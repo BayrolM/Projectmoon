@@ -37,10 +37,10 @@ export function Footer() {
                 <MapPin className="w-3.5 h-3.5" />
                 Medellín, Colombia
               </p>
-              <p className="text-white/60">WhatsApp: +57 323 366 4743</p>
+              <p className="text-white/60">WhatsApp: +57 304 649 5250</p>
               <p className="flex items-center justify-center gap-2 text-white/60">
                 <Mail className="w-3.5 h-3.5" />
-                moontravelco@gmail.com
+                gerencia@moontravelco.net
               </p>
             </div>
           </div>
@@ -65,7 +65,7 @@ export function Footer() {
                 <Instagram className="w-4 h-4 text-[#D2C3F7]" />
               </a>
               <a
-                href="https://www.facebook.com" 
+                href="https://www.facebook.com/share/1Av5qEmBiV/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
@@ -75,7 +75,7 @@ export function Footer() {
                 <Facebook className="w-4 h-4 text-[#D2C3F7]" />
               </a>
               <a
-                href="https://www.tiktok.com/@moon_travelco"
+                href="https://www.tiktok.com/@moontravelco?_r=1&_t=ZS-95Ggdoq20QM"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"

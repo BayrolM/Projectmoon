@@ -80,7 +80,7 @@ export function ContactForm() {
     setSubmitStatus("idle");
 
     // Configuración de WhatsApp
-    const whatsappNumber = "573233664743"; 
+    const whatsappNumber = "573046495250"; 
     const message = `¡Hola Moon Travel Co!\n\nQuisiera solicitar información sobre un viaje:\n\n*Nombre:* ${formData.nombre}\n*Email:* ${formData.email}\n*Destino:* ${formData.destino}\n*Tipo de viaje:* ${formData.tipoViaje === "nacional" ? "Nacional" : "Internacional"}\n\n*Mensaje:*\n${formData.mensaje}\n\n¡Espero su respuesta!`;
     
     const encodedMessage = encodeURIComponent(message);

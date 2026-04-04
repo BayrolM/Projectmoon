@@ -2,7 +2,7 @@ import { MessageCircle, Sparkles, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function CTASection() {
-  const whatsappNumber = "573233664743";
+  const whatsappNumber = "573046495250";
   const message = "¡Hola! Me gustaría recibir asesoría personalizada sobre los paquetes turísticos de Moon Travel Co.";
   const encodedMessage = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;

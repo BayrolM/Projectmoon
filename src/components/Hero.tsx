@@ -1,4 +1,4 @@
-import { Moon, ChevronDown, Sparkles } from "lucide-react";
+import { ChevronDown, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect } from "react";
 
@@ -99,7 +99,11 @@ export function Hero() {
             animate={{ rotate: [0, 5, -5, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           >
-            <Moon className="w-12 h-12 text-[#D2C3F7]" strokeWidth={1.5} />
+            <img 
+              src="/isotipo.png" 
+              alt="Moon Travel Co Isotipo" 
+              className="w-16 h-16 object-contain scale-[2]" 
+            />
           </motion.div>
           <h1
             className="text-5xl md:text-7xl text-white tracking-tight"
