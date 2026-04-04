@@ -119,7 +119,7 @@ export function Hero() {
             className="text-xl md:text-3xl text-white/95 mb-4 max-w-3xl mx-auto leading-relaxed"
             style={{ fontFamily: "'Playfair Display', Georgia, serif", fontStyle: 'italic' }}
           >
-            Donde cada viaje se convierte en una historia inolvidable
+            Más que un viaje, creamos experiencias
           </p>
           <p
             className="text-base md:text-lg text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed"

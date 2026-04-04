@@ -1,4 +1,4 @@
-import { Moon, Instagram, Facebook, Mail } from "lucide-react";
+import { Instagram, Facebook, Mail, MapPin } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,19 +13,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           {/* Brand */}
           <div className="text-center md:text-left">
-            <div className="flex items-center gap-2.5 justify-center md:justify-start mb-4">
-              <div
-                className="p-2 rounded-full"
-                style={{ background: 'rgba(210,195,247,0.15)', border: '1px solid rgba(210,195,247,0.25)' }}
-              >
-                <Moon className="w-5 h-5 text-[#D2C3F7]" strokeWidth={1.5} />
-              </div>
-              <span
-                className="text-xl"
-                style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 600 }}
-              >
-                Moon Travel Co.
-              </span>
+            <div className="flex items-center justify-center md:justify-start mb-10 overflow-visible">
+              <img src="/logo.png" alt="Logo Moon Travel Co." className="h-16 w-auto object-contain scale-[3] origin-left md:origin-left" />
             </div>
             <p
               className="text-white/60 text-sm leading-relaxed"
@@ -43,26 +32,30 @@ export function Footer() {
             >
               Contacto
             </h3>
-            <div className="space-y-2 text-sm" style={{ fontFamily: "'Lato', system-ui, sans-serif" }}>
-              <p className="text-white/60">WhatsApp: +54 9 123 456 7890</p>
+            <div className="space-y-3 text-sm" style={{ fontFamily: "'Lato', system-ui, sans-serif" }}>
+              <p className="flex items-center justify-center gap-2 text-white/60">
+                <MapPin className="w-3.5 h-3.5" />
+                Medellín, Colombia
+              </p>
+              <p className="text-white/60">WhatsApp: +57 323 366 4743</p>
               <p className="flex items-center justify-center gap-2 text-white/60">
                 <Mail className="w-3.5 h-3.5" />
-                info@moontravelco.com
+                moontravelco@gmail.com
               </p>
             </div>
           </div>
 
           {/* Social */}
-          <div className="text-center md:text-right">
+          <div className="text-center">
             <h3
               className="text-base mb-4"
               style={{ fontFamily: "'Lato', system-ui, sans-serif", fontWeight: 700, color: '#D2C3F7' }}
             >
               Síguenos
             </h3>
-            <div className="flex items-center gap-3 justify-center md:justify-end">
+            <div className="flex items-center gap-3 justify-center">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/moon_travelco/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
@@ -72,7 +65,7 @@ export function Footer() {
                 <Instagram className="w-4 h-4 text-[#D2C3F7]" />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
@@ -80,6 +73,26 @@ export function Footer() {
                 aria-label="Facebook"
               >
                 <Facebook className="w-4 h-4 text-[#D2C3F7]" />
+              </a>
+              <a
+                href="https://www.tiktok.com/@moon_travelco"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+                style={{ background: 'rgba(210,195,247,0.12)', border: '1px solid rgba(210,195,247,0.2)' }}
+                aria-label="TikTok"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w-4 h-4 text-[#D2C3F7]"
+                >
+                  <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+                </svg>
               </a>
             </div>
           </div>

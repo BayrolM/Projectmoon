@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Moon, Menu, X, ChevronDown, MessageCircle } from "lucide-react";
+import { Menu, X, ChevronDown, MessageCircle } from "lucide-react";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,18 +25,14 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/97 backdrop-blur-md shadow-sm border-b border-[#D2C3F7]/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-24">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2.5 group">
-            <div className="p-2 rounded-full" style={{ background: 'linear-gradient(135deg, #512DDB, #4E30B2)' }}>
-              <Moon className="w-5 h-5 text-white" strokeWidth={1.5} />
-            </div>
-            <span
-              className="text-xl text-[#1a1a2e] group-hover:text-[#512DDB] transition-colors duration-300"
-              style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 600 }}
-            >
-              Moon Travel Co.
-            </span>
+          <a href="#" className="flex items-center group relative">
+            <img 
+              src="/logo.png" 
+              alt="Moon Travel Co." 
+              className="h-16 w-auto object-contain transition-all duration-300 scale-[2.5] origin-left group-hover:scale-[2.7]" 
+            />
           </a>
 
           {/* Desktop Navigation */}
@@ -57,17 +53,19 @@ export function Navbar() {
               </button>
 
               {isDestinosDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl shadow-xl border border-[#D2C3F7]/40 py-2 animate-fadeIn">
-                  {destinations.map((dest, index) => (
-                    <a
-                      key={index}
-                      href={dest.href}
-                      style={linkStyle}
-                      className="block px-4 py-3 text-gray-700 hover:bg-[#D2C3F7]/20 hover:text-[#512DDB] transition-all duration-200"
-                    >
-                      {dest.name}
-                    </a>
-                  ))}
+                <div className="absolute top-full left-0 pt-2 w-52 animate-fadeIn z-50">
+                  <div className="bg-white rounded-xl shadow-xl border border-[#D2C3F7]/40 py-2">
+                    {destinations.map((dest, index) => (
+                      <a
+                        key={index}
+                        href={dest.href}
+                        style={linkStyle}
+                        className="block px-4 py-3 text-gray-700 hover:bg-[#D2C3F7]/20 hover:text-[#512DDB] transition-all duration-200"
+                      >
+                        {dest.name}
+                      </a>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
@@ -84,17 +82,19 @@ export function Navbar() {
               </button>
 
               {isPaquetesDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl shadow-xl border border-[#D2C3F7]/40 py-2 animate-fadeIn">
-                  {packages.map((pkg, index) => (
-                    <a
-                      key={index}
-                      href={pkg.href}
-                      style={linkStyle}
-                      className="block px-4 py-3 text-gray-700 hover:bg-[#D2C3F7]/20 hover:text-[#512DDB] transition-all duration-200"
-                    >
-                      {pkg.name}
-                    </a>
-                  ))}
+                <div className="absolute top-full left-0 pt-2 w-52 animate-fadeIn z-50">
+                  <div className="bg-white rounded-xl shadow-xl border border-[#D2C3F7]/40 py-2">
+                    {packages.map((pkg, index) => (
+                      <a
+                        key={index}
+                        href={pkg.href}
+                        style={linkStyle}
+                        className="block px-4 py-3 text-gray-700 hover:bg-[#D2C3F7]/20 hover:text-[#512DDB] transition-all duration-200"
+                      >
+                        {pkg.name}
+                      </a>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>

@@ -79,11 +79,18 @@ export function ContactForm() {
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
-    // Simular envío de formulario
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    // Configuración de WhatsApp
+    const whatsappNumber = "573233664743"; 
+    const message = `¡Hola Moon Travel Co!\n\nQuisiera solicitar información sobre un viaje:\n\n*Nombre:* ${formData.nombre}\n*Email:* ${formData.email}\n*Destino:* ${formData.destino}\n*Tipo de viaje:* ${formData.tipoViaje === "nacional" ? "Nacional" : "Internacional"}\n\n*Mensaje:*\n${formData.mensaje}\n\n¡Espero su respuesta!`;
+    
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
-    // Aquí normalmente enviarías los datos a un backend o API
-    console.log("Formulario enviado:", formData);
+    // Simular un pequeño retraso para la experiencia de usuario
+    await new Promise((resolve) => setTimeout(resolve, 800));
+
+    // Redirigir a WhatsApp
+    window.open(whatsappUrl, "_blank");
 
     setIsSubmitting(false);
     setSubmitStatus("success");
@@ -103,7 +110,20 @@ export function ContactForm() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    
+    // Autodetectar tipo de viaje si es destino
+    if (name === "destino") {
+      const isColombia = value.toLowerCase().includes("colombia") || 
+                         ["cartagena", "san andres", "medellin", "bogota", "santa marta"].some(city => value.toLowerCase().includes(city));
+      
+      setFormData((prev) => ({ 
+        ...prev, 
+        [name]: value,
+        tipoViaje: isColombia ? "nacional" : "internacional"
+      }));
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
     
     // Limpiar error cuando el usuario empiece a escribir
     if (errors[name as keyof typeof errors]) {
@@ -248,7 +268,8 @@ export function ContactForm() {
                 <MapPin className="w-4 h-4 text-[#512DDB]" />
                 Destino de interés *
               </label>
-              <select
+              <input
+                list="destinos-list"
                 id="destino"
                 name="destino"
                 value={formData.destino}
@@ -259,14 +280,14 @@ export function ContactForm() {
                     : "border-gray-200 focus:border-[#512DDB] bg-white"
                 }`}
                 style={{ fontFamily: "'Lato', system-ui, sans-serif" }}
-              >
-                <option value="">Selecciona un destino</option>
+                placeholder="Escribe o selecciona un destino"
+                autoComplete="off"
+              />
+              <datalist id="destinos-list">
                 {destinosSugeridos.map((destino) => (
-                  <option key={destino} value={destino}>
-                    {destino}
-                  </option>
+                  <option key={destino} value={destino} />
                 ))}
-              </select>
+              </datalist>
               <AnimatePresence>
                 {errors.destino && (
                   <motion.div

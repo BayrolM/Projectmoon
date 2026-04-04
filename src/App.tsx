@@ -57,7 +57,7 @@ export default function App() {
       duration: "5 días / 4 noches",
       location: "Cartagena, Colombia",
       image: "https://images.unsplash.com/photo-1770808564556-7bc511b893a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJ0YWdlbmElMjBjb2xvbWJpYSUyMGNvbG9yZnVsJTIwY29sb25pYWx8ZW58MXx8fHwxNzc1MDk3NTYyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      whatsappMessage: "¡Hola! Me interesa el paquete 'Ciudad Amurallada' en Cartagena. ¿Podrían darme más información? 🏖️",
+      whatsappMessage: "¡Hola! Me interesa el paquete 'Ciudad Amurallada' en Cartagena. ¿Podrían darme más información?",
     },
     {
       title: "Eje Cafetero",
@@ -65,7 +65,7 @@ export default function App() {
       duration: "4 días / 3 noches",
       location: "Eje Cafetero, Colombia",
       image: "https://images.unsplash.com/photo-1493925410384-84f842e616fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBwbGFudGF0aW9uJTIwY29sb21iaWElMjBtb3VudGFpbnN8ZW58MXx8fHwxNzc1MDk3NTYyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      whatsappMessage: "¡Hola! Quisiera información sobre el paquete 'Eje Cafetero'. ¿Qué actividades incluye? ☕",
+      whatsappMessage: "¡Hola! Quisiera información sobre el paquete 'Eje Cafetero'. ¿Qué actividades incluye?",
     },
     {
       title: "San Andrés Todo Incluido",
@@ -73,7 +73,7 @@ export default function App() {
       duration: "6 días / 5 noches",
       location: "San Andrés, Colombia",
       image: "https://images.unsplash.com/photo-1669517270484-df54ad8d54c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYW4lMjBhbmRyZXMlMjBpc2xhbmQlMjBjYXJpYmJlYW4lMjBiZWFjaHxlbnwxfHx8fDE3NzUwOTc1NjN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      whatsappMessage: "¡Hola! Me interesa el paquete 'San Andrés Todo Incluido'. ¿Cuál es el precio? 🏝️",
+      whatsappMessage: "¡Hola! Me interesa el paquete 'San Andrés Todo Incluido'. ¿Cuál es el precio?",
     },
     {
       title: "Desierto y Villa de Leyva",
@@ -81,7 +81,7 @@ export default function App() {
       duration: "5 días / 4 noches",
       location: "Huila y Boyacá, Colombia",
       image: "https://images.unsplash.com/photo-1697823411806-3402bf656659?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0YXRhY29hJTIwZGVzZXJ0JTIwY29sb21iaWElMjByZWQlMjBzYW5kfGVufDF8fHx8MTc3NTA5NzU2M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      whatsappMessage: "¡Hola! Me fascina el paquete 'Desierto y Villa de Leyva'. ¿Cuándo puedo viajar? 🏜️",
+      whatsappMessage: "¡Hola! Me fascina el paquete 'Desierto y Villa de Leyva'. ¿Cuándo puedo viajar?",
     },
   ];
 
@@ -92,7 +92,7 @@ export default function App() {
       duration: "7 días / 6 noches",
       location: "Caribe",
       image: "https://images.unsplash.com/photo-1602455891364-31034e19a826?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cm9waWNhbCUyMGJlYWNoJTIwcGFyYWRpc2V8ZW58MXx8fHwxNzY4MzE0NTg5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      whatsappMessage: "¡Hola! Me interesa el paquete 'Caribe Paradisíaco' de 7 días. ¿Podrían darme más información? 🏝️",
+      whatsappMessage: "¡Hola! Me interesa el paquete 'Caribe Paradisíaco' de 7 días. ¿Podrían darme más información?",
     },
     {
       title: "París Romántico",
@@ -100,7 +100,7 @@ export default function App() {
       duration: "5 días / 4 noches",
       location: "París, Francia",
       image: "https://images.unsplash.com/photo-1431274172761-fca41d930114?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwYXJpcyUyMGVpZmZlbCUyMHRvd2VyfGVufDF8fHx8MTc2ODI5NzU3MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      whatsappMessage: "¡Hola! Me interesa el paquete 'París Romántico'. ¿Qué incluye el itinerario? 🗼",
+      whatsappMessage: "¡Hola! Me interesa el paquete 'París Romántico'. ¿Qué incluye el itinerario?",
     },
     {
       title: "Japón Tradicional",
@@ -108,7 +108,7 @@ export default function App() {
       duration: "10 días / 9 noches",
       location: "Kyoto, Japón",
       image: "https://images.unsplash.com/photo-1649451898726-1ed602692cec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxqYXBhbmVzZSUyMHRlbXBsZSUyMGt5b3RvfGVufDF8fHx8MTc2ODI2Nzc3OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      whatsappMessage: "¡Hola! Quisiera saber más sobre el paquete 'Japón Tradicional'. ¿Cuáles son las fechas disponibles? 🏯",
+      whatsappMessage: "¡Hola! Quisiera saber más sobre el paquete 'Japón Tradicional'. ¿Cuáles son las fechas disponibles?",
     },
     {
       title: "Aventura Patagónica",
@@ -116,7 +116,7 @@ export default function App() {
       duration: "8 días / 7 noches",
       location: "Patagonia",
       image: "https://images.unsplash.com/photo-1649710972692-34778ba6164f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwYXRhZ29uaWElMjBtb3VudGFpbnN8ZW58MXx8fHwxNzY4Mjk2NjI1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      whatsappMessage: "¡Hola! Me encanta la aventura y me interesa el paquete 'Aventura Patagónica'. ¿Qué actividades incluye? ⛰️",
+      whatsappMessage: "¡Hola! Me encanta la aventura y me interesa el paquete 'Aventura Patagónica'. ¿Qué actividades incluye?",
     },
     {
       title: "Grecia Mágica",
@@ -124,7 +124,7 @@ export default function App() {
       duration: "9 días / 8 noches",
       location: "Grecia",
       image: "https://images.unsplash.com/photo-1676730056228-7e38cbb88edc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYW50b3JpbmklMjBncmVlY2UlMjBzdW5zZXR8ZW58MXx8fHwxNzY4MjUxMDg5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      whatsappMessage: "¡Hola! Estoy interesado/a en el paquete 'Grecia Mágica'. ¿Qué islas se visitan? 🇬🇷",
+      whatsappMessage: "¡Hola! Estoy interesado/a en el paquete 'Grecia Mágica'. ¿Qué islas se visitan?",
     },
     {
       title: "Auroras Boreales",
@@ -132,7 +132,7 @@ export default function App() {
       duration: "6 días / 5 noches",
       location: "Islandia",
       image: "https://images.unsplash.com/photo-1488415032361-b7e238421f1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxub3J0aGVybiUyMGxpZ2h0cyUyMGljZWxhbmR8ZW58MXx8fHwxNzY4MjY3Nzc5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      whatsappMessage: "¡Hola! Me fascina el paquete 'Auroras Boreales'. ¿En qué época del año es mejor viajar? ✨",
+      whatsappMessage: "¡Hola! Me fascina el paquete 'Auroras Boreales'. ¿En qué época del año es mejor viajar?",
     },
   ];
 
@@ -144,7 +144,7 @@ export default function App() {
       <Navbar />
 
       {/* Hero Section - Adding padding-top to account for fixed navbar */}
-      <div className="pt-20">
+      <div className="pt-24">
         <Hero />
       </div>
 
