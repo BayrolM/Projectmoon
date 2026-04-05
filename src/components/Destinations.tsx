@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { MapPin, Sparkles, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 
 interface DestinationData {
   name: string;
@@ -32,7 +32,7 @@ function DestinationCard({ destination, index, handleOtroClick }: { destination:
     return () => clearInterval(interval);
   }, [nextImage, images.length]);
 
-  const variants = {
+  const variants: Variants = {
     enter: (direction: number) => ({
       x: direction > 0 ? "100%" : "-100%",
       opacity: 0,
