@@ -30,8 +30,8 @@ export function WhyUs() {
     },
     {
       icon: Award,
-      title: "Calidad Comprobada",
-      description: "Más de 1000 viajeros nos recomiendan. 98% de satisfacción en nuestros servicios",
+      title: "Legalmente Constituida",
+      description: "Somos una empresa legalmente constituida y registrada ante la Cámara de Comercio, con NIT 1102809922-0",
     },
   ];
 

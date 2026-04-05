@@ -10,50 +10,68 @@ export function Footer() {
       style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1a1a2e 60%, #4E30B2 100%)' }}
     >
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-10">
           {/* Brand */}
           <div className="text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start mb-10 overflow-visible">
-              <img src="/logo.png" alt="Logo Moon Travel Co." className="h-16 w-auto object-contain scale-[3] origin-left md:origin-left" />
+            <div className="flex items-center justify-center md:justify-start mb-6 overflow-visible">
+              <img src="/logo.png" alt="Logo Moon Travel Co." className="h-12 w-auto object-contain scale-[2.5] origin-left" />
             </div>
             <p
-              className="text-white/60 text-sm leading-relaxed"
+              className="text-white/60 text-sm leading-relaxed mt-4"
               style={{ fontFamily: "'Lato', system-ui, sans-serif" }}
             >
-              Haciendo tus sueños de viaje realidad bajo las estrellas
+              Haciendo tus sueños de viaje realidad bajo las estrellas.
             </p>
           </div>
 
           {/* Contact */}
-          <div className="text-center">
+          <div className="text-center md:text-left">
             <h3
-              className="text-base mb-4"
+              className="text-base mb-6"
               style={{ fontFamily: "'Lato', system-ui, sans-serif", fontWeight: 700, color: '#D2C3F7' }}
             >
               Contacto
             </h3>
             <div className="space-y-3 text-sm" style={{ fontFamily: "'Lato', system-ui, sans-serif" }}>
-              <p className="flex items-center justify-center gap-2 text-white/60">
+              <p className="flex items-center justify-center md:justify-start gap-2 text-white/60">
                 <MapPin className="w-3.5 h-3.5" />
                 Medellín, Colombia
               </p>
               <p className="text-white/60">WhatsApp: +57 304 649 5250</p>
-              <p className="flex items-center justify-center gap-2 text-white/60">
+              <a 
+                href="mailto:gerencia@moontravelco.net" 
+                className="flex items-center justify-center md:justify-start gap-2 text-white/60 hover:text-[#D2C3F7] transition-colors"
+              >
                 <Mail className="w-3.5 h-3.5" />
                 gerencia@moontravelco.net
-              </p>
+              </a>
+            </div>
+          </div>
+
+          {/* Global Info */}
+          <div className="text-center md:text-left">
+            <h3
+              className="text-base mb-6"
+              style={{ fontFamily: "'Lato', system-ui, sans-serif", fontWeight: 700, color: '#D2C3F7' }}
+            >
+              Información Legal
+            </h3>
+            <div className="space-y-3 text-sm text-white/60" style={{ fontFamily: "'Lato', system-ui, sans-serif" }}>
+              <p>NIT: 1102809922-0</p>
+              <p>RNT: 264489</p>
+              <p>Dirección: Carrera 54 # 35-21</p>
             </div>
           </div>
 
           {/* Social */}
-          <div className="text-center">
+          <div className="text-center md:text-left">
             <h3
-              className="text-base mb-4"
+              className="text-base mb-6"
               style={{ fontFamily: "'Lato', system-ui, sans-serif", fontWeight: 700, color: '#D2C3F7' }}
             >
               Síguenos
             </h3>
-            <div className="flex items-center gap-3 justify-center">
+            <div className="flex items-center gap-3 justify-center md:justify-start">
               <a
                 href="https://www.instagram.com/moon_travelco/"
                 target="_blank"
