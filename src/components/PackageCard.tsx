@@ -1,5 +1,5 @@
 import { Clock, MapPin, MessageCircle, Check, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { useState, useEffect, useCallback } from "react";
 
 interface PackageCardProps {
@@ -46,7 +46,7 @@ export function PackageCard({
     return () => clearInterval(interval);
   }, [nextImage, images.length]);
 
-  const variants = {
+  const variants: Variants = {
     enter: (direction: number) => ({
       x: direction > 0 ? "100%" : "-100%",
       opacity: 0,
