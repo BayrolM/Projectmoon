@@ -1,8 +1,173 @@
-import { useState, useEffect } from "react";
-import { MapPin, Sparkles, ArrowRight } from "lucide-react";
-import { motion } from "motion/react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
+import { useState, useEffect, useCallback } from "react";
+import { MapPin, Sparkles, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { motion, AnimatePresence, Variants } from "framer-motion";
+
+interface DestinationData {
+  name: string;
+  description: string;
+  type: string;
+  images: string[];
+}
+
+function DestinationCard({ destination, index, handleOtroClick }: { destination: DestinationData, index: number, handleOtroClick: () => void }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
+
+  const images = destination.images || [];
+
+  const nextImage = useCallback(() => {
+    setDirection(1);
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  }, [images.length]);
+
+  const prevImage = useCallback(() => {
+    setDirection(-1);
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  }, [images.length]);
+
+  // Autoplay
+  useEffect(() => {
+    if (images.length <= 1) return;
+    const interval = setInterval(nextImage, 5000);
+    return () => clearInterval(interval);
+  }, [nextImage, images.length]);
+
+  const variants: Variants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? "100%" : "-100%",
+      opacity: 0,
+      scale: 1.1
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      transition: {
+        x: { type: "spring", stiffness: 300, damping: 30 },
+        opacity: { duration: 0.5 },
+        scale: { duration: 0.5 }
+      }
+    },
+    exit: (direction: number) => ({
+      zIndex: 0,
+      x: direction < 0 ? "100%" : "-100%",
+      opacity: 0,
+      scale: 0.9,
+      transition: {
+        x: { type: "spring", stiffness: 300, damping: 30 },
+        opacity: { duration: 0.5 },
+        scale: { duration: 0.5 }
+      }
+    })
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden flex flex-col h-full"
+    >
+      {/* Image Carousel Section */}
+      <div className="relative h-48 overflow-hidden bg-gray-900 shrink-0">
+        <AnimatePresence initial={false} custom={direction}>
+          <motion.img
+            key={currentIndex}
+            src={images[currentIndex]}
+            alt={`${destination.name} - image ${currentIndex + 1}`}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </AnimatePresence>
+        
+        {/* Overlay Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-[2]"></div>
+
+        {/* Carousel Controls (Show on hover) */}
+        {images.length > 1 && (
+          <>
+            <button
+              onClick={(e) => { e.preventDefault(); prevImage(); }}
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-[5] w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/40"
+              aria-label="Previous image"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={(e) => { e.preventDefault(); nextImage(); }}
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-[5] w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/40"
+              aria-label="Next image"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+            
+            {/* Indicators */}
+            <div className="absolute bottom-4 right-4 z-[5] flex gap-1.5 px-2 py-1 rounded-full bg-black/20 backdrop-blur-sm">
+              {images.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={(e) => { e.preventDefault(); setDirection(idx > currentIndex ? 1 : -1); setCurrentIndex(idx); }}
+                  className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                    idx === currentIndex ? "bg-white w-3" : "bg-white/40 hover:bg-white/60"
+                  }`}
+                  aria-label={`Go to image ${idx + 1}`}
+                />
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+
+      {/* Content Section */}
+      <div className="p-6 flex flex-col flex-grow">
+        <div className="flex items-center gap-2 mb-2">
+          <MapPin className="w-4 h-4 text-[#512DDB]" />
+          <h3
+            className="text-xl text-[#1a1a2e]"
+            style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 600 }}
+          >
+            {destination.name}
+          </h3>
+        </div>
+        
+        <p
+          className="text-gray-600 mb-6 flex-grow text-sm leading-relaxed"
+          style={{ fontFamily: "'Lato', system-ui, sans-serif" }}
+        >
+          {destination.description}
+        </p>
+
+        <div className="flex items-center justify-between mt-auto">
+          <div className="flex items-center gap-1.5 text-[#512DDB] text-sm">
+            <Sparkles className="w-4 h-4" />
+            <span style={{ fontFamily: "'Lato', system-ui, sans-serif", fontWeight: 600 }}>
+              {destination.type}
+            </span>
+          </div>
+
+          <button
+            onClick={handleOtroClick}
+            className="flex items-center gap-1 text-[#512DDB] hover:gap-2 transition-all duration-300"
+          >
+            <span
+              className="text-sm"
+              style={{ fontFamily: "'Lato', system-ui, sans-serif", fontWeight: 700 }}
+            >
+              Explorar
+            </span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 export function Destinations() {
   const [activeTab, setActiveTab] = useState<"nacional" | "internacional">("nacional");
@@ -233,84 +398,12 @@ export function Destinations() {
         {/* Destinations Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {currentDestinations.map((destination, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden flex flex-col"
-            >
-              {/* Imágenes Carousel */}
-              <div className="relative h-48 overflow-hidden group/img shrink-0">
-                <Carousel 
-                  className="w-full h-full relative" 
-                  opts={{ loop: true }}
-                  plugins={[Autoplay({ delay: 3000, stopOnInteraction: true })]}
-                >
-                  <CarouselContent className="h-48 -ml-0">
-                    {destination.images?.map((imgUrl, imgIndex) => (
-                      <CarouselItem key={imgIndex} className="pl-0 basis-full relative h-48">
-                        <img
-                          src={imgUrl}
-                          alt={`${destination.name} ${imgIndex + 1}`}
-                          className="w-full h-full object-cover group-hover/img:scale-110 transition-transform duration-500"
-                        />
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  {destination.images?.length > 1 && (
-                    <>
-                      <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 size-8 bg-white/70 border-white/70 hover:bg-white z-10 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center p-0" />
-                      <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 size-8 bg-white/70 border-white/70 hover:bg-white z-10 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center p-0" />
-                    </>
-                  )}
-                </Carousel>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none z-0"></div>
-              </div>
-
-              {/* Content */}
-              <div className="p-6">
-                <div className="flex items-center gap-2 mb-2">
-                  <MapPin className="w-4 h-4 text-[#512DDB]" />
-                  <h3
-                    className="text-xl text-[#1a1a2e]"
-                    style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 600 }}
-                  >
-                    {destination.name}
-                  </h3>
-                </div>
-                
-                <p
-                  className="text-gray-600 mb-3 text-sm leading-relaxed"
-                  style={{ fontFamily: "'Lato', system-ui, sans-serif" }}
-                >
-                  {destination.description}
-                </p>
-
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1.5 text-[#512DDB] text-sm">
-                    <Sparkles className="w-4 h-4" />
-                    <span style={{ fontFamily: "'Lato', system-ui, sans-serif", fontWeight: 600 }}>
-                      {destination.type}
-                    </span>
-                  </div>
-
-                  <button
-                    onClick={handleOtroClick}
-                    className="flex items-center gap-1 text-[#512DDB] hover:gap-2 transition-all duration-300"
-                  >
-                    <span
-                      className="text-sm"
-                      style={{ fontFamily: "'Lato', system-ui, sans-serif", fontWeight: 700 }}
-                    >
-                      Explorar
-                    </span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            </motion.div>
+            <DestinationCard 
+              key={index} 
+              destination={destination} 
+              index={index} 
+              handleOtroClick={handleOtroClick} 
+            />
           ))}
         </div>
       </div>
