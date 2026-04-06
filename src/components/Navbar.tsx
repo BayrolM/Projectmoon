@@ -16,7 +16,7 @@ export function Navbar() {
     { name: "Internacional", href: "#paquetes-internacional" },
   ];
 
-  const whatsappNumber = "5491234567890"; // Actualizar con número real
+  const whatsappNumber = "573046495250"; // Actualizar con número real
   const whatsappMessage = "¡Hola! Quisiera obtener información sobre los paquetes turísticos de Moon Travel Co. 🌙";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
