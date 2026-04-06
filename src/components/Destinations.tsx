@@ -9,7 +9,7 @@ interface DestinationData {
   images: string[];
 }
 
-function DestinationCard({ destination, index, handleOtroClick }: { destination: DestinationData, index: number, handleOtroClick: () => void }) {
+function DestinationCard({ destination, index }: { destination: DestinationData, index: number }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
 
@@ -151,18 +151,20 @@ function DestinationCard({ destination, index, handleOtroClick }: { destination:
             </span>
           </div>
 
-          <button
-            onClick={handleOtroClick}
+          <a
+            href={`https://wa.me/573046495250?text=${encodeURIComponent(`Hola, me gustaría recibir más información sobre el destino: ${destination.name}`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-1 text-[#512DDB] hover:gap-2 transition-all duration-300"
           >
             <span
               className="text-sm"
               style={{ fontFamily: "'Lato', system-ui, sans-serif", fontWeight: 700 }}
             >
-              Explorar
+              Más información
             </span>
             <ArrowRight className="w-4 h-4" />
-          </button>
+          </a>
         </div>
       </div>
     </motion.div>
@@ -192,8 +194,8 @@ export function Destinations() {
       description: "Ciudad colonial caribeña con playas hermosas y vida nocturna vibrante",
       type: "Playa & Cultura",
       images: [
-        "https://images.unsplash.com/photo-1770808564556-7bc511b893a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJ0YWdlbmElMjBjb2xvbWJpYSUyMGNvbG9yZnVsJTIwY29sb25pYWx8ZW58MXx8fHwxNzc1MDk3NTYyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-        "https://images.unsplash.com/photo-1770808564556-7bc511b893a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJ0YWdlbmElMjBjb2xvbWJpYSUyMGNvbG9yZnVsJTIwY29sb25pYWx8ZW58MXx8fHwxNzc1MDk3NTYyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+        "/images/nacionales/cartagena 1.jpg",
+        "/images/nacionales/cartagena 2.jpg"
       ] 
     },
     { 
@@ -201,8 +203,8 @@ export function Destinations() {
       description: "La ciudad de la eterna primavera con innovación y cultura paisa",
       type: "Ciudad & Naturaleza",
       images: [
-        "https://images.unsplash.com/photo-1568632234165-573a0e01b29b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWRlbGxpbiUyMGNvbG9tYmlhJTIwY2l0eXxlbnwxfHx8fDE3NzUwOTc1NjN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-        "https://images.unsplash.com/photo-1568632234165-573a0e01b29b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWRlbGxpbiUyMGNvbG9tYmlhJTIwY2l0eXxlbnwxfHx8fDE3NzUwOTc1NjN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+        "/images/nacionales/medellin 1.jpg",
+        "/images/nacionales/medellin 2.jpg"
       ] 
     },
     { 
@@ -210,8 +212,8 @@ export function Destinations() {
       description: "Isla paradisíaca con mar de 7 colores y playas de ensueño",
       type: "Playa & Relax",
       images: [
-        "https://images.unsplash.com/photo-1669517270484-df54ad8d54c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYW4lMjBhbmRyZXMlMjBpc2xhbmQlMjBjYXJpYmJlYW4lMjBiZWFjaHxlbnwxfHx8fDE3NzUwOTc1NjN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-        "https://images.unsplash.com/photo-1669517270484-df54ad8d54c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYW4lMjBhbmRyZXMlMjBpc2xhbmQlMjBjYXJpYmJlYW4lMjBiZWFjaHxlbnwxfHx8fDE3NzUwOTc1NjN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+        "/images/nacionales/san andres 1.jpg",
+        "/images/nacionales/san andres 2.avif"
       ] 
     },
     { 
@@ -219,8 +221,8 @@ export function Destinations() {
       description: "Combina playas caribeñas con la Sierra Nevada y Parque Tayrona",
       type: "Aventura & Playa",
       images: [
-        "https://images.unsplash.com/photo-1583487890344-cfd3f2d5bcf3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYW50YSUyMG1hcnRhJTIwY29sb21iaWElMjBiZWFjaHxlbnwxfHx8fDE3NzUwOTc1NjR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-        "https://images.unsplash.com/photo-1583487890344-cfd3f2d5bcf3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYW50YSUyMG1hcnRhJTIwY29sb21iaWElMjBiZWFjaHxlbnwxfHx8fDE3NzUwOTc1NjR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+        "/images/nacionales/santa marta 1.jpg",
+        "/images/nacionales/santa marta 2.jpg"
       ] 
     },
     { 
@@ -229,7 +231,7 @@ export function Destinations() {
       type: "Cultura & Naturaleza",
       images: [
         "https://images.unsplash.com/photo-1493925410384-84f842e616fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBwbGFudGF0aW9uJTIwY29sb21iaWElMjBtb3VudGFpbnN8ZW58MXx8fHwxNzc1MDk3NTYyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-        "https://images.unsplash.com/photo-1493925410384-84f842e616fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBwbGFudGF0aW9uJTIwY29sb21iaWElMjBtb3VudGFpbnN8ZW58MXx8fHwxNzc1MDk3NTYyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+        "/images/nacionales/eje cafetero.jpg"
       ] 
     },
     { 
@@ -237,8 +239,8 @@ export function Destinations() {
       description: "Pueblos coloniales mágicos y tradiciones ancestrales",
       type: "Historia & Cultura",
       images: [
-        "https://images.unsplash.com/photo-1624714538302-d7f98ee5a142?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib3lhY2ElMjBjb2xvbWJpYSUyMGNvbG9uaWFsfGVufDF8fHx8MTc3NTA5NzU2NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-        "https://images.unsplash.com/photo-1624714538302-d7f98ee5a142?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib3lhY2ElMjBjb2xvbWJpYSUyMGNvbG9uaWFsfGVufDF8fHx8MTc3NTA5NzU2NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+        "/images/nacionales/boyaca 1.jpg",
+        "/images/nacionales/boyaca 2.jpg"
       ] 
     },
     { 
@@ -246,76 +248,166 @@ export function Destinations() {
       description: "Capital de Colombia con cultura, gastronomía y sitios históricos únicos.",
       type: "Ciudad & Cultura",
       images: [
-        "https://images.pexels.com/photos/19676353/pexels-photo-19676353.jpeg",
-        "https://images.unsplash.com/photo-1770808564556-7bc511b893a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJ0YWdlbmElMjBjb2xvbWJpYSUyMGNvbG9yZnVsJTIwY29sb25pYWx8ZW58MXx8fHwxNzc1MDk3NTYyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+        "/images/nacionales/bogota 1.jpg",
+        "/images/nacionales/bogota 2.jpg"
       ] 
     },
     { 
-      name: "Cartagena (Opción 2)", 
-      description: "Ciudad colonial caribeña con playas hermosas y vida nocturna vibrante",
-      type: "Playa & Cultura",
+      name: "Islas del Rosario", 
+      description: "Archipiélago de aguas cristalinas ideal para descansar y hacer snorkel.",
+      type: "Playa & Naturaleza",
       images: [
-        "https://images.unsplash.com/photo-1770808564556-7bc511b893a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJ0YWdlbmElMjBjb2xvbWJpYSUyMGNvbG9yZnVsJTIwY29sb25pYWx8ZW58MXx8fHwxNzc1MDk3NTYyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-        "https://images.unsplash.com/photo-1770808564556-7bc511b893a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJ0YWdlbmElMjBjb2xvbWJpYSUyMGNvbG9yZnVsJTIwY29sb25pYWx8ZW58MXx8fHwxNzc1MDk3NTYyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+        "/images/nacionales/islas rosario 1.jpg",
+        "/images/nacionales/islas rosario 2.jpg"
+      ] 
+    },
+    { 
+      name: "Parque Tayrona", 
+      description: "Parque natural con playas vírgenes, selva y biodiversidad impresionante.",
+      type: "Naturaleza & Aventura",
+      images: [
+        "/images/nacionales/parque tayrona 1.jpg",
+        "/images/nacionales/parque tayrona 2.jpg"
+      ] 
+    },
+    { 
+      name: "Guatapé", 
+      description: "Pueblo colorido famoso por la Piedra del Peñol y su embalse.",
+      type: "Cultura & Paisajes",
+      images: [
+        "/images/nacionales/guatape 1.jpg",
+        "/images/nacionales/guatape 2.jpg"
+      ] 
+    },
+    { 
+      name: "Nariño", 
+      description: "Región con volcanes, lagunas y cultura andina auténtica.",
+      type: "Naturaleza & Tradición",
+      images: [
+        "/images/nacionales/nariño 1.avif",
+        "/images/nacionales/nariño 2.jpg"
+      ] 
+    },
+    { 
+      name: "Cali", 
+      description: "Capital mundial de la salsa con ambiente alegre y vida nocturna.",
+      type: "Cultura & Fiesta",
+      images: [
+        "/images/nacionales/cali 1.jpeg",
+        "/images/nacionales/cali 2.jpg"
       ] 
     }
   ];
 
   const internacionalDestinations = [
     { 
-      name: "Caribe", 
-      description: "Playas de arena blanca, aguas cristalinas y resorts todo incluido",
-      type: "Playa & Lujo",
+      name: "Nueva York", 
+      description: "Ciudad icónica con rascacielos, cultura urbana y entretenimiento sin fin.",
+      type: "Ciudad & Cultura",
       images: [
-        "https://images.unsplash.com/photo-1602455891364-31034e19a826?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cm9waWNhbCUyMGJlYWNoJTIwcGFyYWRpc2V8ZW58MXx8fHwxNzY4MzE0NTg5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-        "https://images.unsplash.com/photo-1602455891364-31034e19a826?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cm9waWNhbCUyMGJlYWNoJTIwcGFyYWRpc2V8ZW58MXx8fHwxNzY4MzE0NTg5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+        "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
+        "https://images.unsplash.com/photo-1534430480872-3498386e7856?crop=entropy&cs=tinysrgb&fit=max&fm=jpg"
+      ] 
+    },
+    { 
+      name: "Roma", 
+      description: "Destino histórico con monumentos antiguos, arte y gastronomía italiana.",
+      type: "Historia & Cultura",
+      images: [
+        "https://images.unsplash.com/photo-1552832230-c0197dd311b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
+        "https://images.unsplash.com/photo-1531572753322-ad063cecc140?crop=entropy&cs=tinysrgb&fit=max&fm=jpg"
+      ] 
+    },
+    { 
+      name: "Dubai", 
+      description: "Ciudad futurista con lujo, desierto y arquitectura impresionante.",
+      type: "Lujo & Modernidad",
+      images: [
+        "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
+        "https://images.unsplash.com/photo-1518684079-3c830dcef090?crop=entropy&cs=tinysrgb&fit=max&fm=jpg"
+      ] 
+    },
+    { 
+      name: "Londres", 
+      description: "Capital europea con historia, museos y cultura diversa.",
+      type: "Historia & Cultura",
+      images: [
+        "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
+        "https://images.unsplash.com/photo-1520939817895-060bdaf4fe1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg"
+      ] 
+    },
+    { 
+      name: "Bangkok", 
+      description: "Ciudad vibrante con templos, mercados y vida nocturna intensa.",
+      type: "Cultura & Aventura",
+      images: [
+        "/images/internacionales/bangkok 1.jpg",
+        "/images/internacionales/bangkok 2.jpg"
+      ] 
+    },
+    { 
+      name: "Estambul", 
+      description: "Destino único entre Europa y Asia con rica historia y arquitectura.",
+      type: "Historia & Tradición",
+      images: [
+        "https://images.unsplash.com/photo-1527838832700-5059252407fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
+        "/images/internacionales/estambul 1.jpg"
+      ] 
+    },
+    { 
+      name: "Sídney", 
+      description: "Ciudad costera famosa por su ópera, playas y estilo de vida relajado.",
+      type: "Playa & Ciudad",
+      images: [
+        "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
+        "https://images.unsplash.com/photo-1528072164453-f4e8ef0d475a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg"
       ] 
     },
     { 
       name: "París", 
-      description: "La ciudad del amor con arte, arquitectura y gastronomía única",
-      type: "Romance & Cultura",
+      description: "Ciudad del amor con arte, historia y monumentos icónicos como la Torre Eiffel.",
+      type: "Cultura & Romance",
       images: [
-        "https://images.unsplash.com/photo-1431274172761-fca41d930114?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwYXJpcyUyMGVpZmZlbCUyMHRvd2VyfGVufDF8fHx8MTc2ODI5NzU3MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-        "https://images.unsplash.com/photo-1431274172761-fca41d930114?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwYXJpcyUyMGVpZmZlbCUyMHRvd2VyfGVufDF8fHx8MTc2ODI5NzU3MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+        "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
+        "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg"
       ] 
     },
     { 
       name: "Japón", 
-      description: "Templos milenarios, tecnología futurista y tradiciones zen",
-      type: "Cultura & Aventura",
+      description: "País que mezcla tradición milenaria con tecnología avanzada y paisajes únicos.",
+      type: "Cultura & Tecnología",
       images: [
-        "https://images.unsplash.com/photo-1649451898726-1ed602692cec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxqYXBhbmVzZSUyMHRlbXBsZSUyMGt5b3RvfGVufDF8fHx8MTc2ODI2Nzc3OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-        "https://images.unsplash.com/photo-1649451898726-1ed602692cec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxqYXBhbmVzZSUyMHRlbXBsZSUyMGt5b3RvfGVufDF8fHx8MTc2ODI2Nzc3OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+        "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
+        "https://images.unsplash.com/photo-1528360983277-13d401cdc186?crop=entropy&cs=tinysrgb&fit=max&fm=jpg"
       ] 
     },
     { 
       name: "Patagonia", 
-      description: "Glaciares imponentes, trekking y paisajes naturales únicos",
-      type: "Aventura & Naturaleza",
+      description: "Destino natural con glaciares, montañas y paisajes impresionantes.",
+      type: "Naturaleza & Aventura",
       images: [
-        "https://images.unsplash.com/photo-1649710972692-34778ba6164f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwYXRhZ29uaWElMjBtb3VudGFpbnN8ZW58MXx8fHwxNzY4Mjk2NjI1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-        "https://images.unsplash.com/photo-1649710972692-34778ba6164f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwYXRhZ29uaWElMjBtb3VudGFpbnN8ZW58MXx8fHwxNzY4Mjk2NjI1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+        "/images/internacionales/patagonia 1.jpg",
+        "/images/internacionales/patagonia 2.jpg"
       ] 
     },
     { 
       name: "Grecia", 
-      description: "Islas de postal, historia antigua y gastronomía mediterránea",
+      description: "Destino mediterráneo con islas hermosas, historia antigua y arquitectura blanca.",
       type: "Historia & Playa",
       images: [
-        "https://images.unsplash.com/photo-1676730056228-7e38cbb88edc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYW50b3JpbmklMjBncmVlY2UlMjBzdW5zZXR8ZW58MXx8fHwxNzY4MjUxMDg5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-        "https://images.unsplash.com/photo-1676730056228-7e38cbb88edc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYW50b3JpbmklMjBncmVlY2UlMjBzdW5zZXR8ZW58MXx8fHwxNzY4MjUxMDg5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+        "/images/internacionales/grecia 1.webp",
+        "/images/internacionales/grecia 2.jpg"
       ] 
     },
     { 
       name: "Islandia", 
-      description: "Auroras boreales, géiseres, cascadas y aguas termales",
-      type: "Aventura & Naturaleza",
+      description: "País de paisajes volcánicos, auroras boreales y cascadas espectaculares.",
+      type: "Naturaleza & Aventura",
       images: [
-        "https://images.unsplash.com/photo-1488415032361-b7e238421f1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxub3J0aGVybiUyMGxpZ2h0cyUyMGljZWxhbmR8ZW58MXx8fHwxNzY4MjY3Nzc5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-        "https://images.unsplash.com/photo-1488415032361-b7e238421f1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxub3J0aGVybiUyMGxpZ2h0cyUyMGljZWxhbmR8ZW58MXx8fHwxNzY4MjY3Nzc5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+        "/images/internacionales/islandia 1.jpg",
+        "/images/internacionales/islandia 2.jpg"
       ] 
-    },
+    }
   ];
 
   const currentDestinations = activeTab === "nacional" ? nacionalDestinations : internacionalDestinations;
@@ -402,7 +494,6 @@ export function Destinations() {
               key={index} 
               destination={destination} 
               index={index} 
-              handleOtroClick={handleOtroClick} 
             />
           ))}
         </div>
