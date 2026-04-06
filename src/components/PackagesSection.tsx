@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { PackageCard } from "./PackageCard";
-import { nacionalPackages, internacionalPackages } from "../data/packages";
+import { nacionalPackages, internacionalPackages, europaPackages, norteAmericaPackages } from "../data/packages";
 
 export function PackagesSection() {
-  const [activePackageTab, setActivePackageTab] = useState<"nacional" | "internacional">("nacional");
+  const [activePackageTab, setActivePackageTab] = useState<"nacional" | "internacional" | "europa" | "norteAmerica">("nacional");
 
   // Detectar cambios en el hash de la URL para activar el tab correcto
   useEffect(() => {
@@ -40,7 +40,11 @@ export function PackagesSection() {
     };
   }, []);
 
-  const currentPackages = activePackageTab === "nacional" ? nacionalPackages : internacionalPackages;
+  const currentPackages = 
+  activePackageTab === "nacional" ? nacionalPackages : 
+  activePackageTab === "internacional" ? internacionalPackages : 
+  activePackageTab === "europa" ? europaPackages : 
+  norteAmericaPackages;
 
   return (
     <section id="paquetes" className="py-24 px-4 bg-white">
@@ -95,8 +99,36 @@ export function PackagesSection() {
             >
               Internacional
             </motion.button>
+            <motion.button
+  onClick={() => setActivePackageTab("europa")} // Importante usar el mismo nombre
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  className="px-8 py-3 rounded-full transition-all duration-300"
+  style={
+    activePackageTab === "europa"
+      ? { background: 'linear-gradient(135deg, #512DDB, #4E30B2)', color: 'white', boxShadow: '0 4px 20px rgba(81,45,219,0.3)', fontWeight: 700 }
+      : { background: 'white', color: '#4b5563', border: '1.5px solid #e5e7eb', fontWeight: 700 }
+  }
+>
+  Europa y mucho más
+</motion.button>
+<motion.button
+  onClick={() => setActivePackageTab("norteAmerica")} // Importante usar el mismo nombre
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  className="px-8 py-3 rounded-full transition-all duration-300"
+  style={
+    activePackageTab === "norteAmerica"
+      ? { background: 'linear-gradient(135deg, #512DDB, #4E30B2)', color: 'white', boxShadow: '0 4px 20px rgba(81,45,219,0.3)', fontWeight: 700 }
+      : { background: 'white', color: '#4b5563', border: '1.5px solid #e5e7eb', fontWeight: 700 }
+  }
+>
+  Norte America
+</motion.button>
           </div>
         </motion.div>
+        
+        
 
         {/* Packages Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
