@@ -1,26 +1,68 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { PackageCard } from "./PackageCard";
-import { nacionalPackages, internacionalPackages, europaPackages, norteAmericaPackages } from "../data/packages";
+import {
+  colombiaPackages,
+  playasColombiaPackages,
+  europaPackages,
+  norteAmericaPackages,
+  surAmericaPackages,
+  caribePackages,
+} from "../data/packages";
 
 export function PackagesSection() {
-  const [activePackageTab, setActivePackageTab] = useState<"nacional" | "internacional" | "europa" | "norteAmerica">("nacional");
+  const [activePackageTab, setActivePackageTab] = useState<
+    | "colombia"
+    | "playasColombia"
+    | "europa"
+    | "norteAmerica"
+    | "surAmerica"
+    | "caribe"
+  >("colombia");
 
   // Detectar cambios en el hash de la URL para activar el tab correcto
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash;
-      
+
       // Manejar los hash de paquetes
-      if (hash === "#paquetes-nacional") {
-        setActivePackageTab("nacional");
+      if (hash === "#paquetes-colombia") {
+        setActivePackageTab("colombia");
         // Hacer scroll suave a la sección de paquetes
         setTimeout(() => {
           const packagesSection = document.getElementById("paquetes");
           packagesSection?.scrollIntoView({ behavior: "smooth" });
         }, 100);
-      } else if (hash === "#paquetes-internacional") {
-        setActivePackageTab("internacional");
+      } else if (hash === "#paquetes-playasColombia") {
+        setActivePackageTab("playasColombia");
+        // Hacer scroll suave a la sección de paquetes
+        setTimeout(() => {
+          const packagesSection = document.getElementById("paquetes");
+          packagesSection?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      } else if (hash === "#paquetes-europa") {
+        setActivePackageTab("europa");
+        // Hacer scroll suave a la sección de paquetes
+        setTimeout(() => {
+          const packagesSection = document.getElementById("paquetes");
+          packagesSection?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      } else if (hash === "#paquetes-norteAmerica") {
+        setActivePackageTab("norteAmerica");
+        // Hacer scroll suave a la sección de paquetes
+        setTimeout(() => {
+          const packagesSection = document.getElementById("paquetes");
+          packagesSection?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      } else if (hash === "#paquetes-surAmerica") {
+        setActivePackageTab("surAmerica");
+        // Hacer scroll suave a la sección de paquetes
+        setTimeout(() => {
+          const packagesSection = document.getElementById("paquetes");
+          packagesSection?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      } else if (hash === "#paquetes-caribe") {
+        setActivePackageTab("caribe");
         // Hacer scroll suave a la sección de paquetes
         setTimeout(() => {
           const packagesSection = document.getElementById("paquetes");
@@ -40,11 +82,18 @@ export function PackagesSection() {
     };
   }, []);
 
-  const currentPackages = 
-  activePackageTab === "nacional" ? nacionalPackages : 
-  activePackageTab === "internacional" ? internacionalPackages : 
-  activePackageTab === "europa" ? europaPackages : 
-  norteAmericaPackages;
+  const currentPackages =
+    activePackageTab === "colombia"
+      ? colombiaPackages
+      : activePackageTab === "playasColombia"
+        ? playasColombiaPackages
+        : activePackageTab === "europa"
+          ? europaPackages
+          : activePackageTab === "norteAmerica"
+            ? norteAmericaPackages
+            : activePackageTab === "surAmerica"
+              ? surAmericaPackages
+              : caribePackages;
 
   return (
     <section id="paquetes" className="py-24 px-4 bg-white">
@@ -59,7 +108,10 @@ export function PackagesSection() {
         >
           <h2
             className="text-4xl md:text-5xl mb-4 text-[#1a1a2e]"
-            style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 600 }}
+            style={{
+              fontFamily: "'Playfair Display', Georgia, serif",
+              fontWeight: 600,
+            }}
           >
             Paquetes diseñados para ti
           </h2>
@@ -67,71 +119,159 @@ export function PackagesSection() {
             className="text-lg text-gray-500 max-w-2xl mx-auto mb-10"
             style={{ fontFamily: "'Lato', system-ui, sans-serif" }}
           >
-            Experiencias completas con alojamiento, traslados y actividades incluidas. 
-            Elige entre destinos nacionales o internacionales
+            Experiencias completas con alojamiento, traslados y actividades
+            incluidas. Elige entre destinos nacionales o internacionales
           </p>
 
           {/* Tabs */}
-          <div className="flex justify-center gap-3">
+          <div className="flex overflow-x-auto pb-4 md:justify-center gap-3 no-scrollbar scroll-smooth">
             <motion.button
-              onClick={() => setActivePackageTab("nacional")}
+              onClick={() => setActivePackageTab("colombia")}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-3 rounded-full transition-all duration-300"
               style={
-                activePackageTab === "nacional"
-                  ? { background: 'linear-gradient(135deg, #512DDB, #4E30B2)', color: 'white', boxShadow: '0 4px 20px rgba(81,45,219,0.3)', fontFamily: "'Lato', system-ui, sans-serif", fontWeight: 700 }
-                  : { background: 'white', color: '#4b5563', border: '1.5px solid #e5e7eb', fontFamily: "'Lato', system-ui, sans-serif", fontWeight: 700 }
+                activePackageTab === "colombia"
+                  ? {
+                      background: "linear-gradient(135deg, #512DDB, #4E30B2)",
+                      color: "white",
+                      boxShadow: "0 4px 20px rgba(81,45,219,0.3)",
+                      fontFamily: "'Lato', system-ui, sans-serif",
+                      fontWeight: 700,
+                    }
+                  : {
+                      background: "white",
+                      color: "#4b5563",
+                      border: "1.5px solid #e5e7eb",
+                      fontFamily: "'Lato', system-ui, sans-serif",
+                      fontWeight: 700,
+                    }
               }
             >
-              Nacional
+              Colombia
             </motion.button>
             <motion.button
-              onClick={() => setActivePackageTab("internacional")}
+              onClick={() => setActivePackageTab("playasColombia")}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-3 rounded-full transition-all duration-300"
               style={
-                activePackageTab === "internacional"
-                  ? { background: 'linear-gradient(135deg, #512DDB, #4E30B2)', color: 'white', boxShadow: '0 4px 20px rgba(81,45,219,0.3)', fontFamily: "'Lato', system-ui, sans-serif", fontWeight: 700 }
-                  : { background: 'white', color: '#4b5563', border: '1.5px solid #e5e7eb', fontFamily: "'Lato', system-ui, sans-serif", fontWeight: 700 }
+                activePackageTab === "playasColombia"
+                  ? {
+                      background: "linear-gradient(135deg, #512DDB, #4E30B2)",
+                      color: "white",
+                      boxShadow: "0 4px 20px rgba(81,45,219,0.3)",
+                      fontFamily: "'Lato', system-ui, sans-serif",
+                      fontWeight: 700,
+                    }
+                  : {
+                      background: "white",
+                      color: "#4b5563",
+                      border: "1.5px solid #e5e7eb",
+                      fontFamily: "'Lato', system-ui, sans-serif",
+                      fontWeight: 700,
+                    }
               }
             >
-              Internacional
+              Playas de Colombia
             </motion.button>
             <motion.button
-  onClick={() => setActivePackageTab("europa")} // Importante usar el mismo nombre
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.95 }}
-  className="px-8 py-3 rounded-full transition-all duration-300"
-  style={
-    activePackageTab === "europa"
-      ? { background: 'linear-gradient(135deg, #512DDB, #4E30B2)', color: 'white', boxShadow: '0 4px 20px rgba(81,45,219,0.3)', fontWeight: 700 }
-      : { background: 'white', color: '#4b5563', border: '1.5px solid #e5e7eb', fontWeight: 700 }
-  }
->
-  Europa y mucho más
-</motion.button>
-<motion.button
-  onClick={() => setActivePackageTab("norteAmerica")} // Importante usar el mismo nombre
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.95 }}
-  className="px-8 py-3 rounded-full transition-all duration-300"
-  style={
-    activePackageTab === "norteAmerica"
-      ? { background: 'linear-gradient(135deg, #512DDB, #4E30B2)', color: 'white', boxShadow: '0 4px 20px rgba(81,45,219,0.3)', fontWeight: 700 }
-      : { background: 'white', color: '#4b5563', border: '1.5px solid #e5e7eb', fontWeight: 700 }
-  }
->
-  Norte America
-</motion.button>
+              onClick={() => setActivePackageTab("europa")}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-3 rounded-full transition-all duration-300"
+              style={
+                activePackageTab === "europa"
+                  ? {
+                      background: "linear-gradient(135deg, #512DDB, #4E30B2)",
+                      color: "white",
+                      boxShadow: "0 4px 20px rgba(81,45,219,0.3)",
+                      fontWeight: 700,
+                    }
+                  : {
+                      background: "white",
+                      color: "#4b5563",
+                      border: "1.5px solid #e5e7eb",
+                      fontWeight: 700,
+                    }
+              }
+            >
+              Europa y mucho más
+            </motion.button>
+            <motion.button
+              onClick={() => setActivePackageTab("norteAmerica")}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-3 rounded-full transition-all duration-300"
+              style={
+                activePackageTab === "norteAmerica"
+                  ? {
+                      background: "linear-gradient(135deg, #512DDB, #4E30B2)",
+                      color: "white",
+                      boxShadow: "0 4px 20px rgba(81,45,219,0.3)",
+                      fontWeight: 700,
+                    }
+                  : {
+                      background: "white",
+                      color: "#4b5563",
+                      border: "1.5px solid #e5e7eb",
+                      fontWeight: 700,
+                    }
+              }
+            >
+              Norte America
+            </motion.button>
+            <motion.button
+              onClick={() => setActivePackageTab("surAmerica")}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-3 rounded-full transition-all duration-300"
+              style={
+                activePackageTab === "surAmerica"
+                  ? {
+                      background: "linear-gradient(135deg, #512DDB, #4E30B2)",
+                      color: "white",
+                      boxShadow: "0 4px 20px rgba(81,45,219,0.3)",
+                      fontWeight: 700,
+                    }
+                  : {
+                      background: "white",
+                      color: "#4b5563",
+                      border: "1.5px solid #e5e7eb",
+                      fontWeight: 700,
+                    }
+              }
+            >
+              Sur America
+            </motion.button>
+            <motion.button
+              onClick={() => setActivePackageTab("caribe")}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-3 rounded-full transition-all duration-300"
+              style={
+                activePackageTab === "caribe"
+                  ? {
+                      background: "linear-gradient(135deg, #512DDB, #4E30B2)",
+                      color: "white",
+                      boxShadow: "0 4px 20px rgba(81,45,219,0.3)",
+                      fontWeight: 700,
+                    }
+                  : {
+                      background: "white",
+                      color: "#4b5563",
+                      border: "1.5px solid #e5e7eb",
+                      fontWeight: 700,
+                    }
+              }
+            >
+              Playas del Caribe
+            </motion.button>
           </div>
         </motion.div>
-        
-        
 
         {/* Packages Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-2 sm:px-0">
           {currentPackages.map((pkg, index) => (
             <PackageCard
               key={`${activePackageTab}-${index}`}

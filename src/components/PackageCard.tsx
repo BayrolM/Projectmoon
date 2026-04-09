@@ -1,6 +1,6 @@
 import { Clock, MapPin, MessageCircle, Check, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
 
 interface PackageCardProps {
   title: string;
@@ -39,13 +39,6 @@ export function PackageCard({
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
   }, [images.length]);
 
-  // Autoplay
-  useEffect(() => {
-    if (images.length <= 1) return;
-    const interval = setInterval(nextImage, 5000);
-    return () => clearInterval(interval);
-  }, [nextImage, images.length]);
-
   const variants: Variants = {
     enter: (direction: number) => ({
       x: direction > 0 ? "100%" : "-100%",
@@ -58,9 +51,9 @@ export function PackageCard({
       opacity: 1,
       scale: 1,
       transition: {
-        x: { type: "spring", stiffness: 300, damping: 30 },
-        opacity: { duration: 0.5 },
-        scale: { duration: 0.5 }
+        x: { type: "spring", stiffness: 200, damping: 25 },
+        opacity: { duration: 0.4 },
+        scale: { duration: 0.4 }
       }
     },
     exit: (direction: number) => ({
@@ -98,6 +91,7 @@ export function PackageCard({
             animate="center"
             exit="exit"
             className="absolute inset-0 w-full h-full object-cover"
+            style={{ willChange: "transform", transform: "translateZ(0)" }}
           />
         </AnimatePresence>
         

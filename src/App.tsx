@@ -10,6 +10,7 @@ import { Testimonials } from "./components/Testimonials";
 import { FAQ } from "./components/FAQ";
 import { ContactForm } from "./components/ContactForm";
 import { PackagesSection } from "./components/PackagesSection";
+import { CruisesSection } from "./components/CruisesSection";
 
 export default function App() {
   return (
@@ -27,6 +28,9 @@ export default function App() {
 
       {/* Packages Section (Modularizado) */}
       <PackagesSection />
+
+      {/* Cruises Section (Modularizado) */}
+      <CruisesSection />
 
       {/* Gallery Section */}
       <Gallery />

@@ -9,17 +9,17 @@ export interface Package {
   customizable?: boolean;
 }
 
-export const nacionalPackages: Package[] = [
+export const colombiaPackages: Package[] = [
   {
-    title: "Ciudad Amurallada",
-    description: "Descubre la magia colonial de Cartagena, sus playas paradisíacas y la vida nocturna del caribe colombiano.",
+    title: "Boyaca",
+    description: "Descubre la magia de Boyacá, sus montañas, sus paisajes y su cultura.",
     duration: "5 días / 4 noches",
-    location: "Cartagena, Colombia",
+    location: "Boyacá, Colombia",
     images: [
-      "https://images.unsplash.com/photo-1770808564556-7bc511b893a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJ0YWdlbmElMjBjb2xvbWJpYSUyMGNvbG9yZnVsJTIwY29sb21iaWElMjBtb3VudGFpbnN8ZW58MXx8fHwxNzc1MDk3NTYyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      "https://images.unsplash.com/photo-1598965612140-57f920da782e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+      "/images/Paquetes/Colombia/boyacaPaquete.jpeg",
+      "https://images.unsplash.com/photo-1770808564556-7bc511b893a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJ0YWdlbmElMjBjb2xvbWJpYSUyMGNvbG9yZnVsJTIwY29sb21iaWElMjBtb3VudGFpbnN8ZW58MXx8fHwxNzc1MDk3NTYyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
     ],
-    whatsappMessage: "¡Hola! Me interesa el paquete 'Ciudad Amurallada' en Cartagena. ¿Podrían darme más información?",
+    whatsappMessage: "¡Hola! Me interesa el paquete 'Boyaca' en Colombia. ¿Podrían darme más información?",
     features: ["City tour histórico", "Tour a Islas del Rosario", "Alojamiento boutique", "Traslados incluidos"],
   },
   {
@@ -28,8 +28,8 @@ export const nacionalPackages: Package[] = [
     duration: "4 días / 3 noches",
     location: "Eje Cafetero, Colombia",
     images: [
-      "https://images.unsplash.com/photo-1493925410384-84f842e616fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBwbGFudGF0aW9uJTIwY29sb21iaWElMjBtb3VudGFpbnN8ZW58MXx8fHwxNzc1MDk3NTYyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      "/images/Paquetes/norteAmerica/tours-eje.png"
+      "/images/Paquetes/Colombia/ejeCafeteroPaquete.jpeg",
+      "https://images.unsplash.com/photo-1493925410384-84f842e616fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBwbGFudGF0aW9uJTIwY29sb21iaWElMjBtb3VudGFpbnN8ZW58MXx8fHwxNzc1MDk3NTYyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
     ],
     whatsappMessage: "¡Hola! Quisiera información sobre el paquete 'Eje Cafetero'. ¿Qué actividades incluye?",
     features: [
@@ -42,104 +42,200 @@ export const nacionalPackages: Package[] = [
     customizable: true
   },
   {
-    title: "San Andrés Todo Incluido",
+    title: "Mompox",
     description: "Relájate en las playas más hermosas de Colombia con mar de 7 colores, deportes acuáticos y gastronomía isleña.",
     duration: "6 días / 5 noches",
-    location: "San Andrés, Colombia",
+    location: "Mompox, Colombia",
     images: [
-      "https://images.unsplash.com/photo-1669517270484-df54ad8d54c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYW4lMjBhbmRyZXMlMjBpc2xhbmQlMjBjYXJpYmJlYW4lMjBiZWFjaHxlbnwxfHx8fDE3NzUwOTc1NjN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      "https://images.unsplash.com/photo-1582236471842-1e967119ec80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+      "/images/Paquetes/Colombia/mompoxPaquete.jpeg",
+      "https://images.unsplash.com/photo-1669517270484-df54ad8d54c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYW4lMjBhbmRyZXMlMjBpc2xhbmQlMjBjYXJpYmJlYW4lMjBiZWFjaHxlbnwxfHx8fDE3NzUwOTc1NjN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
     ],
-    whatsappMessage: "¡Hola! Me interesa el paquete 'San Andrés Todo Incluido'. ¿Cuál es el precio?",
+    whatsappMessage: "¡Hola! Me interesa el paquete 'Mompox'. ¿Cuál es el precio?",
     features: ["Vuelos incluidos", "Hotel frente al mar", "Desayunos y cenas", "Tour acuario y Johnny Cay"],
   },
   {
-    title: "Desierto y Villa de Leyva",
-    description: "Aventura en el Desierto de la Tatacoa y encanto colonial en Villa de Leyva, dos joyas únicas de Colombia.",
+    title: "Llanos Orientales",
+    description: "Aventura en los Llanos Orientales, dos joyas únicas de Colombia.",
     duration: "5 días / 4 noches",
-    location: "Huila y Boyacá, Colombia",
+    location: "Llanos Orientales, Colombia",
     images: [
-      "https://images.unsplash.com/photo-1697823411806-3402bf656659?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0YXRhY29hJTIwZGVzZXJ0JTIwY29sb21iaWElMjByZWQlMjBzYW5kfGVufDF8fHx8MTc3NTA5NzU2M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      "https://images.unsplash.com/photo-1583390234789-9e8d477813a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+      "/images/Paquetes/Colombia/llanosOrientalesPaquete.jpeg",
+      "https://images.unsplash.com/photo-1697823411806-3402bf656659?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0YXRhY29hJTIwZGVzZXJ0JTIwY29sb21iaWElMjByZWQlMjBzYW5kfGVufDF8fHx8MTc3NTA5NzU2M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
     ],
-    whatsappMessage: "¡Hola! Me fascina el paquete 'Desierto y Villa de Leyva'. ¿Cuándo puedo viajar?",
+    whatsappMessage: "¡Hola! Me fascina el paquete 'Llanos Orientales'. ¿Cuándo puedo viajar?",
+    features: ["Observación astronómica", "Tour por el desierto rojo", "Cata de vinos en Villa de Leyva", "Transporte de lujo"],
+  },
+  {
+    title: "Medellín",
+    description: "Aventura en Medellín, la ciudad de la eterna primavera.",
+    duration: "5 días / 4 noches",
+    location: "Medellín, Colombia",
+    images: [
+      "/images/Paquetes/Colombia/medellinPaquete.jpeg",
+      "https://images.unsplash.com/photo-1697823411806-3402bf656659?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0YXRhY29hJTIwZGVzZXJ0JTIwY29sb21iaWElMjByZWQlMjBzYW5kfGVufDF8fHx8MTc3NTA5NzU2M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+    ],
+    whatsappMessage: "¡Hola! Me fascina el paquete 'Medellín'. ¿Cuándo puedo viajar?",
+    features: ["Observación astronómica", "Tour por el desierto rojo", "Cata de vinos en Villa de Leyva", "Transporte de lujo"],
+  },
+  {
+    title: "Bogotá",
+    description: "Aventura en Bogotá, la capital de Colombia.",
+    duration: "5 días / 4 noches",
+    location: "Bogotá, Colombia",
+    images: [
+      "/images/Paquetes/Colombia/bogotaPaquete.jpeg",
+      "https://images.unsplash.com/photo-1697823411806-3402bf656659?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0YXRhY29hJTIwZGVzZXJ0JTIwY29sb21iaWElMjByZWQlMjBzYW5kfGVufDF8fHx8MTc3NTA5NzU2M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+    ],
+    whatsappMessage: "¡Hola! Me fascina el paquete 'Bogotá'. ¿Cuándo puedo viajar?",
+    features: ["Observación astronómica", "Tour por el desierto rojo", "Cata de vinos en Villa de Leyva", "Transporte de lujo"],
+  },
+  {
+    title: "Santander",
+    description: "Aventura en Santander, la joya de Colombia.",
+    duration: "5 días / 4 noches",
+    location: "Santander, Colombia",
+    images: [
+      "/images/Paquetes/Colombia/santanderPaquete.jpeg",
+      "https://images.unsplash.com/photo-1697823411806-3402bf656659?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0YXRhY29hJTIwZGVzZXJ0JTIwY29sb21iaWElMjByZWQlMjBzYW5kfGVufDF8fHx8MTc3NTA5NzU2M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+    ],
+    whatsappMessage: "¡Hola! Me fascina el paquete 'Santander'. ¿Cuándo puedo viajar?",
+    features: ["Observación astronómica", "Tour por el desierto rojo", "Cata de vinos en Villa de Leyva", "Transporte de lujo"],
+  },
+  {
+    title: "Amazonas",
+    description: "Aventura en Amazonas, la selva de Colombia.",
+    duration: "5 días / 4 noches",
+    location: "Amazonas, Colombia",
+    images: [
+      "/images/Paquetes/Colombia/amazonasPaquete.jpeg",
+      "https://images.unsplash.com/photo-1697823411806-3402bf656659?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0YXRhY29hJTIwZGVzZXJ0JTIwY29sb21iaWElMjByZWQlMjBzYW5kfGVufDF8fHx8MTc3NTA5NzU2M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+    ],
+    whatsappMessage: "¡Hola! Me fascina el paquete 'Amazonas'. ¿Cuándo puedo viajar?",
+    features: ["Observación astronómica", "Tour por el desierto rojo", "Cata de vinos en Villa de Leyva", "Transporte de lujo"],
+  },
+  {
+    title: "Desierto de la Tatacoa",
+    description: "Aventura en el Desierto de la Tatacoa, la joya de Colombia.",
+    duration: "5 días / 4 noches",
+    location: "Desierto de la Tatacoa, Colombia",
+    images: [
+      "/images/Paquetes/Colombia/desiertoTatacoa.jpeg",
+      "https://images.unsplash.com/photo-1697823411806-3402bf656659?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0YXRhY29hJTIwZGVzZXJ0JTIwY29sb21iaWElMjByZWQlMjBzYW5kfGVufDF8fHx8MTc3NTA5NzU2M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+    ],
+    whatsappMessage: "¡Hola! Me fascina el paquete 'Desierto de la Tatacoa'. ¿Cuándo puedo viajar?",
     features: ["Observación astronómica", "Tour por el desierto rojo", "Cata de vinos en Villa de Leyva", "Transporte de lujo"],
   },
 ];
 
-export const internacionalPackages: Package[] = [
+export const playasColombiaPackages: Package[] = [
   {
-    title: "Caribe Paradisíaco",
-    description: "Disfruta de playas de arena blanca, aguas cristalinas y atardeceres inolvidables en el Caribe.",
+    title: "Santa Marta",
+    description: "Disfruta de playas de arena blanca, aguas cristalinas y atardeceres inolvidables en Santa Marta.",
     duration: "7 días / 6 noches",
-    location: "Caribe",
+    location: "Santa Marta, Colombia",
     images: [
+      "/images/Paquetes/playasColombia/santaMartaPaquete.jpeg",
       "https://images.unsplash.com/photo-1602455891364-31034e19a826?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cm9waWNhbCUyMGJlYWNoJTIwcGFyYWRpc2V8ZW58MXx8fHwxNzY4MzE0NTg5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
     ],
-    whatsappMessage: "¡Hola! Me interesa el paquete 'Caribe Paradisíaco' de 7 días. ¿Podrían darme más información?",
+    whatsappMessage: "¡Hola! Me interesa el paquete 'Santa Marta' de 7 días. ¿Podrían darme más información?",
     features: ["Alojamiento 5 estrellas", "Plan todo incluido", "Fiesta blanca nocturna", "Snorkeling guiado"],
   },
   {
-    title: "París Romántico",
-    description: "Vive la ciudad del amor con visitas a la Torre Eiffel, Louvre y paseos por el Sena.",
+    title: "Cartagena",
+    description: "Descubre la magia de Cartagena, una ciudad colonial llena de historia, cultura y playas hermosas.",
     duration: "5 días / 4 noches",
-    location: "París, Francia",
+    location: "Cartagena, Colombia",
     images: [
-      "https://images.unsplash.com/photo-1431274172761-fca41d930114?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwYXJpcyUyMGVpZmZlbCUyMHRvd2VyfGVufDF8fHx8MTc2ODI5NzU3MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      "/images/Paquetes/playasColombia/cartagenaPaquete.jpeg",
       "https://images.unsplash.com/photo-1549144511-f099e773c147?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
     ],
-    whatsappMessage: "¡Hola! Me interesa el paquete 'París Romántico'. ¿Qué incluye el itinerario?",
-    features: ["Crucero por el Sena", "Entradas al Louvre", "Cena en Montmartre", "Guía en español"],
+    whatsappMessage: "¡Hola! Me interesa el paquete 'Cartagena'. ¿Qué incluye el itinerario?",
+    features: ["Tour por las islas", "Tour por la ciudad amurallada", "Cena en la ciudad amurallada", "Tour por las islas"],
   },
   {
-    title: "Japón Tradicional",
-    description: "Explora templos milenarios, jardines zen y sumérgete en la cultura japonesa auténtica.",
-    duration: "10 días / 9 noches",
-    location: "Kyoto, Japón",
+    title: "Isla Mucura",
+    description: "Descubre la belleza natural de Isla Mucura, un paraíso caribeño con aguas cristalinas y playas de arena blanca.",
+    duration: "4 días / 3 noches",
+    location: "Isla Mucura, Colombia",
     images: [
-      "https://images.unsplash.com/photo-1649451898726-1ed602692cec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxqYXBhbmVzZSUyMHRlbXBsZSUyMGt5b3RvfGVufDF8fHx8MTc2ODI2Nzc3OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      "/images/Paquetes/playasColombia/islaMucuraPaquete.jpeg",
       "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
     ],
-    whatsappMessage: "¡Hola! Quisiera saber más sobre el paquete 'Japón Tradicional'. ¿Cuáles son las fechas disponibles?",
-    features: ["Ceremonia del té", "JR Pass incluido", "Hospedaje Ryokan", "Tour santuarios Kyoto"],
+    whatsappMessage: "¡Hola! Quisiera saber más sobre el paquete 'Isla Mucura'. ¿Cuáles son las fechas disponibles?",
+    features: ["Snorkeling", "Tour por las islas", "Hospedaje en la playa", "Tour por las islas"],
   },
   {
-    title: "Aventura Patagónica",
-    description: "Trekking en glaciares, lagos turquesa y paisajes que te dejarán sin aliento en la Patagonia.",
-    duration: "8 días / 7 noches",
-    location: "Patagonia",
+    title: "Tintipán",
+    description: "Descubre la belleza natural de Tintipán, un paraíso caribeño con aguas cristalinas y playas de arena blanca.",
+    duration: "4 días / 3 noches",
+    location: "Tintipán, Colombia",
     images: [
-      "https://images.unsplash.com/photo-1649710972692-34778ba6164f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwYXRhZ29uaWElMjBtb3VudGFpbnN8ZW58MXx8fHwxNzY4Mjk2NjI1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      "https://images.unsplash.com/photo-1544376798-89aa6b82c6cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+      "/images/Paquetes/playasColombia/tintipanPaquete.jpeg",
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
     ],
-    whatsappMessage: "¡Hola! Me encanta la aventura y me interesa el paquete 'Aventura Patagónica'. ¿Qué actividades incluye?",
-    features: ["Trekking glaciar Perito Moreno", "Crucero por fiordos", "Equipo técnico incluido", "Vuelos de conexión"],
+    whatsappMessage: "¡Hola! Me encanta la aventura y me interesa el paquete 'Tintipán'. ¿Qué actividades incluye?",
+    features: ["Snorkeling", "Tour por las islas", "Hospedaje en la playa", "Tour por las islas"],
   },
   {
-    title: "Grecia Mágica",
-    description: "Descubre las islas griegas, sus puestas de sol en Santorini y la historia de Atenas.",
+    title: "San Andres",
+    description: "Descubre la belleza natural de San Andres, un paraíso caribeño con aguas cristalinas y playas de arena blanca.",
     duration: "9 días / 8 noches",
-    location: "Grecia",
+    location: "San Andres, Colombia",
     images: [
-      "https://images.unsplash.com/photo-1676730056228-7e38cbb88edc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYW50b3JpbmklMjBncmVlY2UlMjBzdW5zZXR8ZW58MXx8fHwxNzY4MjUxMDg5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      "/images/Paquetes/playasColombia/sanAndresPaquete.jpeg",
       "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
     ],
-    whatsappMessage: "¡Hola! Estoy interesado/a en el paquete 'Grecia Mágica'. ¿Qué islas se visitan?",
-    features: ["Ferry express entre islas", "Entrada a la Acrópolis", "Alojamiento con vista al mar", "Tour de vinos en Santorini"],
+    whatsappMessage: "¡Hola! Estoy interesado/a en el paquete 'San Andres'. ¿Qué islas se visitan?",
+    features: ["Tour por las islas", "Tour por la ciudad amurallada", "Cena en la ciudad amurallada", "Tour por las islas"],
   },
   {
-    title: "Auroras Boreales",
-    description: "Vive la magia de las auroras boreales en Islandia con aguas termales y paisajes únicos.",
+    title: "Nuqui",
+    description: "Descubre la belleza natural de Nuqui, un paraíso caribeño con aguas cristalinas y playas de arena blanca.",
     duration: "6 días / 5 noches",
-    location: "Islandia",
+    location: "Nuqui, Colombia",
     images: [
-      "https://images.unsplash.com/photo-1488415032361-b7e238421f1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxub3J0aGVybiUyMGxpZ2h0cyUyMGljZWxhbmR8ZW58MXx8fHwxNzY4MjY3Nzc5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      "https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+      "/images/Paquetes/playasColombia/nuquiPaquete.jpeg",
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
     ],
-    whatsappMessage: "¡Hola! Me fascina el paquete 'Auroras Boreales'. ¿En qué época del año es mejor viajar?",
-    features: ["Safari fotográfico de auroras", "Baño en Blue Lagoon", "Visita a glaciares y volcanes", "Chaqueta térmica de cortesía"],
+    whatsappMessage: "¡Hola! Me fascina el paquete 'Nuqui'. ¿En qué época del año es mejor viajar?",
+    features: ["Tour por las islas", "Tour por la ciudad amurallada", "Cena en la ciudad amurallada", "Tour por las islas"],
   },
+  {
+    title: "Capurganá",
+    description: "Descubre la belleza natural de Capurganá, un paraíso caribeño con aguas cristalinas y playas de arena blanca.",
+    duration: "4 días / 3 noches",
+    location: "Capurganá, Colombia",
+    images: [
+      "/images/Paquetes/playasColombia/capurganaPaquete.jpeg",
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+    ],
+    whatsappMessage: "¡Hola! Estoy interesado/a en el paquete 'Capurganá'. ¿Qué islas se visitan?",
+    features: ["Tour por las islas", "Tour por la ciudad amurallada", "Cena en la ciudad amurallada", "Tour por las islas"],
+  },
+  {
+    title: "Guajira",
+    description: "Descubre la belleza natural de Guajira, un paraíso caribeño con aguas cristalinas y playas de arena blanca.",
+    duration: "4 días / 3 noches",
+    location: "Guajira, Colombia",
+    images: [
+      "/images/Paquetes/playasColombia/guajiraPaquete.jpeg",
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+    ],
+    whatsappMessage: "¡Hola! Estoy interesado/a en el paquete 'Guajira'. ¿Qué islas se visitan?",
+    features: ["Tour por las islas", "Tour por la ciudad amurallada", "Cena en la ciudad amurallada", "Tour por las islas"],
+  },
+  {
+    title: "Isla Fuerte",
+    description: "Descubre la belleza natural de Isla Fuerte, un paraíso caribeño con aguas cristalinas y playas de arena blanca.",
+    duration: "4 días / 3 noches",
+    location: "Isla Fuerte, Colombia",
+    images: [
+      "/images/Paquetes/playasColombia/islaFuertePaquete.jpeg",
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+    ],
+    whatsappMessage: "¡Hola! Estoy interesado/a en el paquete 'Isla Fuerte'. ¿Qué islas se visitan?",
+    features: ["Tour por las islas", "Tour por la ciudad amurallada", "Cena en la ciudad amurallada", "Tour por las islas"],
+  }
 ];
 
 
@@ -262,6 +358,111 @@ export const norteAmericaPackages: Package[] = [
     location: "Ciudad de Mexico",
     images: ["/images/Paquetes/norteAmerica/cdmxPaquete.jpeg"],
     whatsappMessage: "¡Hola! Quisiera info del paquete a Ciudad de Mexico.",
+    features: ["Vuelos incluidos", "Guía en español", "Hoteles 4 estrellas"],
+  }
+];
+
+export const surAmericaPackages: Package[] = [
+  {
+    title: "Machu Picchu",
+    description: "Disfruta de las ruinas de Machu Picchu en un solo viaje.",
+    duration: "5 días / 4 noches",
+    location: "Machu Picchu",
+    images: ["/images/Paquetes/surAmerica/machupicchu.jpeg"],
+    whatsappMessage: "¡Hola! Quisiera info del paquete a Machu Picchu.",
+    features: ["Vuelos incluidos", "Guía en español", "Hoteles 4 estrellas"],
+  },
+  {
+    title: "Cataratas del Iguazu",
+    description: "Disfruta de las cataratas del Iguazu en un solo viaje.",
+    duration: "5 días / 4 noches",
+    location: "Cataratas del Iguazu",
+    images: ["/images/Paquetes/surAmerica/iguazu.jpeg"],
+    whatsappMessage: "¡Hola! Quisiera info del paquete a las cataratas del Iguazu.",
+    features: ["Vuelos incluidos", "Guía en español", "Hoteles 4 estrellas"],
+  },
+  {
+    title: "Salar de Uyuni",
+    description: "Disfruta de las playas de Salar de Uyuni en un solo viaje.",
+    duration: "5 días / 4 noches",
+    location: "Salar de Uyuni",
+    images: ["/images/Paquetes/surAmerica/salaruyuni.jpeg"],
+    whatsappMessage: "¡Hola! Quisiera info del paquete a Salar de Uyuni.",
+    features: ["Vuelos incluidos", "Guía en español", "Hoteles 4 estrellas"],
+  },  
+  {
+    title: "Centro del Mundo",
+    description: "Disfruta del Centro del Mundo en un solo viaje.",
+    duration: "5 días / 4 noches",
+    location: "Centro del Mundo",
+    images: ["/images/Paquetes/surAmerica/centromundo.jpeg"],
+    whatsappMessage: "¡Hola! Quisiera info del paquete al Centro del Mundo.",
+    features: ["Vuelos incluidos", "Guía en español", "Hoteles 4 estrellas"],
+  },
+  {
+    title: "Santiago de Chile",
+    description: "Disfruta de la ciudad de Santiago de Chile en un solo viaje.",
+    duration: "5 días / 4 noches",
+    location: "Santiago de Chile",
+    images: ["/images/Paquetes/surAmerica/santiagochile.jpeg"],
+    whatsappMessage: "¡Hola! Quisiera info del paquete a Santiago de Chile.",
+    features: ["Vuelos incluidos", "Guía en español", "Hoteles 4 estrellas"],
+  }
+];
+
+export const caribePackages: Package[] = [
+  {
+    title: "Cancun",
+    description: "Disfruta de las playas de Cancun en un solo viaje.",
+    duration: "5 días / 4 noches",
+    location: "Cancun",
+    images: ["/images/Paquetes/caribe/cancunPaquete.jpeg"],
+    whatsappMessage: "¡Hola! Quisiera info del paquete a Cancun.",
+    features: ["Vuelos incluidos", "Guía en español", "Hoteles 4 estrellas"],
+  },
+  {
+    title: "Punta Cana",
+    description: "Disfruta de las playas de Punta Cana en un solo viaje.",
+    duration: "5 días / 4 noches",
+    location: "Punta Cana",
+    images: ["/images/Paquetes/caribe/puntaCanaPaquete.jpeg"],
+    whatsappMessage: "¡Hola! Quisiera info del paquete a Punta Cana.",
+    features: ["Vuelos incluidos", "Guía en español", "Hoteles 4 estrellas"],
+  },
+  {
+    title: "Aruba",
+    description: "Disfruta de las playas de Aruba en un solo viaje.",
+    duration: "5 días / 4 noches",
+    location: "Aruba",
+    images: ["/images/Paquetes/caribe/arubaPaquete.jpeg"],
+    whatsappMessage: "¡Hola! Quisiera info del paquete a Aruba.",
+    features: ["Vuelos incluidos", "Guía en español", "Hoteles 4 estrellas"],
+  },
+  {
+    title: "Ciudad de Panama",
+    description: "Disfruta de la ciudad de Panama en un solo viaje.",
+    duration: "5 días / 4 noches",
+    location: "Ciudad de Panama",
+    images: ["/images/Paquetes/caribe/panamaPaquete.jpeg"],
+    whatsappMessage: "¡Hola! Quisiera info del paquete a Ciudad de Panama.",
+    features: ["Vuelos incluidos", "Guía en español", "Hoteles 4 estrellas"],
+  },
+  {
+    title: "Habana",
+    description: "Disfruta de las playas de la Habana en un solo viaje.",
+    duration: "5 días / 4 noches",
+    location: "Habana",
+    images: ["/images/Paquetes/caribe/habanaPaquete.jpeg"],
+    whatsappMessage: "¡Hola! Quisiera info del paquete a la Habana.",
+    features: ["Vuelos incluidos", "Guía en español", "Hoteles 4 estrellas"],
+  },
+  {
+    title: "Nassau",
+    description: "Disfruta de las playas de Nassau en un solo viaje.",
+    duration: "5 días / 4 noches",
+    location: "Nassau",
+    images: ["/images/Paquetes/caribe/nassauPaquete.jpeg"],
+    whatsappMessage: "¡Hola! Quisiera info del paquete a Nassau.",
     features: ["Vuelos incluidos", "Guía en español", "Hoteles 4 estrellas"],
   }
 ];
