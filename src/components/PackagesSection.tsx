@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { PackageCard } from "./PackageCard";
 import {
   colombiaPackages,
@@ -9,6 +9,13 @@ import {
   surAmericaPackages,
   caribePackages,
 } from "../data/packages";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "./ui/carousel";
 
 export function PackagesSection() {
   const [activePackageTab, setActivePackageTab] = useState<
@@ -270,21 +277,42 @@ export function PackagesSection() {
           </div>
         </motion.div>
 
-        {/* Packages Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-2 sm:px-0">
-          {currentPackages.map((pkg, index) => (
-            <PackageCard
-              key={`${activePackageTab}-${index}`}
-              title={pkg.title}
-              description={pkg.description}
-              duration={pkg.duration}
-              location={pkg.location}
-              images={pkg.images}
-              whatsappMessage={pkg.whatsappMessage}
-              features={pkg.features}
-              customizable={pkg.customizable}
-            />
-          ))}
+        {/* Packages Carousel */}
+        <div className="relative group px-4">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent>
+              {currentPackages.map((pkg, index) => (
+                <CarouselItem
+                  key={`${activePackageTab}-${index}`}
+                  className="pl-4 basis-full md:basis-1/2 lg:basis-1/3"
+                >
+                  <div className="h-full py-4">
+                    <PackageCard
+                      title={pkg.title}
+                      description={pkg.description}
+                      duration={pkg.duration}
+                      location={pkg.location}
+                      images={pkg.images}
+                      whatsappMessage={pkg.whatsappMessage}
+                      features={pkg.features}
+                      customizable={pkg.customizable}
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+
+            <div className="hidden md:block">
+              <CarouselPrevious className="-left-12 h-12 w-12 bg-white border-[#D2C3F7] text-[#512DDB] hover:bg-[#512DDB] hover:text-white transition-all shadow-md" />
+              <CarouselNext className="-right-12 h-12 w-12 bg-white border-[#D2C3F7] text-[#512DDB] hover:bg-[#512DDB] hover:text-white transition-all shadow-md" />
+            </div>
+          </Carousel>
         </div>
       </div>
     </section>

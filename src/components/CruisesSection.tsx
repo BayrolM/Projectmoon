@@ -2,6 +2,13 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { CruceroCard } from "./CruisesCard";
 import { cruisesPackages, nationalCruises } from "../data/cruises";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "./ui/carousel";
 
 export function CruisesSection() {
   const [activeCruiseTab, setActiveCruiseTab] = useState<
@@ -31,24 +38,16 @@ export function CruisesSection() {
       }
     };
 
-    // Ejecutar al cargar la página
     handleHashChange();
-
-    // Escuchar cambios en el hash
     window.addEventListener("hashchange", handleHashChange);
-
-    return () => {
-      window.removeEventListener("hashchange", handleHashChange);
-    };
+    return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
 
-  const currentCruises =
-    activeCruiseTab === "nacional" ? nationalCruises : cruisesPackages;
+  const currentCruises = activeCruiseTab === "nacional" ? nationalCruises : cruisesPackages;
 
   return (
     <section id="cruceros" className="py-24 px-4 bg-slate-50">
       <div className="max-w-7xl mx-auto">
-        {/* Encabezado */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -65,30 +64,16 @@ export function CruisesSection() {
             Surca los mares con las mejores navieras del mundo.
           </p>
 
-          {/* Botones de filtro */}
           <div className="flex justify-center gap-4 mt-8">
             <motion.button
               onClick={() => setActiveCruiseTab("nacional")}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 rounded-full transition-all duration-300"
-              style={
+              className={`px-8 py-3 rounded-full transition-all duration-300 font-bold ${
                 activeCruiseTab === "nacional"
-                  ? {
-                      background: "linear-gradient(135deg, #512DDB, #4E30B2)",
-                      color: "white",
-                      boxShadow: "0 4px 20px rgba(81,45,219,0.3)",
-                      fontFamily: "'Lato', system-ui, sans-serif",
-                      fontWeight: 700,
-                    }
-                  : {
-                      background: "white",
-                      color: "#4b5563",
-                      border: "1.5px solid #e5e7eb",
-                      fontFamily: "'Lato', system-ui, sans-serif",
-                      fontWeight: 700,
-                    }
-              }
+                  ? "bg-gradient-to-r from-[#512DDB] to-[#4E30B2] text-white shadow-lg"
+                  : "bg-white text-gray-600 border border-gray-200"
+              }`}
             >
               Nacional
             </motion.button>
@@ -96,38 +81,42 @@ export function CruisesSection() {
               onClick={() => setActiveCruiseTab("internacional")}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 rounded-full transition-all duration-300"
-              style={
+              className={`px-8 py-3 rounded-full transition-all duration-300 font-bold ${
                 activeCruiseTab === "internacional"
-                  ? {
-                      background: "linear-gradient(135deg, #512DDB, #4E30B2)",
-                      color: "white",
-                      boxShadow: "0 4px 20px rgba(81,45,219,0.3)",
-                      fontFamily: "'Lato', system-ui, sans-serif",
-                      fontWeight: 700,
-                    }
-                  : {
-                      background: "white",
-                      color: "#4b5563",
-                      border: "1.5px solid #e5e7eb",
-                      fontFamily: "'Lato', system-ui, sans-serif",
-                      fontWeight: 700,
-                    }
-              }
+                  ? "bg-gradient-to-r from-[#512DDB] to-[#4E30B2] text-white shadow-lg"
+                  : "bg-white text-gray-600 border border-gray-200"
+              }`}
             >
               Internacional
             </motion.button>
           </div>
         </motion.div>
 
-        {/* Grid de Cruceros */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {currentCruises.map((Cruise, index) => (
-            <CruceroCard key={`${activeCruiseTab}-${index}`} {...Cruise} />
-          ))}
+        <div className="relative group px-4">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent>
+              {currentCruises.map((Cruise, index) => (
+                <CarouselItem key={`${activeCruiseTab}-${index}`} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                  <div className="h-full py-4">
+                    <CruceroCard {...Cruise} />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            
+            <div className="hidden md:block">
+              <CarouselPrevious className="-left-12 h-12 w-12 bg-white border-[#D2C3F7] text-[#512DDB] hover:bg-[#512DDB] hover:text-white transition-all shadow-md" />
+              <CarouselNext className="-right-12 h-12 w-12 bg-white border-[#D2C3F7] text-[#512DDB] hover:bg-[#512DDB] hover:text-white transition-all shadow-md" />
+            </div>
+          </Carousel>
         </div>
 
-        {/* Footer */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
