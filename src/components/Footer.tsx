@@ -123,6 +123,8 @@ export function Footer() {
             style={{ fontFamily: "'Lato', system-ui, sans-serif" }}
           >
             © {currentYear} Moon Travel Co. Todos los derechos reservados.
+            <br />
+            En desarrollo de lo dispuesto en la Ley 679 de 2001 y la ley 1336 de 2009, se advierte que la explotación sexual, la pornografía, el turismo sexual y demás formas de abuso sexual en Colombia son sancionados penal y administrativamente conforme a las leyes vigentes.
           </p>
         </div>
       </div>

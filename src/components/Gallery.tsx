@@ -1,28 +1,28 @@
 export function Gallery() {
   const images = [
     {
-      url: "https://images.unsplash.com/photo-1599444121410-b9cf6156986a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjB0cmF2ZWxpbmclMjBhZHZlbnR1cmUlMjBoYXBweXxlbnwxfHx8fDE3NzUwOTc1NjB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      alt: "Pareja viajando feliz",
+      url: "/images/experienciasViajeros/experiencia 1.jpeg",
+      alt: "Experiencia 1",
       large: true,
     },
     {
-      url: "https://images.unsplash.com/photo-1597434429739-2574d7e06807?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3VudGFpbiUyMGhpa2luZyUyMGxhbmRzY2FwZSUyMHNjZW5pY3xlbnwxfHx8fDE3NzUwOTc1NjB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      alt: "Senderismo en montañas",
+      url: "/images/experienciasViajeros/experiencia 2.jpeg",
+      alt: "Experiencia 2",
       large: false,
     },
     {
-      url: "https://images.unsplash.com/photo-1631535152690-ba1a85229136?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWFjaCUyMHN1bnNldCUyMHRyb3BpY2FsJTIwdmFjYXRpb258ZW58MXx8fHwxNzc1MDk3NTYxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      alt: "Atardecer en la playa",
+      url: "/images/experienciasViajeros/experiencia 3.jpeg",
+      alt: "Experiencia 3",
       large: false,
     },
     {
-      url: "https://images.unsplash.com/photo-1679757635255-ea2c361b628d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaXR5JTIwYXJjaGl0ZWN0dXJlJTIwdHJhdmVsJTIwZXVyb3BlfGVufDF8fHx8MTc3NTA5NzU2MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      alt: "Arquitectura europea",
+      url: "/images/experienciasViajeros/experiencia 4.jpeg",
+      alt: "Experiencia 4",
       large: false,
     },
     {
-      url: "https://images.unsplash.com/photo-1762529486225-e8c28fd5b500?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdWx0dXJhbCUyMHRlbXBsZSUyMGFzaWFuJTIwdHJhdmVsfGVufDF8fHx8MTc3NTA5NzU2Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      alt: "Templo asiático",
+      url: "/images/experienciasViajeros/experiencia 5.jpeg",
+      alt: "Experiencia 5",
       large: false,
     },
   ];

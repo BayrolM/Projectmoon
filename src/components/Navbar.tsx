@@ -17,7 +17,7 @@ export function Navbar() {
   ];
 
   const whatsappNumber = "573046495250"; // Actualizar con número real
-  const whatsappMessage = "¡Hola! Quisiera obtener información sobre los paquetes turísticos de Moon Travel Co. 🌙";
+  const whatsappMessage = "¡Hola Equipo Moon Travel Co.! 🌙✨ Estoy interesado/a en recibir asesoría personalizada para planear mi próximo viaje. ✈️ ¿Me podrían compartir más información sobre los destinos, paquetes y tarifas que manejan? ¡Muchas gracias! 🌍";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
   const linkStyle = { fontFamily: "'Lato', system-ui, sans-serif", fontWeight: 400 };

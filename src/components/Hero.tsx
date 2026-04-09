@@ -176,7 +176,7 @@ export function Hero() {
         >
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-[#D2C3F7] rounded-full" />
-            <span>+1000 viajeros satisfechos</span>
+            <span>+100 viajeros satisfechos</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-[#D2C3F7] rounded-full" />
