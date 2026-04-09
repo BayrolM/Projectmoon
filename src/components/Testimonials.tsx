@@ -4,28 +4,28 @@ import { motion } from "framer-motion";
 export function Testimonials() {
   const testimonials = [
     {
-      name: "María González",
-      initials: "MG",
-      destination: "París, Francia",
-      date: "Marzo 2026",
+      name: "Luz Dary Palacio",
+      initials: "LP",
+      destination: "Santa Marta, Colombia",
+      date: "Abril 2026",
       rating: 5,
-      text: "Una experiencia inolvidable de principio a fin. La atención personalizada y la asesoría detallada hicieron que cada momento en París fuera perfecto. Definitivamente volveré a viajar con Moon Travel Co.",
+      text: "Moon travel tiene excelente servicio. Profesionalismo. Puntualidad y calidez humana.  Pendientes del viaje de principio a fin, de cumplimiento de los tours y del itinerario. Increíble experiencia.",
     },
     {
-      name: "Carlos Ramírez",
-      initials: "CR",
-      destination: "Kyoto, Japón",
+      name: "Manuela Zapata Restrepo",
+      initials: "MZ",
+      destination: "Isla Fuerte, Colombia",
       date: "Enero 2026",
       rating: 5,
-      text: "Cumplí mi sueño de conocer Japón gracias a ellos. La planificación fue impecable y el soporte durante todo el viaje me dio tranquilidad. La mejor inversión que he hecho.",
+      text: "Lili es excelente en todos los sentidos, muy comprometida, responsable y amable. Es muy sincera a la hora de brindar sugerencias y de atender cualquier situación que se pueda presentar.",
     },
     {
-      name: "Laura Martínez",
-      initials: "LM",
-      destination: "Islas del Caribe",
-      date: "Febrero 2026",
+      name: "David Cavajal  ",
+      initials: "DC",
+      destination: "Cartagena, Colombia",
+      date: "Abril 2026",
       rating: 5,
-      text: "Las playas, el hotel, las excursiones... todo superó mis expectativas. El equipo de Moon Travel se encargó de cada detalle. ¡Ya estoy planeando mi próximo viaje con ellos!",
+      text: "Excelente viaje, recomendado con esta página ya que ofrece precios a tu bolsillo!",
     },
   ];
 
@@ -90,7 +90,7 @@ export function Testimonials() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
               whileHover={{ y: -8 }}
-              className="group relative bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-[#D2C3F7]/30"
+              className="group relative bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-[#D2C3F7]/30 flex flex-col h-full"
             >
               {/* Quote icon */}
               <motion.div
@@ -121,14 +121,14 @@ export function Testimonials() {
 
               {/* Review Text */}
               <p
-                className="text-gray-600 leading-relaxed mb-6 text-sm"
+                className="text-gray-600 leading-relaxed mb-6 text-sm flex-grow"
                 style={{ fontFamily: "'Lato', system-ui, sans-serif", fontStyle: 'italic' }}
               >
                 "{testimonial.text}"
               </p>
 
               {/* Author Info */}
-              <div className="flex items-center gap-4 pt-4 border-t border-[#D2C3F7]/30">
+              <div className="flex items-center gap-4 pt-4 mt-auto border-t border-[#D2C3F7]/30">
                 {/* Avatar */}
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
@@ -170,7 +170,7 @@ export function Testimonials() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-12 text-center"
         >
-          <div className="inline-flex flex-col items-center gap-2 px-8 py-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-gray-200">
+          <div className="inline-flex flex-col items-center gap-3 px-8 py-5 bg-white/60 backdrop-blur-sm rounded-2xl border border-gray-200">
             <div className="flex items-center gap-2">
               <div className="flex -space-x-2">
                 {[...Array(5)].map((_, i) => (
@@ -189,13 +189,17 @@ export function Testimonials() {
               >
                 98% de satisfacción
               </span>
-            </div>
-            <p
-              className="text-sm text-gray-500"
-              style={{ fontFamily: "'Lato', system-ui, sans-serif" }}
+            </div> 
+            {/* Google Reviews Button */}
+            <a
+              href="https://g.page/r/Cd37pb0SKKWlEBM/review"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-5 py-2 mt-1 rounded-full text-white text-sm transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg"
+              style={{ background: 'linear-gradient(135deg, #512DDB, #4E30B2)', fontFamily: "'Lato', system-ui, sans-serif", fontWeight: 700 }}
             >
-              Basado en +1000 opiniones verificadas
-            </p>
+              Ver opiniones en Google
+            </a>
           </div>
         </motion.div>
       </div>

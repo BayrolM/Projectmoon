@@ -140,7 +140,7 @@ export function WhyUs() {
           className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
         >
           {[
-            { number: "1000+", label: "Viajeros Felices" },
+            { number: "100+", label: "Viajeros Felices" },
             { number: "50+", label: "Destinos Exclusivos" },
             { number: "98%", label: "Satisfacción" },
           ].map((stat, index) => (

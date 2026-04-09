@@ -1,4 +1,4 @@
-import { MessageCircle, Sparkles, Phone } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function CTASection() {
@@ -50,14 +50,14 @@ export function CTASection() {
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Icon */}
         <motion.div
-          initial={{ scale: 0, rotate: -180 }}
-          whileInView={{ scale: 1, rotate: 0 }}
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, type: "spring" }}
-          className="inline-flex items-center justify-center w-20 h-20 rounded-3xl shadow-xl mb-8"
-          style={{ background: 'linear-gradient(135deg, #512DDB, #4E30B2)', boxShadow: '0 10px 40px rgba(81,45,219,0.3)' }}
+          className="inline-flex items-center justify-center w-24 h-24 rounded-3xl shadow-xl mb-8 bg-white"
+          style={{ boxShadow: '0 10px 40px rgba(81,45,219,0.15)' }}
         >
-          <Sparkles className="w-9 h-9 text-white" strokeWidth={2} />
+          <img src="/isotipo.png" alt="Moon Travel Co." className="w-16 h-16 object-contain" />
         </motion.div>
 
         {/* Heading */}
@@ -112,21 +112,6 @@ export function CTASection() {
           >
             <MessageCircle className="w-6 h-6 group-hover:rotate-12 transition-transform" />
             <span>Chatear por WhatsApp</span>
-          </motion.a>
-
-          <motion.a
-            href="#contacto"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-3 px-10 py-5 bg-white text-[#512DDB] text-lg rounded-2xl border-2 border-[#512DDB]/20 hover:border-[#512DDB] transition-all duration-300 group"
-            style={{
-              fontFamily: "'Lato', system-ui, sans-serif",
-              fontWeight: 700,
-              boxShadow: '0 4px 20px rgba(81,45,219,0.15)',
-            }}
-          >
-            <Phone className="w-6 h-6 group-hover:rotate-12 transition-transform" />
-            <span>Solicitar llamada</span>
           </motion.a>
         </motion.div>
 
