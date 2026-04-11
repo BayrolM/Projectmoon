@@ -162,14 +162,13 @@ export function CTASection() {
             className="text-gray-700 italic mb-2"
             style={{ fontFamily: "'Lato', system-ui, sans-serif" }}
           >
-            "La mejor decisión fue contactar a Moon Travel Co. Nos ayudaron a planificar 
-            cada detalle y vivimos un viaje increíble en Grecia. ¡Totalmente recomendados!"
+            "Moon Travel, fue muy cumplido con todos sus servicios, Tours, Viajes, etc. Siempre pendientes a todo, no duden en reservar o planear sus planes con ellos👏🏽…"
           </p>
           <p
             className="text-sm text-gray-500"
             style={{ fontFamily: "'Lato', system-ui, sans-serif", fontWeight: 600 }}
           >
-            — Laura M., viajera feliz ⭐
+            — Bayrol M., viajero feliz ⭐
           </p>
         </motion.div>
       </div>

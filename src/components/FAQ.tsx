@@ -12,30 +12,41 @@ export function FAQ() {
         "Recomendamos reservar con al menos 30 días de anticipación para destinos nacionales y 60 días para internacionales. Esto garantiza mejor disponibilidad de vuelos, hoteles y mejores tarifas. Sin embargo, también manejamos reservas de última hora según disponibilidad.",
     },
     {
+      question: "¿Qué documentación necesito para viajar?",
+      answer:
+        "Depende del destino. Generalmente necesitarás tu documento de identidad o pasaporte vigente.Algunos países pueden requerir visa, vacunas específicas y, en el caso de menores de edad, registro civil y permisos si viajan sin alguno de sus padres.Te asesoramos en todo el proceso para que viajes sin preocupaciones",
+    },
+    {
       question: "¿Puedo personalizar los paquetes turísticos?",
       answer:
         "¡Absolutamente! Todos nuestros paquetes son 100% personalizables. Podemos ajustar fechas, hoteles, actividades, duración del viaje y más. Contáctanos por WhatsApp y diseñaremos el viaje perfecto según tus preferencias y presupuesto.",
     },
     {
+      question: "¿Qué incluyen los paquetes de viaje?",
+      answer:
+        "Nuestros paquetes pueden incluir transporte al destino (aéreo o terrestre), alojamiento, traslados, alimentación y experiencias.Todo depende del plan que elijas y el tipo de viaje que desees vivir",
+    },
+    {
       question: "¿Los paquetes incluyen seguro de viaje?",
       answer:
-        "Sí, todos nuestros paquetes internacionales incluyen seguro de viaje básico que cubre emergencias médicas, cancelaciones y pérdida de equipaje. También ofrecemos seguros premium con cobertura más amplia si lo deseas.",
+        "Sí, todos nuestros paquetes internacionales e nacionales incluyen seguro de viaje básico que cubre emergencias médicas, cancelaciones,pérdida de equipaje entre otros imprevistos. También ofrecemos seguros premium con cobertura más amplia si lo deseas.",
     },
     {
       question: "¿Puedo pagar en cuotas?",
       answer:
-        "Sí, ofrecemos planes de financiamiento flexibles. Puedes pagar con tarjeta de crédito en cuotas sin interés (según convenios bancarios) o con planes de pago diferido. Contáctanos para conocer todas las opciones disponibles.",
+        "Puedes separar tu viaje con un 30% de depósito y el resto pagarlo en abonos quincenales o mensuales. El plan de pagos se ajusta según la fecha de tu viaje, teniendo como plazo máximo hasta un mes antes de la salida. También puedes realizar el pago con tarjeta de crédito, según las condiciones de tu entidad bancaria.",
     },
     {
       question: "¿Cuál es la política de cancelación?",
       answer:
-        "Nuestra política varía según el destino y la anticipación. Generalmente, cancelaciones con más de 30 días tienen reembolso del 80%, entre 15-30 días del 50%, y menos de 15 días no tienen reembolso. Te recomendamos contratar el seguro de cancelación flexible.",
+        "Las políticas de cancelación varían según el servicio, el destino y la antelación.Cada experiencia tiene condiciones específicas, por lo que es muy importante revisar esta información al momento de reservar.Te recomendamos validar todos los detalles con tu asesor antes de confirmar ",
     },
     {
-      question: "¿Necesito visa para los destinos internacionales?",
+      question: "¿Puedo hacer cambios en mi reserva?",
       answer:
-        "Depende de tu nacionalidad y el destino. Te asesoramos sobre los requisitos de visa, documentos necesarios y te ayudamos con el proceso de solicitud. Algunos destinos requieren visa previa, otros permiten visa a la llegada, y algunos no requieren visa.",
+        "¡Claro que sí! Contamos con paquetes familiares diseñados para todas las edades. Además, te asesoramos sobre requisitos especiales, actividades para niños y todo lo necesario para que disfruten al máximo. Para menores de edad, es indispensable presentar registro civil y, si viajan sin uno de los padres, un permiso notariado.",
     },
+    
   ];
 
   const toggleFAQ = (index: number) => {
