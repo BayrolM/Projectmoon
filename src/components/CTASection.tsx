@@ -3,23 +3,27 @@ import { motion } from "framer-motion";
 
 export function CTASection() {
   const whatsappNumber = "573046495250";
-  const message = "¡Hola! Me gustaría recibir asesoría personalizada sobre los paquetes turísticos de Moon Travel Co.";
+  const message =
+    "¡Hola! Me gustaría recibir asesoría personalizada sobre los paquetes turísticos de Moon Travel Co.";
   const encodedMessage = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
   return (
     <section
       className="py-24 px-4 relative overflow-hidden"
-      style={{ background: 'linear-gradient(135deg, #f5f3ff 0%, #ede9fe 50%, #D2C3F7 100%)' }}
+      style={{
+        background:
+          "linear-gradient(135deg, #f5f3ff 0%, #ede9fe 50%, #D2C3F7 100%)",
+      }}
     >
       {/* Decorative blobs */}
       <div
         className="absolute top-10 right-10 w-72 h-72 rounded-full blur-3xl pointer-events-none"
-        style={{ background: 'rgba(81,45,219,0.12)' }}
+        style={{ background: "rgba(81,45,219,0.12)" }}
       ></div>
       <div
         className="absolute bottom-10 left-10 w-72 h-72 rounded-full blur-3xl pointer-events-none"
-        style={{ background: 'rgba(78,48,178,0.10)' }}
+        style={{ background: "rgba(78,48,178,0.10)" }}
       ></div>
 
       {/* Animated floating elements */}
@@ -55,9 +59,13 @@ export function CTASection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, type: "spring" }}
           className="inline-flex items-center justify-center w-24 h-24 rounded-3xl shadow-xl mb-8 bg-white"
-          style={{ boxShadow: '0 10px 40px rgba(81,45,219,0.15)' }}
+          style={{ boxShadow: "0 10px 40px rgba(81,45,219,0.15)" }}
         >
-          <img src="/isotipo.png" alt="Moon Travel Co." className="w-16 h-16 object-contain" />
+          <img
+            src="/logo.png"
+            alt="Moon Travel Co."
+            className="w-25 h-25 object-contain"
+          />
         </motion.div>
 
         {/* Heading */}
@@ -69,7 +77,10 @@ export function CTASection() {
         >
           <h2
             className="text-4xl md:text-5xl mb-6 text-[#1a1a2e]"
-            style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 600 }}
+            style={{
+              fontFamily: "'Playfair Display', Georgia, serif",
+              fontWeight: 600,
+            }}
           >
             ¿Listo para tu próxima aventura?
           </h2>
@@ -84,8 +95,9 @@ export function CTASection() {
           className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed"
           style={{ fontFamily: "'Lato', system-ui, sans-serif" }}
         >
-          Recibe una <strong>consulta gratuita</strong> y personalizada. Nuestros expertos diseñarán 
-          el itinerario perfecto según tus gustos, presupuesto y fechas disponibles.
+          Recibe una <strong>consulta gratuita</strong> y personalizada.
+          Nuestros expertos diseñarán el itinerario perfecto según tus gustos,
+          presupuesto y fechas disponibles.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -104,10 +116,10 @@ export function CTASection() {
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-3 px-10 py-5 text-white text-lg rounded-2xl transition-all duration-300 group"
             style={{
-              background: 'linear-gradient(135deg, #512DDB, #4E30B2)',
+              background: "linear-gradient(135deg, #512DDB, #4E30B2)",
               fontFamily: "'Lato', system-ui, sans-serif",
               fontWeight: 700,
-              boxShadow: '0 10px 40px rgba(81,45,219,0.35)',
+              boxShadow: "0 10px 40px rgba(81,45,219,0.35)",
             }}
           >
             <MessageCircle className="w-6 h-6 group-hover:rotate-12 transition-transform" />
@@ -162,11 +174,16 @@ export function CTASection() {
             className="text-gray-700 italic mb-2"
             style={{ fontFamily: "'Lato', system-ui, sans-serif" }}
           >
-            "Moon Travel, fue muy cumplido con todos sus servicios, Tours, Viajes, etc. Siempre pendientes a todo, no duden en reservar o planear sus planes con ellos👏🏽…"
+            "Moon Travel, fue muy cumplido con todos sus servicios, Tours,
+            Viajes, etc. Siempre pendientes a todo, no duden en reservar o
+            planear sus planes con ellos👏🏽…"
           </p>
           <p
             className="text-sm text-gray-500"
-            style={{ fontFamily: "'Lato', system-ui, sans-serif", fontWeight: 600 }}
+            style={{
+              fontFamily: "'Lato', system-ui, sans-serif",
+              fontWeight: 600,
+            }}
           >
             — Bayrol M., viajero feliz ⭐
           </p>

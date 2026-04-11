@@ -301,6 +301,7 @@ export function PackagesSection() {
                       images={pkg.images}
                       whatsappMessage={pkg.whatsappMessage}
                       features={pkg.features}
+                      notIncluded={pkg.notIncluded}
                       customizable={pkg.customizable}
                     />
                   </div>
@@ -309,8 +310,8 @@ export function PackagesSection() {
             </CarouselContent>
 
             <div className="hidden md:block">
-              <CarouselPrevious className="-left-12 h-12 w-12 bg-white border-[#D2C3F7] text-[#512DDB] hover:bg-[#512DDB] hover:text-white transition-all shadow-md" />
-              <CarouselNext className="-right-12 h-12 w-12 bg-white border-[#D2C3F7] text-[#512DDB] hover:bg-[#512DDB] hover:text-white transition-all shadow-md" />
+              <CarouselPrevious className="-left-16 h-12 w-12 bg-[#512DDB] border-[#512DDB] text-white hover:bg-[#4E30B2] transition-all shadow-lg" />
+              <CarouselNext className="-right-16 h-12 w-12 bg-[#512DDB] border-[#512DDB] text-white hover:bg-[#4E30B2] transition-all shadow-lg" />
             </div>
           </Carousel>
         </div>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { CruceroCard } from "./CruisesCard";
-import { cruisesPackages, nationalCruises } from "../data/cruises";
+import { cruisesPackages } from "../data/cruises";
 import {
   Carousel,
   CarouselContent,
@@ -12,8 +12,8 @@ import {
 
 export function CruisesSection() {
   const [activeCruiseTab, setActiveCruiseTab] = useState<
-    "nacional" | "internacional"
-  >("nacional");
+    "sin-visa" | "visa" | "europa"
+  >("sin-visa");
 
   // Detectar cambios en el hash de la URL para activar el tab correcto
   useEffect(() => {
@@ -21,16 +21,20 @@ export function CruisesSection() {
       const hash = window.location.hash;
 
       // Manejar los hash de cruceros
-      if (hash === "#cruceros-nacional") {
-        setActiveCruiseTab("nacional");
-        // Hacer scroll suave a la sección de cruceros
+      if (hash === "#cruceros-sin-visa") {
+        setActiveCruiseTab("sin-visa");
         setTimeout(() => {
           const cruisesSection = document.getElementById("cruceros");
           cruisesSection?.scrollIntoView({ behavior: "smooth" });
         }, 100);
-      } else if (hash === "#cruceros-internacional") {
-        setActiveCruiseTab("internacional");
-        // Hacer scroll suave a la sección de cruceros
+      } else if (hash === "#cruceros-visa") {
+        setActiveCruiseTab("visa");
+        setTimeout(() => {
+          const cruisesSection = document.getElementById("cruceros");
+          cruisesSection?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      } else if (hash === "#cruceros-europa") {
+        setActiveCruiseTab("europa");
         setTimeout(() => {
           const cruisesSection = document.getElementById("cruceros");
           cruisesSection?.scrollIntoView({ behavior: "smooth" });
@@ -43,7 +47,9 @@ export function CruisesSection() {
     return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
 
-  const currentCruises = activeCruiseTab === "nacional" ? nationalCruises : cruisesPackages;
+  const currentCruises = cruisesPackages.filter(
+    (cruise) => cruise.type === activeCruiseTab,
+  );
 
   return (
     <section id="cruceros" className="py-24 px-4 bg-slate-50">
@@ -64,30 +70,42 @@ export function CruisesSection() {
             Surca los mares con las mejores navieras del mundo.
           </p>
 
-          <div className="flex justify-center gap-4 mt-8">
+          <div className="flex flex-wrap justify-center gap-4 mt-8">
             <motion.button
-              onClick={() => setActiveCruiseTab("nacional")}
+              onClick={() => setActiveCruiseTab("sin-visa")}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className={`px-8 py-3 rounded-full transition-all duration-300 font-bold ${
-                activeCruiseTab === "nacional"
+                activeCruiseTab === "sin-visa"
                   ? "bg-gradient-to-r from-[#512DDB] to-[#4E30B2] text-white shadow-lg"
                   : "bg-white text-gray-600 border border-gray-200"
               }`}
             >
-              Nacional
+              Sin Visa
             </motion.button>
             <motion.button
-              onClick={() => setActiveCruiseTab("internacional")}
+              onClick={() => setActiveCruiseTab("visa")}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className={`px-8 py-3 rounded-full transition-all duration-300 font-bold ${
-                activeCruiseTab === "internacional"
+                activeCruiseTab === "visa"
                   ? "bg-gradient-to-r from-[#512DDB] to-[#4E30B2] text-white shadow-lg"
                   : "bg-white text-gray-600 border border-gray-200"
               }`}
             >
-              Internacional
+              Con Visa
+            </motion.button>
+            <motion.button
+              onClick={() => setActiveCruiseTab("europa")}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`px-8 py-3 rounded-full transition-all duration-300 font-bold ${
+                activeCruiseTab === "europa"
+                  ? "bg-gradient-to-r from-[#512DDB] to-[#4E30B2] text-white shadow-lg"
+                  : "bg-white text-gray-600 border border-gray-200"
+              }`}
+            >
+              Europa
             </motion.button>
           </div>
         </motion.div>
@@ -102,17 +120,20 @@ export function CruisesSection() {
           >
             <CarouselContent>
               {currentCruises.map((Cruise, index) => (
-                <CarouselItem key={`${activeCruiseTab}-${index}`} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                <CarouselItem
+                  key={`${activeCruiseTab}-${index}`}
+                  className="pl-4 basis-full md:basis-1/2 lg:basis-1/3"
+                >
                   <div className="h-full py-4">
                     <CruceroCard {...Cruise} />
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            
+
             <div className="hidden md:block">
-              <CarouselPrevious className="-left-12 h-12 w-12 bg-white border-[#D2C3F7] text-[#512DDB] hover:bg-[#512DDB] hover:text-white transition-all shadow-md" />
-              <CarouselNext className="-right-12 h-12 w-12 bg-white border-[#D2C3F7] text-[#512DDB] hover:bg-[#512DDB] hover:text-white transition-all shadow-md" />
+              <CarouselPrevious className="-left-16 h-12 w-12 bg-[#512DDB] border-[#512DDB] text-white hover:bg-[#4E30B2] transition-all shadow-lg" />
+              <CarouselNext className="-right-16 h-12 w-12 bg-[#512DDB] border-[#512DDB] text-white hover:bg-[#4E30B2] transition-all shadow-lg" />
             </div>
           </Carousel>
         </div>

@@ -22,8 +22,9 @@ export function Navbar() {
   ];
 
   const cruises = [
-    { name: "Nacional", href: "#cruceros-nacional" },
-    { name: "Internacional", href: "#cruceros-internacional" },
+    { name: "Sin Visa", href: "#cruceros-sin-visa" },
+    { name: "Con Visa", href: "#cruceros-visa" },
+    { name: "Europa", href: "#cruceros-europa" },
   ];
 
   const whatsappNumber = "573046495250";

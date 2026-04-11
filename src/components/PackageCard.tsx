@@ -1,4 +1,4 @@
-import { Clock, MapPin, MessageCircle, Check, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
+import { Clock, MapPin, MessageCircle, Check, Sparkles, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { useState, useCallback } from "react";
 
@@ -10,6 +10,7 @@ interface PackageCardProps {
   images: string[];
   whatsappMessage: string;
   features?: string[];
+  notIncluded?: string[];
   customizable?: boolean;
 }
 
@@ -21,6 +22,7 @@ export function PackageCard({
   images = [],
   whatsappMessage,
   features = [],
+  notIncluded = [],
   customizable = false,
 }: PackageCardProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -167,17 +169,39 @@ export function PackageCard({
 
         {/* Features List */}
         {features.length > 0 && (
-          <div className="space-y-2 mb-6">
-            {features.map((feature, idx) => (
-              <div key={idx} className="flex items-start gap-2 group/item">
-                <div className="mt-1 bg-[#D2C3F7]/30 p-0.5 rounded-full shrink-0">
-                  <Check className="w-3 h-3 text-[#512DDB]" />
+          <div className="mb-4">
+            <p className="text-[10px] uppercase tracking-widest text-[#512DDB] font-bold mb-2"> Incluye:</p>
+            <div className="grid grid-cols-2 gap-x-3 gap-y-2.5">
+              {features.map((feature, idx) => (
+                <div key={idx} className="flex items-start gap-2 group/item">
+                  <div className="mt-0.5 bg-[#D2C3F7]/30 p-0.5 rounded-full shrink-0">
+                    <Check className="w-3 h-3 text-[#512DDB]" />
+                  </div>
+                  <span className="text-[11px] text-gray-600 leading-tight line-clamp-2" style={{ fontFamily: "'Lato', system-ui, sans-serif" }}>
+                    {feature}
+                  </span>
                 </div>
-                <span className="text-xs text-gray-600 leading-tight" style={{ fontFamily: "'Lato', system-ui, sans-serif" }}>
-                  {feature}
-                </span>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Not Included List */}
+        {notIncluded.length > 0 && (
+          <div className="mb-6 border-t border-gray-50 pt-3">
+            <p className="text-[10px] uppercase tracking-widest text-red-500 font-bold mb-2">No Incluye:</p>
+            <div className="grid grid-cols-1 gap-1">
+              {notIncluded.map((item, idx) => (
+                <div key={idx} className="flex items-start gap-2 group/item">
+                  <div className="mt-1 bg-red-50 p-0.5 rounded-full shrink-0">
+                    <X className="w-2.5 h-2.5 text-red-500" />
+                  </div>
+                  <span className="text-[11px] text-gray-500 leading-tight italic" style={{ fontFamily: "'Lato', system-ui, sans-serif" }}>
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         )}
 
