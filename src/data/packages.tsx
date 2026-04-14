@@ -12,9 +12,9 @@ export interface Package {
 
 export const colombiaPackages: Package[] = [
   {
-    title: "Boyaca",
+    title: "Boyacá",
     description:
-      "Descubre la magia de Boyacá, sus montañas, sus paisajes y su cultura.",
+      "Un viaje inolvidable por la historia y los pueblos coloniales de Boyacá, saliendo desde Medellín.",
     duration: "5 días / 4 noches",
     location: "Boyacá, Colombia",
     images: [
@@ -24,10 +24,15 @@ export const colombiaPackages: Package[] = [
     whatsappMessage:
       "¡Hola! Me interesa el paquete 'Boyaca' en Colombia. ¿Podrían darme más información?",
     features: [
-      "City tour histórico",
-      "Tour a Islas del Rosario",
-      "Alojamiento boutique",
-      "Traslados incluidos",
+      "Transporte especial desde Medellín",
+      "Alojamiento (2 noches Paipa, 2 noches Villa de Leyva)",
+      "Alimentación (4 desayunos y 4 cenas)",
+      "Ingreso a Catedral de Sal de Zipaquirá",
+      "Ingreso a Termales de Paipa",
+      "Tour por Villa de Leyva y Ráquira",
+      "Visita a Laguna de Tota y Pueblito Boyacense",
+      "Recorrido histórico por Puente de Boyacá y Pantano de Vargas",
+      "Guía profesional y asistencia médica",
     ],
   },
   {
@@ -163,9 +168,10 @@ export const colombiaPackages: Package[] = [
   },
   {
     title: "Desierto de la Tatacoa",
-    description: "Aventura en el Desierto de la Tatacoa, la joya de Colombia.",
-    duration: "5 días / 4 noches",
-    location: "Desierto de la Tatacoa, Colombia",
+    description:
+      "Explora uno de los paisajes más impresionantes de Colombia, disfruta del desierto rojo y gris, vive una experiencia astronómica única y relájate en termales.",
+    duration: "3 días / 2 noches",
+    location: "Villa Vieja, Huila, Colombia",
     images: [
       "/images/Paquetes/Colombia/desiertoTatacoa.jpeg",
       "https://images.unsplash.com/photo-1697823411806-3402bf656659?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0YXRhY29hJTIwZGVzZXJ0JTIwY29sb21iaWElMjByZWQlMjBzYW5kfGVufDF8fHx8MTc3NTA5NzU2M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
@@ -173,10 +179,17 @@ export const colombiaPackages: Package[] = [
     whatsappMessage:
       "¡Hola! Me fascina el paquete 'Desierto de la Tatacoa'. ¿Cuándo puedo viajar?",
     features: [
-      "Observación astronómica",
-      "Tour por el desierto rojo",
-      "Cata de vinos en Villa de Leyva",
-      "Transporte de lujo",
+      "Transporte en vehículos de servicios especiales",
+      "Alojamiento 2 noches en hotel en Villa Vieja",
+      "Alimentación completa (desayuno, almuerzo y cena)",
+      "City tour por Villa Vieja",
+      "Visita al Desierto Rojo (Cuzco)",
+      "Visita al Desierto Gris (Los Hoyos y Valle de los Fantasmas)",
+      "Charla astronómica",
+      "Entrada a termales de Rivera",
+      "Visita a la Mano del Gigante (incluye ingreso y traslado)",
+      "Guía acompañante durante todo el recorrido",
+      "Asistencia médica",
     ],
   },
 ];
@@ -185,27 +198,30 @@ export const playasColombiaPackages: Package[] = [
   {
     title: "Santa Marta",
     description:
-      "Disfruta de playas de arena blanca, aguas cristalinas y atardeceres inolvidables en Santa Marta.",
-    duration: "7 días / 6 noches",
+      "Disfruta del Caribe colombiano con recorridos por Santa Marta, excursiones a Playa Blanca y la experiencia única de río y mar en Buritaca.",
+    duration: "4 días / 3 noches",
     location: "Santa Marta, Colombia",
     images: [
       "/images/Paquetes/playasColombia/santaMartaPaquete.jpeg",
       "https://images.unsplash.com/photo-1602455891364-31034e19a826?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cm9waWNhbCUyMGJlYWNoJTIwcGFyYWRpc2V8ZW58MXx8fHwxNzY4MzE0NTg5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     ],
     whatsappMessage:
-      "¡Hola! Me interesa el paquete 'Santa Marta' de 7 días. ¿Podrían darme más información?",
+      "¡Hola! Me interesa el paquete 'Santa Marta' de 4 días. ¿Podrían darme más información?",
     features: [
-      "Alojamiento 5 estrellas",
-      "Plan todo incluido",
-      "Fiesta blanca nocturna",
-      "Snorkeling guiado",
+      "Traslados aeropuerto – hotel – aeropuerto",
+      "Alojamiento 3 noches en hotel elegido",
+      "Alimentación: desayuno y cena por noche de alojamiento",
+      "Integración en Chiva Rumbera y recorrido por la ciudad",
+      "Excursión en lancha a Playa Blanca",
+      "Excursión a Río y Mar en Buritaca",
+      "Guía coordinador en destino",
     ],
   },
   {
     title: "Cartagena",
     description:
-      "Descubre la magia de Cartagena, una ciudad colonial llena de historia, cultura y playas hermosas.",
-    duration: "5 días / 4 noches",
+      "Vive la magia del Caribe en Cartagena con playas, recorridos históricos, vida nocturna y experiencias inolvidables frente al mar.",
+    duration: "4 días / 3 noches",
     location: "Cartagena, Colombia",
     images: [
       "/images/Paquetes/playasColombia/cartagenaPaquete.jpeg",
@@ -214,10 +230,16 @@ export const playasColombiaPackages: Package[] = [
     whatsappMessage:
       "¡Hola! Me interesa el paquete 'Cartagena'. ¿Qué incluye el itinerario?",
     features: [
-      "Tour por las islas",
-      "Tour por la ciudad amurallada",
-      "Cena en la ciudad amurallada",
-      "Tour por las islas",
+      "Tiquetes aéreos ida y regreso",
+      "Traslados aeropuerto – hotel – aeropuerto",
+      "Alojamiento 3 noches en Hotel Dorado Plaza",
+      "Alimentación full (desayuno, almuerzo, cena y snacks)",
+      "Bar abierto 24 horas",
+      "Recreación dirigida",
+      "Shows nocturnos en vivo",
+      "Tour a Playa Blanca Barú (con almuerzo típico)",
+      "City tour panorámico en chiva",
+      "Asistencia médica",
     ],
   },
   {
@@ -261,8 +283,8 @@ export const playasColombiaPackages: Package[] = [
   {
     title: "San Andres",
     description:
-      "Descubre la belleza natural de San Andres, un paraíso caribeño con aguas cristalinas y playas de arena blanca.",
-    duration: "9 días / 8 noches",
+      "Disfruta del paraíso caribeño con playas cristalinas, tours por la isla, acuario natural y experiencias únicas en el mar de los siete colores.",
+    duration: "4 días / 3 noches",
     location: "San Andres, Colombia",
     images: [
       "/images/Paquetes/playasColombia/sanAndresPaquete.jpeg",
@@ -271,10 +293,15 @@ export const playasColombiaPackages: Package[] = [
     whatsappMessage:
       "¡Hola! Estoy interesado/a en el paquete 'San Andres'. ¿Qué islas se visitan?",
     features: [
-      "Tour por las islas",
-      "Tour por la ciudad amurallada",
-      "Cena en la ciudad amurallada",
-      "Tour por las islas",
+      "Tiquetes aéreos ida y regreso",
+      "Traslados aeropuerto – hotel – aeropuerto",
+      "Alojamiento 3 noches en hotel elegido",
+      "Alimentación: desayuno, almuerzo y cena (según hotel)",
+      "Vuelta a la isla",
+      "Tour al Acuario y Johnny Cay",
+      "Tour bahía (manglares, mantarrayas y estrellas de mar)",
+      "Guía coordinador en destino",
+      "Asistencia médica",
     ],
   },
   {
@@ -576,7 +603,8 @@ export const caribePackages: Package[] = [
   },
   {
     title: "Aruba",
-    description: "Disfruta de las playas de Aruba en un solo viaje.",
+    description:
+      "Descubre la isla feliz con playas de aguas cristalinas, paisajes únicos y recorridos por los lugares más emblemáticos del Caribe.",
     duration: "5 días / 4 noches",
     location: "Aruba",
     images: ["/images/Paquetes/playasCaribe/arubaPaquete.jpeg"],
