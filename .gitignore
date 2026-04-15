@@ -37,3 +37,10 @@ build/
 
 # TypeScript
 *.tsbuildinfo
+
+# Vite
+.vite/
+
+# OS
+Thumbs.db
+*.icloud

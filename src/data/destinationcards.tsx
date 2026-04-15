@@ -1,9 +1,4 @@
-export interface DestinationData {
-  name: string;
-  description: string;
-  type: string;
-  images: string[];
-}
+import { DestinationData } from "../types";
 
 export const nacionalDestinations: DestinationData[] = [
   { 

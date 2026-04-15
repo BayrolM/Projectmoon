@@ -1,92 +1,154 @@
-export interface Cruise {
-  title: string; //Nombre del crucero o itinerario
-  shipName: string; // Nombre del barco
-  description: string;
-  duration: string;
-  location: string; // Puerto de salida
-  images: string[];
-  whatsappMessage: string;
-  itinerary: string[]; // Escalas
-  included: string[]; // Buffet, shows, propinas, etc.
-  line: string;
-  type: "visa" | "sin-visa" | "europa"; // Clasificación del crucero
-}
+import { Cruise } from "../types";
 
-export const cruisesPackages: Cruise[] = [
-  // SIN VISA
+export const sinVisaCruises: Cruise[] = [
   {
-    title: "Caribe Sur y Antillas (Sin Visa)",
-    shipName: "Rhapsody of the Seas",
-    line: "Royal Caribbean",
+    title: "Caribe Fascinante (Sin Visa)",
+    shipName: "Costa Fascinosa",
+    line: "Costa Cruises",
     type: "sin-visa",
     description:
-      "Explora las maravillas del Caribe sin necesidad de visa americana. Una aventura inolvidable con el sello de Royal Caribbean.",
-    duration: "8 días / 7 noches",
-    location: "Cartagena, Colombia / Colón, Panamá",
-    images: [
-      "https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=1000",
-      "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?q=80&w=1000",
-    ],
-    whatsappMessage:
-      "¡Hola! Me interesa el crucero 'Caribe Sur y Antillas' (Sin Visa) en el barco Rhapsody of the Seas saliendo de Cartagena/Panamá.",
-    itinerary: ["Cartagena", "Colón (Panamá)", "Aruba", "Bonaire", "Curaçao"],
-    included: [
-      "Crucero + Impuestos",
-      "Alimentación Completa (Buffet y a la carta)",
-      "Bebidas acompañantes de dispensador y servidas a la mesa",
-      "Actividades a bordo y shows en vivo",
-      "Ingreso a áreas públicas y gimnasio",
-      "*Paquete de bebidas ilimitado opcional (solo en tarifas que lo estipulan)",
-    ],
-  },
-  
-  // CON VISA
-  {
-    title: "Caribe Mágico desde La Romana",
-    shipName: "Explora I",
-    line: "MSC Cruises",
-    type: "visa",
-    description:
-      "Descubre la belleza de las Antillas desde la República Dominicana. Requiere visa correspondiente según nacionalidad.",
+      "Descubre la magia del Caribe a bordo de un barco renovado y lleno de entretenimiento. Una opción perfecta para viajar sin complicaciones de visa desde La Romana.",
     duration: "8 días / 7 noches",
     location: "La Romana, Rep. Dominicana",
     images: [
-      "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?q=80&w=1000",
       "https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=1000",
+      "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?q=80&w=1000",
     ],
     whatsappMessage:
-      "¡Hola! Me interesa el crucero desde La Romana con destino al Caribe.",
-    itinerary: ["La Romana", "St. Maarten", "Antigua", "St. Kitts", "Martinica"],
+      "¡Hola! Quisiera información sobre el crucero 'Caribe Sin Visa' en el Costa Fascinosa saliendo desde La Romana.",
+    itinerary: ["La Romana", "Destinos del Caribe (Consulte escalas)"],
     included: [
-      "Alimentación completa",
-      "Entretenimiento de clase mundial",
-      "Acceso a piscinas y jacuzzis",
+      "Temporada Diciembre 2026 - Febrero 2027",
+      "Barco renovado en 2022 con 17 puentes",
+      "Alimentación completa: Restaurantes Otto e Mezzo e Il Gattopardo",
+      "Entretenimiento: Campo polideportivo, Teatro, Casino y Piscinas",
+      "Clubes para niños divididos por grupos de edad",
+      "Bienestar: Solemio Spa, Gimnasio y Piscinas de hidromasaje",
+      "9 bares (4 de ellos temáticos)",
+      "Zonas comerciales a bordo",
     ],
   },
   {
-    title: "Caribe Legendario (Miami)",
-    shipName: "Wonder of the Seas",
-    line: "Royal Caribbean",
-    type: "visa",
+    title: "Encantos del Caribe (Sin Visa)",
+    shipName: "Costa Favolosa",
+    line: "Costa Cruises",
+    type: "sin-visa",
     description:
-      "Vive la aventura en el barco más grande del mundo recorriendo las joyas del Caribe saliendo de Florida.",
+      "Vive una experiencia mágica a bordo del renovado Costa Favolosa. Disfruta de la mejor gastronomía italiana y diversión ilimitada saliendo desde Santo Domingo.",
     duration: "8 días / 7 noches",
-    location: "Miami, FL",
+    location: "Santo Domingo, Rep. Dominicana",
     images: [
       "https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=1000",
       "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?q=80&w=1000",
     ],
     whatsappMessage:
-      "¡Hola! Me interesa el crucero 'Caribe Legendario' en el barco Wonder of the Seas desde Miami.",
-    itinerary: ["Miami", "Perfect Day at CocoCay", "Cozumel", "Roatán"],
+      "¡Hola! Me interesa el crucero 'Caribe Sin Visa' en el barco Costa Favolosa saliendo desde Santo Domingo.",
+    itinerary: ["Santo Domingo", "Destinos del Caribe (Consulte escalas)"],
     included: [
-      "Alimentación completa",
-      "Shows estilo Broadway",
-      "Parque acuático a bordo",
+      "Barco renovado en 2022",
+      "Alimentación completa: Restaurantes Duca d'Orleans y Duca di Bogogna",
+      "Acceso a 9 hidromasajes y piscinas con toboganes",
+      "Entretenimiento: Teatro, Casino y actividades para niños por edades",
+      "Bienestar: Gimnasio, Solarium y piscinas de hidromasaje",
+      "Variedad de 12 bares (4 temáticos)",
+      "Acceso a zonas comerciales y Beauty Spa Solemio",
     ],
   },
+  {
+    title: "Caribe Mágico (Sin Visa)",
+    shipName: "MSC Opera",
+    line: "MSC Cruises",
+    type: "sin-visa",
+    description:
+      "Disfruta del Caribe saliendo desde La Romana sin necesidad de visa. Una experiencia completa de relax y diversión en alta mar.",
+    duration: "8 días / 7 noches",
+    location: "La Romana, República Dominicana",
+    images: [
+      "https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=1000",
+      "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?q=80&w=1000",
+    ],
+    whatsappMessage:
+      "¡Hola! Me interesa el crucero 'Caribe Sin Visa' en el MSC Opera saliendo desde La Romana.",
+    itinerary: ["La Romana", "Destinos del Caribe (Consulte escalas)"],
+    included: [
+      "Temporada Noviembre 2026 - Noviembre 2027",
+      "Alimentación completa (Buffet y restaurantes de especialidad)",
+      "Zonas de juego LEGO para niños y Parque Acuático",
+      "Entretenimiento: Teatro, Casino y Discoteca Byblos",
+      "Acceso a gimnasio, sauna y baño turco",
+      "Asistencia por 728 miembros de tripulación",
+    ],
+  },
+];
 
-  // EUROPA
+export const visaCruises: Cruise[] = [
+  {
+    title: "Magia en el Mar: Disney Cruise Line",
+    shipName: "Disney Wish / Disney Dream",
+    line: "Disney Cruise Line",
+    type: "visa",
+    description:
+      "Vive la magia de Disney en alta mar. Una experiencia inigualable con encuentros con personajes, shows de Broadway y fuegos artificiales en el mar.",
+    duration: "5 días / 4 noches", // Duración estándar del itinerario de Bahamas
+    location: "Puerto Cañaveral (Florida), EE. UU.",
+    images: [
+      "https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=1000",
+      "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?q=80&w=1000",
+    ],
+    whatsappMessage:
+      "¡Hola! Me encantaría recibir información sobre los cruceros de Disney. ¿Qué fechas hay disponibles?",
+    itinerary: [
+      "Puerto Cañaveral",
+      "Nassau (Bahamas)",
+      "Castaway Cay (Isla privada de Disney)",
+    ],
+    included: [
+      "Encuentros y fotos con personajes de Disney, Marvel y Star Wars",
+      "Alimentación completa: Restaurantes temáticos con rotación",
+      "Bebidas gaseosas, café y té ilimitados en cubierta",
+      "Shows estilo Broadway y cine con estrenos de Disney",
+      "Fiestas temáticas en cubierta y fuegos artificiales",
+      "Clubes exclusivos para niños, jóvenes y áreas solo para adultos",
+      "Día en Castaway Cay, la isla privada de Disney en las Bahamas",
+    ],
+  },
+  // CON VISA
+  {
+    title: "Caribe y Perfect Day at CocoCay",
+    shipName: "Freedom of the Seas",
+    line: "Royal Caribbean",
+    type: "visa",
+    description:
+      "Disfruta de una escapada inolvidable combinando Nassau con la exclusividad de CocoCay, la isla privada de Royal Caribbean premiada como el mejor destino privado.",
+    duration: "6 días / 5 noches",
+    location: "Miami, Florida, EE. UU.",
+    images: [
+      "https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=1000",
+      "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?q=80&w=1000",
+    ],
+    whatsappMessage:
+      "¡Hola! Me interesa el crucero de 5 noches en el Freedom of the Seas saliendo desde Miami.",
+    itinerary: [
+      "Miami",
+      "Nassau (Bahamas)",
+      "Perfect Day at CocoCay",
+      "Bahamas",
+      "Miami",
+    ],
+    included: [
+      "Alojamiento 5 noches en el Freedom of the Seas",
+      "Alimentación completa (Restaurantes principales y buffet)",
+      "Acceso a 'Perfect Day at CocoCay' (Isla privada)",
+      "Simulador de surf FlowRider® y Pared de escalada",
+      "Toboganes acuáticos y piscinas renovadas",
+      "Shows estilo Broadway y entretenimiento nocturno",
+      "Gimnasio de última tecnología y canchas deportivas",
+      "Programas para niños y jóvenes (Adventure Ocean)",
+    ],
+  },
+];
+
+export const europaCruises: Cruise[] = [
   {
     title: "Mediterráneo Clásico",
     shipName: "Oasis of the Seas",
@@ -102,7 +164,13 @@ export const cruisesPackages: Cruise[] = [
     ],
     whatsappMessage:
       "¡Hola! Me interesa el crucero por el Mediterráneo desde Barcelona.",
-    itinerary: ["Barcelona", "Palma de Mallorca", "Marsella", "La Spezia", "Roma"],
+    itinerary: [
+      "Barcelona",
+      "Palma de Mallorca",
+      "Marsella",
+      "La Spezia",
+      "Roma",
+    ],
     included: [
       "Alimentación completa",
       "Recorrido por ciudades históricas",
@@ -131,4 +199,10 @@ export const cruisesPackages: Cruise[] = [
       "Vistas espectaculares del Egeo",
     ],
   },
+];
+
+export const cruisesPackages: Cruise[] = [
+  ...sinVisaCruises,
+  ...visaCruises,
+  ...europaCruises,
 ];

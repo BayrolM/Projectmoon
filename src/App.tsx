@@ -1,16 +1,16 @@
-import { Hero } from "./components/Hero";
-import { WhyUs } from "./components/WhyUs";
-import { HowItWorks } from "./components/HowItWorks";
-import { CTASection } from "./components/CTASection";
-import { Footer } from "./components/Footer";
-import { Navbar } from "./components/Navbar";
-import { Destinations } from "./components/Destinations";
-import { Gallery } from "./components/Gallery";
-import { Testimonials } from "./components/Testimonials";
-import { FAQ } from "./components/FAQ";
-import { ContactForm } from "./components/ContactForm";
-import { PackagesSection } from "./components/PackagesSection";
-import { CruisesSection } from "./components/CruisesSection";
+import { Hero } from "./components/sections/Hero";
+import { WhyUs } from "./components/sections/WhyUs";
+import { HowItWorks } from "./components/sections/HowItWorks";
+import { CTASection } from "./components/sections/CTASection";
+import { Footer } from "./components/layout/Footer";
+import { Navbar } from "./components/layout/Navbar";
+import { Destinations } from "./components/sections/Destinations";
+import { Gallery } from "./components/sections/Gallery";
+import { Testimonials } from "./components/sections/Testimonials";
+import { FAQ } from "./components/sections/FAQ";
+import { ContactForm } from "./components/sections/ContactForm";
+import { PackagesSection } from "./components/sections/PackagesSection";
+import { CruisesSection } from "./components/sections/CruisesSection";
 
 export default function App() {
   return (

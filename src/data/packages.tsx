@@ -1,14 +1,4 @@
-export interface Package {
-  title: string;
-  description: string;
-  duration: string;
-  location: string;
-  images: string[];
-  whatsappMessage: string;
-  features?: string[];
-  notIncluded?: string[];
-  customizable?: boolean;
-}
+import { Package } from "../types";
 
 export const colombiaPackages: Package[] = [
   {
