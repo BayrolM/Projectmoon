@@ -1,7 +1,8 @@
 import { Star, Quote } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 export function Testimonials() {
+  const shouldReduceMotion = useReducedMotion();
   const testimonials = [
     {
       name: "Luz Dary Palacio",
@@ -30,7 +31,7 @@ export function Testimonials() {
   ];
 
   return (
-    <section className="py-24 px-4 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #fafafa 0%, #f5f3ff 100%)' }}>
+    <section className="py-24 px-4 relative overflow-hidden bg-gradient-to-b from-[#fafafa] to-[#f5f3ff]">
       {/* Decorative elements */}
       <div className="absolute top-20 right-10 w-64 h-64 bg-[#D2C3F7]/20 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-20 left-10 w-64 h-64 bg-[#512DDB]/10 rounded-full blur-3xl pointer-events-none" />
@@ -38,45 +39,31 @@ export function Testimonials() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
           <motion.div
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
+            initial={shouldReduceMotion ? { opacity: 0 } : { scale: 0 }}
+            whileInView={shouldReduceMotion ? { opacity: 1 } : { scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="inline-block mb-4"
           >
-            <div
-              className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm"
-              style={{
-                background: 'linear-gradient(135deg, #512DDB, #4E30B2)',
-                color: 'white',
-                fontFamily: "'Lato', system-ui, sans-serif",
-                fontWeight: 700,
-                boxShadow: '0 4px 16px rgba(81,45,219,0.25)'
-              }}
-            >
+            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm brand-gradient text-white font-sans font-bold brand-shadow">
               <Star className="w-4 h-4 fill-white" />
               Testimonios reales
             </div>
           </motion.div>
 
-          <h2
-            className="text-4xl md:text-5xl mb-4 text-[#1a1a2e]"
-            style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 600 }}
-          >
+          <h2 className="text-4xl md:text-5xl mb-4 text-[#1a1a2e] font-serif font-semibold">
             Historias de viajeros felices
           </h2>
-          <p
-            className="text-lg text-gray-500 max-w-2xl mx-auto"
-            style={{ fontFamily: "'Lato', system-ui, sans-serif" }}
-          >
-            La satisfacción de nuestros clientes es nuestra mejor carta de presentación
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto font-sans">
+            La satisfacción de nuestros clientes es nuestra mejor carta de
+            presentación
           </p>
         </motion.div>
 
@@ -85,22 +72,32 @@ export function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={
+                shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 30 }
+              }
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
-              whileHover={{ y: -8 }}
+              whileHover={shouldReduceMotion ? {} : { y: -8 }}
               className="group relative bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-[#D2C3F7]/30 flex flex-col h-full"
-              style={{ willChange: "transform" }}
+              style={{ willChange: shouldReduceMotion ? "auto" : "transform" }}
             >
               {/* Quote icon */}
               <motion.div
-                initial={{ scale: 0, rotate: -90 }}
-                whileInView={{ scale: 1, rotate: 0 }}
+                initial={
+                  shouldReduceMotion
+                    ? { opacity: 0 }
+                    : { scale: 0, rotate: -90 }
+                }
+                whileInView={
+                  shouldReduceMotion ? { opacity: 1 } : { scale: 1, rotate: 0 }
+                }
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.15 + 0.2 }}
                 className="absolute -top-3 -right-3 w-12 h-12 rounded-full flex items-center justify-center shadow-lg"
-                style={{ background: 'linear-gradient(135deg, #512DDB, #4E30B2)' }}
+                style={{
+                  background: "linear-gradient(135deg, #512DDB, #4E30B2)",
+                }}
               >
                 <Quote className="w-5 h-5 text-white" />
               </motion.div>
@@ -113,7 +110,10 @@ export function Testimonials() {
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: index * 0.15 + 0.3 + i * 0.05 }}
+                    transition={{
+                      duration: 0.3,
+                      delay: index * 0.15 + 0.3 + i * 0.05,
+                    }}
                   >
                     <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                   </motion.div>
@@ -123,7 +123,10 @@ export function Testimonials() {
               {/* Review Text */}
               <p
                 className="text-gray-600 leading-relaxed mb-6 text-sm flex-grow"
-                style={{ fontFamily: "'Lato', system-ui, sans-serif", fontStyle: 'italic' }}
+                style={{
+                  fontFamily: "'Lato', system-ui, sans-serif",
+                  fontStyle: "italic",
+                }}
               >
                 "{testimonial.text}"
               </p>
@@ -134,9 +137,17 @@ export function Testimonials() {
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   className="w-11 h-11 rounded-full flex items-center justify-center text-white shadow-md flex-shrink-0"
-                  style={{ background: 'linear-gradient(135deg, #512DDB, #4E30B2)' }}
+                  style={{
+                    background: "linear-gradient(135deg, #512DDB, #4E30B2)",
+                  }}
                 >
-                  <span style={{ fontFamily: "'Lato', system-ui, sans-serif", fontWeight: 700, fontSize: '0.85rem' }}>
+                  <span
+                    style={{
+                      fontFamily: "'Lato', system-ui, sans-serif",
+                      fontWeight: 700,
+                      fontSize: "0.85rem",
+                    }}
+                  >
                     {testimonial.initials}
                   </span>
                 </motion.div>
@@ -144,7 +155,10 @@ export function Testimonials() {
                 <div>
                   <h4
                     className="text-[#1a1a2e] mb-0.5"
-                    style={{ fontFamily: "'Lato', system-ui, sans-serif", fontWeight: 700 }}
+                    style={{
+                      fontFamily: "'Lato', system-ui, sans-serif",
+                      fontWeight: 700,
+                    }}
                   >
                     {testimonial.name}
                   </h4>
@@ -178,7 +192,9 @@ export function Testimonials() {
                   <div
                     key={i}
                     className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs border-2 border-white"
-                    style={{ background: 'linear-gradient(135deg, #512DDB, #4E30B2)' }}
+                    style={{
+                      background: "linear-gradient(135deg, #512DDB, #4E30B2)",
+                    }}
                   >
                     ★
                   </div>
@@ -186,18 +202,25 @@ export function Testimonials() {
               </div>
               <span
                 className="text-gray-700"
-                style={{ fontFamily: "'Lato', system-ui, sans-serif", fontWeight: 600 }}
+                style={{
+                  fontFamily: "'Lato', system-ui, sans-serif",
+                  fontWeight: 600,
+                }}
               >
                 98% de satisfacción
               </span>
-            </div> 
+            </div>
             {/* Google Reviews Button */}
             <a
               href="https://g.page/r/Cd37pb0SKKWlEBM/review"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-5 py-2 mt-1 rounded-full text-white text-sm transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg"
-              style={{ background: 'linear-gradient(135deg, #512DDB, #4E30B2)', fontFamily: "'Lato', system-ui, sans-serif", fontWeight: 700 }}
+              style={{
+                background: "linear-gradient(135deg, #512DDB, #4E30B2)",
+                fontFamily: "'Lato', system-ui, sans-serif",
+                fontWeight: 700,
+              }}
             >
               Ver opiniones en Google
             </a>

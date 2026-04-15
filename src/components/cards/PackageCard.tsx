@@ -8,7 +8,12 @@ import {
   ChevronRight,
   X,
 } from "lucide-react";
-import { motion, AnimatePresence, Variants } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  Variants,
+  useReducedMotion,
+} from "framer-motion";
 import { useCarousel } from "../../hooks/useCarousel";
 import { useWhatsApp } from "../../hooks/useWhatsApp";
 import { Package } from "../../types";
@@ -23,6 +28,7 @@ export function PackageCard({
   features = [],
   notIncluded = [],
 }: Package) {
+  const shouldReduceMotion = useReducedMotion();
   const { currentIndex, direction, next, prev, goTo } = useCarousel(
     images.length,
   );
@@ -30,9 +36,9 @@ export function PackageCard({
 
   const variants: Variants = {
     enter: (direction: number) => ({
-      x: direction > 0 ? "100%" : "-100%",
+      x: shouldReduceMotion ? 0 : direction > 0 ? "100%" : "-100%",
       opacity: 0,
-      scale: 1.1,
+      scale: shouldReduceMotion ? 1 : 1.1,
     }),
     center: {
       zIndex: 1,
@@ -47,9 +53,9 @@ export function PackageCard({
     },
     exit: (direction: number) => ({
       zIndex: 0,
-      x: direction < 0 ? "100%" : "-100%",
+      x: shouldReduceMotion ? 0 : direction < 0 ? "100%" : "-100%",
       opacity: 0,
-      scale: 0.9,
+      scale: shouldReduceMotion ? 1 : 0.9,
       transition: {
         x: { type: "spring", stiffness: 300, damping: 30 },
         opacity: { duration: 0.5 },
@@ -60,13 +66,13 @@ export function PackageCard({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5 }}
-      whileHover={{ y: -8 }}
+      whileHover={shouldReduceMotion ? {} : { y: -8 }}
       className="group relative bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col h-full"
-      style={{ willChange: "transform" }}
+      style={{ willChange: shouldReduceMotion ? "auto" : "transform" }}
     >
       {/* Image Carousel Section */}
       <div className="relative h-64 overflow-hidden bg-gray-900">
@@ -81,8 +87,12 @@ export function PackageCard({
             animate="center"
             exit="exit"
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ willChange: "transform", transform: "translateZ(0)" }}
+            style={{
+              willChange: shouldReduceMotion ? "auto" : "transform",
+              transform: "translateZ(0)",
+            }}
             loading="lazy"
+            decoding="async"
           />
         </AnimatePresence>
 

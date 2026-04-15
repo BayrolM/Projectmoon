@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { CruiseCard } from "../cards/CruiseCard";
-import { cruisesPackages } from "../../data/cruises";
+import { sinVisaCruises, visaCruises, europaCruises } from "../../data/cruises";
 import {
   Carousel,
   CarouselContent,
@@ -10,17 +10,21 @@ import {
   CarouselPrevious,
 } from "../ui/carousel";
 
+const cruisesByType = {
+  "sin-visa": sinVisaCruises,
+  visa: visaCruises,
+  europa: europaCruises,
+};
+
 export function CruisesSection() {
   const [activeCruiseTab, setActiveCruiseTab] = useState<
     "sin-visa" | "visa" | "europa"
   >("sin-visa");
 
-  // Detectar cambios en el hash de la URL para activar el tab correcto
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash;
 
-      // Manejar los hash de cruceros
       if (hash === "#cruceros-sin-visa") {
         setActiveCruiseTab("sin-visa");
         setTimeout(() => {
@@ -47,9 +51,7 @@ export function CruisesSection() {
     return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
 
-  const currentCruises = cruisesPackages.filter(
-    (cruise) => cruise.type === activeCruiseTab,
-  );
+  const currentCruises = cruisesByType[activeCruiseTab];
 
   return (
     <section id="cruceros" className="py-24 px-4 bg-slate-50">
@@ -78,7 +80,7 @@ export function CruisesSection() {
               whileTap={{ scale: 0.95 }}
               className={`px-8 py-3 rounded-full transition-all duration-300 font-bold ${
                 activeCruiseTab === "sin-visa"
-                  ? "bg-gradient-to-r from-[#512DDB] to-[#4E30B2] text-white shadow-lg"
+                  ? "brand-gradient text-white brand-shadow"
                   : "bg-white text-gray-600 border border-gray-200"
               }`}
             >
@@ -91,7 +93,7 @@ export function CruisesSection() {
               whileTap={{ scale: 0.95 }}
               className={`px-8 py-3 rounded-full transition-all duration-300 font-bold ${
                 activeCruiseTab === "visa"
-                  ? "bg-gradient-to-r from-[#512DDB] to-[#4E30B2] text-white shadow-lg"
+                  ? "brand-gradient text-white brand-shadow"
                   : "bg-white text-gray-600 border border-gray-200"
               }`}
             >
@@ -104,7 +106,7 @@ export function CruisesSection() {
               whileTap={{ scale: 0.95 }}
               className={`px-8 py-3 rounded-full transition-all duration-300 font-bold ${
                 activeCruiseTab === "europa"
-                  ? "bg-gradient-to-r from-[#512DDB] to-[#4E30B2] text-white shadow-lg"
+                  ? "brand-gradient text-white brand-shadow"
                   : "bg-white text-gray-600 border border-gray-200"
               }`}
             >

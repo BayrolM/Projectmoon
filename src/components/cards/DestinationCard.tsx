@@ -6,7 +6,7 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { DestinationData } from "../../types";
 import { useWhatsApp } from "../../hooks/useWhatsApp";
 
@@ -16,6 +16,7 @@ interface DestinationCardProps {
 }
 
 export function DestinationCard({ destination, index }: DestinationCardProps) {
+  const shouldReduceMotion = useReducedMotion();
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = destination.images || [];
 
@@ -36,20 +37,22 @@ export function DestinationCard({ destination, index }: DestinationCardProps) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden flex flex-col h-full"
-      style={{ willChange: "transform" }}
+      transition={{ duration: 0.5, delay: index * 0.05 }}
+      className={`group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 ${shouldReduceMotion ? "" : "hover:-translate-y-2"} overflow-hidden flex flex-col h-full`}
+      style={{ willChange: shouldReduceMotion ? "auto" : "transform" }}
     >
       {/* Image Carousel Section */}
       <div className="relative h-48 overflow-hidden bg-gray-900 shrink-0">
         <img
           src={images[currentIndex]}
+          key={currentIndex}
           alt={`${destination.name} - image ${currentIndex + 1}`}
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-[2]"></div>
 

@@ -51,6 +51,31 @@ html {
   --brand-light: #D2C3F7;
   --moon-deep: #0f172a;
   --moon-night: #1a1a2e;
+  
+  --brand-gradient: linear-gradient(135deg, #512DDB, #4E30B2);
+  --brand-shadow: 0 4px 16px rgba(81, 45, 219, 0.25);
+}
+
+@layer utilities {
+  .brand-gradient {
+    background: var(--brand-gradient);
+  }
+  .brand-shadow {
+    box-shadow: var(--brand-shadow);
+  }
+  .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  .font-sans {
+    font-family: 'Lato', system-ui, sans-serif;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 .dark {

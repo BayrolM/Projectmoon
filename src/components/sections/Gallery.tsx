@@ -32,17 +32,12 @@ export function Gallery() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2
-            className="text-4xl md:text-5xl mb-4 text-[#1a1a2e]"
-            style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 600 }}
-          >
+          <h2 className="text-4xl md:text-5xl mb-4 text-[#1a1a2e] font-serif font-semibold">
             Galería de Experiencias
           </h2>
-          <p
-            className="text-lg text-gray-500 max-w-2xl mx-auto"
-            style={{ fontFamily: "'Lato', system-ui, sans-serif" }}
-          >
-            Momentos inolvidables capturados por nuestros viajeros alrededor del mundo
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto font-sans">
+            Momentos inolvidables capturados por nuestros viajeros alrededor del
+            mundo
           </p>
         </div>
 
@@ -55,6 +50,7 @@ export function Gallery() {
               alt={images[0].alt}
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               loading="lazy"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#512DDB]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
@@ -70,6 +66,7 @@ export function Gallery() {
                 alt={image.alt}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#4E30B2]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>

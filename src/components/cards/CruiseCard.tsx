@@ -7,7 +7,7 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-import { motion, AnimatePresence, Variants } from "framer-motion";
+import { motion, AnimatePresence, Variants, useReducedMotion } from "framer-motion";
 import { useCarousel } from "../../hooks/useCarousel";
 import { useWhatsApp } from "../../hooks/useWhatsApp";
 import { Cruise } from "../../types";
@@ -23,14 +23,15 @@ export function CruiseCard({
   itinerary,
   included,
 }: Cruise) {
+  const shouldReduceMotion = useReducedMotion();
   const { currentIndex, direction, next, prev } = useCarousel(images.length);
   const { whatsappUrl } = useWhatsApp(whatsappMessage);
 
   const variants: Variants = {
     enter: (direction: number) => ({
-      x: direction > 0 ? "100%" : "-100%",
+      x: shouldReduceMotion ? 0 : (direction > 0 ? "100%" : "-100%"),
       opacity: 0,
-      scale: 1.1,
+      scale: shouldReduceMotion ? 1 : 1.1,
     }),
     center: {
       zIndex: 1,
@@ -45,9 +46,9 @@ export function CruiseCard({
     },
     exit: (direction: number) => ({
       zIndex: 0,
-      x: direction < 0 ? "100%" : "-100%",
+      x: shouldReduceMotion ? 0 : (direction < 0 ? "100%" : "-100%"),
       opacity: 0,
-      scale: 0.9,
+      scale: shouldReduceMotion ? 1 : 0.9,
       transition: {
         x: { type: "spring", stiffness: 300, damping: 30 },
         opacity: { duration: 0.5 },
@@ -58,12 +59,12 @@ export function CruiseCard({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -8 }}
+      whileHover={shouldReduceMotion ? {} : { y: -8 }}
       className="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all border border-blue-50 flex flex-col h-full"
-      style={{ willChange: "transform" }}
+      style={{ willChange: shouldReduceMotion ? "auto" : "transform" }}
     >
       {/* Sección Imagen */}
       <div className="relative h-72 overflow-hidden bg-slate-900">
@@ -77,7 +78,9 @@ export function CruiseCard({
             animate="center"
             exit="exit"
             className="absolute inset-0 w-full h-full object-cover"
+            style={{ willChange: shouldReduceMotion ? "auto" : "transform", transform: "translateZ(0)" }}
             loading="lazy"
+            decoding="async"
           />
         </AnimatePresence>
 
@@ -163,20 +166,25 @@ export function CruiseCard({
         </div>
 
         {/* Beneficios */}
-        <div className="space-y-2 mb-6">
-          {included.map((item, i) => (
-            <div key={i} className="flex items-start gap-2">
-              <div className="mt-1 bg-[#D2C3F7]/30 p-0.5 rounded-full shrink-0">
-                <Check className="w-3 h-3 text-[#512DDB]" />
+        <div className="mb-6">
+          <p className="text-[10px] uppercase tracking-widest text-[#512DDB] font-bold mb-2">
+            Incluye:
+          </p>
+          <div className="grid grid-cols-2 gap-x-3 gap-y-2.5">
+            {included.map((item, i) => (
+              <div key={i} className="flex items-start gap-2 group/item">
+                <div className="mt-0.5 bg-[#D2C3F7]/30 p-0.5 rounded-full shrink-0">
+                  <Check className="w-3 h-3 text-[#512DDB]" />
+                </div>
+                <span
+                  className="text-[11px] text-gray-600 leading-tight line-clamp-2"
+                  style={{ fontFamily: "'Lato', system-ui, sans-serif" }}
+                >
+                  {item}
+                </span>
               </div>
-              <span
-                className="text-xs text-gray-600 leading-tight"
-                style={{ fontFamily: "'Lato', system-ui, sans-serif" }}
-              >
-                {item}
-              </span>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         <motion.a

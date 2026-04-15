@@ -1,9 +1,10 @@
 import { ChevronDown, Sparkles } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { useState, useEffect, useMemo } from "react";
 
 export function Hero() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const shouldReduceMotion = useReducedMotion();
 
   const carouselImages = [
     "https://images.unsplash.com/photo-1628075265328-aec05575f8f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuaWdodCUyMHNreSUyMHRyYXZlbCUyMGFkdmVudHVyZXxlbnwxfHx8fDE3NjgzMjE0NDl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
@@ -51,10 +52,17 @@ export function Hero() {
             src={carouselImages[currentImageIndex]}
             alt="Travel destination"
             className="w-full h-full object-cover"
-            initial={{ opacity: 0, scale: 1.1 }}
+            initial={
+              shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 1.1 }
+            }
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 1.2, ease: "easeInOut" }}
+            exit={
+              shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.95 }
+            }
+            transition={{
+              duration: shouldReduceMotion ? 0.6 : 1.2,
+              ease: "easeInOut",
+            }}
           />
         </AnimatePresence>
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a]/85 via-[#1a1a2e]/75 to-[#4E30B2]/65"></div>
@@ -76,30 +84,32 @@ export function Hero() {
         ))}
       </div>
 
-      {/* Floating particles effect */}
-      <div className="absolute inset-0 z-[1] overflow-hidden pointer-events-none">
-        {particles.map((p) => (
-          <motion.div
-            key={p.id}
-            className="absolute w-2 h-2 bg-white/20 rounded-full"
-            initial={{
-              x: p.initialX,
-              y: p.initialY,
-            }}
-            animate={{
-              y: p.animateY,
-              x: p.animateX,
-              opacity: [0, 1, 0],
-            }}
-            transition={{
-              duration: p.duration,
-              repeat: Infinity,
-              delay: p.delay,
-              ease: "linear",
-            }}
-          />
-        ))}
-      </div>
+      {/* Floating particles effect - only show if reduced motion is not preferred */}
+      {!shouldReduceMotion && (
+        <div className="absolute inset-0 z-[1] overflow-hidden pointer-events-none">
+          {particles.map((p) => (
+            <motion.div
+              key={p.id}
+              className="absolute w-2 h-2 bg-white/20 rounded-full"
+              initial={{
+                x: p.initialX,
+                y: p.initialY,
+              }}
+              animate={{
+                y: p.animateY,
+                x: p.animateX,
+                opacity: [0, 1, 0],
+              }}
+              transition={{
+                duration: p.duration,
+                repeat: Infinity,
+                delay: p.delay,
+                ease: "linear",
+              }}
+            />
+          ))}
+        </div>
+      )}
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
