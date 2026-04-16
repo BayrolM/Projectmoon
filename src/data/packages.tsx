@@ -46,18 +46,23 @@ export const colombiaPackages: Package[] = [
   {
     title: "Mompox",
     description:
-      "Relájate en las playas más hermosas de Colombia con mar de 7 colores, deportes acuáticos y gastronomía isleña.",
-    duration: "6 días / 5 noches",
-    location: "Mompox, Colombia",
+      "Viaja en el tiempo en esta joya colonial. Descubre la elegancia de la filigrana, el sabor del queso de capa y la serenidad del río Magdalena.",
+    duration: "4 días / 3 noches",
+    location: "Mompox, Bolívar",
     images: ["/images/Paquetes/Colombia/mompoxPaquete.jpeg"],
     whatsappMessage:
-      "¡Hola! Me interesa el paquete 'Mompox'. ¿Cuál es el precio?",
+      "¡Hola! Quisiera información sobre el paquete 'Mompox'. ¿Podrían darme más información?",
     features: [
-      "Vuelos incluidos",
-      "Hotel frente al mar",
-      "Desayunos y cenas",
-      "Tour acuario y Johnny Cay",
+      "Transporte aéreo o terrestre (según elección)",
+      "Traslados aeropuerto o terminal hasta el hotel",
+      "Alojamiento 3 noches con 3 desayunos, 2 almuerzos y cenas",
+      "Tour del Vino Momposino y taller de Filigrana",
+      "Recorrido en planchón por el río Magdalena",
+      "Visita a la Ciénaga de Pijiño y Tour del Queso de Capa",
+      "City Tour histórico por el centro colonial",
+      "Asistencia en viajes permanente",
     ],
+    customizable: true,
   },
   {
     title: "Llanos Orientales",

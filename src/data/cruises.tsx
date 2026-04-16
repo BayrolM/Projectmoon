@@ -2,33 +2,6 @@ import { Cruise } from "../types";
 
 export const sinVisaCruises: Cruise[] = [
   {
-    title: "Caribe Fascinante (Sin Visa)",
-    shipName: "Costa Fascinosa",
-    line: "Costa Cruises",
-    type: "sin-visa",
-    description:
-      "Descubre la magia del Caribe a bordo de un barco renovado y lleno de entretenimiento. Una opción perfecta para viajar sin complicaciones de visa desde La Romana.",
-    duration: "8 días / 7 noches",
-    location: "La Romana, Rep. Dominicana",
-    images: [
-      "https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=1000",
-      "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?q=80&w=1000",
-    ],
-    whatsappMessage:
-      "¡Hola! Quisiera información sobre el crucero 'Caribe Sin Visa' en el Costa Fascinosa saliendo desde La Romana.",
-    itinerary: ["La Romana", "Destinos del Caribe (Consulte escalas)"],
-    included: [
-      "Temporada Diciembre 2026 - Febrero 2027",
-      "Barco renovado en 2022 con 17 puentes",
-      "Alimentación completa: Restaurantes Otto e Mezzo e Il Gattopardo",
-      "Entretenimiento: Campo polideportivo, Teatro, Casino y Piscinas",
-      "Clubes para niños divididos por grupos de edad",
-      "Bienestar: Solemio Spa, Gimnasio y Piscinas de hidromasaje",
-      "9 bares (4 de ellos temáticos)",
-      "Zonas comerciales a bordo",
-    ],
-  },
-  {
     title: "Encantos del Caribe (Sin Visa)",
     shipName: "Costa Favolosa",
     line: "Costa Cruises",
@@ -38,11 +11,11 @@ export const sinVisaCruises: Cruise[] = [
     duration: "8 días / 7 noches",
     location: "Santo Domingo, Rep. Dominicana",
     images: [
-      "https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=1000",
-      "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?q=80&w=1000",
+      "/images/Cruceros/sinVisa/santoDomingo.jpg",
+      "/images/Cruceros/sinVisa/santoDomingo2.jpg",
     ],
     whatsappMessage:
-      "¡Hola! Me interesa el crucero 'Caribe Sin Visa' en el barco Costa Favolosa saliendo desde Santo Domingo.",
+      "¡Hola! Me interesa el crucero 'Caribe'. ¿Podrían darme más información?",
     itinerary: ["Santo Domingo", "Destinos del Caribe (Consulte escalas)"],
     included: [
       "Barco renovado en 2022",
@@ -64,11 +37,11 @@ export const sinVisaCruises: Cruise[] = [
     duration: "8 días / 7 noches",
     location: "La Romana, República Dominicana",
     images: [
-      "https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=1000",
-      "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?q=80&w=1000",
+      "/images/Cruceros/sinVisa/laRomanaCrucero.jpg",
+      "/images/Cruceros/sinVisa/laRomanaCrucero2.jpg",
     ],
     whatsappMessage:
-      "¡Hola! Me interesa el crucero 'Caribe Sin Visa' en el MSC Opera saliendo desde La Romana.",
+      "¡Hola! Me interesa el crucero 'Caribe'. ¿Podrían darme más información?",
     itinerary: ["La Romana", "Destinos del Caribe (Consulte escalas)"],
     included: [
       "Temporada Noviembre 2026 - Noviembre 2027",
@@ -89,11 +62,11 @@ export const visaCruises: Cruise[] = [
     type: "visa",
     description:
       "Vive la magia de Disney en alta mar. Una experiencia inigualable con encuentros con personajes, shows de Broadway y fuegos artificiales en el mar.",
-    duration: "5 días / 4 noches", // Duración estándar del itinerario de Bahamas
+    duration: "5 días / 4 noches",
     location: "Puerto Cañaveral (Florida), EE. UU.",
     images: [
-      "https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=1000",
-      "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?q=80&w=1000",
+      "/images/Cruceros/Visa/disneyCrucero.avif",
+      "/images/Cruceros/Visa/disneyCrucero2.jpg",
     ],
     whatsappMessage:
       "¡Hola! Me encantaría recibir información sobre los cruceros de Disney. ¿Qué fechas hay disponibles?",
@@ -112,7 +85,6 @@ export const visaCruises: Cruise[] = [
       "Día en Castaway Cay, la isla privada de Disney en las Bahamas",
     ],
   },
-  // CON VISA
   {
     title: "Caribe y Perfect Day at CocoCay",
     shipName: "Freedom of the Seas",
@@ -123,8 +95,8 @@ export const visaCruises: Cruise[] = [
     duration: "6 días / 5 noches",
     location: "Miami, Florida, EE. UU.",
     images: [
-      "https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=1000",
-      "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?q=80&w=1000",
+      "/images/Cruceros/Visa/miamiCrucero.jpg",
+      "/images/Cruceros/Visa/miamiCrucero2.jpg",
     ],
     whatsappMessage:
       "¡Hola! Me interesa el crucero de 5 noches en el Freedom of the Seas saliendo desde Miami.",
