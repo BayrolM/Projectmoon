@@ -436,13 +436,23 @@ export const europaPackages: Package[] = [
     ],
   },
   {
-    title: "Inglaterra",
-    description: "Recorre Londres, Manchester y Liverpool en un solo viaje.",
-    duration: "15 días / 14 noches",
-    location: "Inglaterra",
+    title: "Londres",
+    description:
+      "Explora la capital británica, desde sus icónicos palacios reales hasta la modernidad del London Eye, con guías expertos en español.",
+    duration: "4 días / 3 noches",
+    location: "Londres, Inglaterra",
     images: ["/images/Paquetes/Europa/inglaterraPaquete.jpeg"],
-    whatsappMessage: "¡Hola! Quisiera info del paquete a Inglaterra.",
-    features: ["Vuelos incluidos", "Guía en español", "Hoteles 4 estrellas"],
+    whatsappMessage:
+      "¡Hola! Quisiera información sobre el paquete 'Londres'. ¿Podrían darme más información?",
+    features: [
+      "Tiquetes aéreos  ida y regreso",
+      "Traslados aeropuerto – hotel – aeropuerto",
+      "Alojamiento",
+      "Alimentación",
+      "Visita de medio día con guía o audio-guía en español",
+      "Asistencia médica ",
+      "Traslados en servicio regular desde la terminal",
+    ],
   },
 ];
 
