@@ -6,7 +6,6 @@ export interface Package {
   images: string[];
   whatsappMessage: string;
   features?: string[];
-  notIncluded?: string[];
   customizable?: boolean;
 }
 
