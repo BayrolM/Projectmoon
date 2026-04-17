@@ -47,8 +47,8 @@ Para ejecutar este proyecto localmente, sigue estos pasos:
 1. **Clonar el repositorio**
 
    ```bash
-   git clone https://github.com/dbnexus69/MoonTravelCo_Landing.git
-   cd MoonTravelCo_Landing
+   git clone https://github.com/BayrolM/Projectmoon.git
+   cd Projectmoon
    ```
 
 2. **Instalar dependencias**
