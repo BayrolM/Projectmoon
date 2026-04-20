@@ -24,7 +24,6 @@ export function Navbar() {
   const cruises = [
     { name: "Sin Visa", href: "#cruceros-sin-visa" },
     { name: "Con Visa", href: "#cruceros-visa" },
-    { name: "Europa", href: "#cruceros-europa" },
   ];
 
   const whatsappNumber = "573046495250";

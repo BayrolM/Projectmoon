@@ -11,9 +11,9 @@ import {
 } from "./ui/carousel";
 
 export function CruisesSection() {
-  const [activeCruiseTab, setActiveCruiseTab] = useState<
-    "sin-visa" | "visa" | "europa"
-  >("sin-visa");
+  const [activeCruiseTab, setActiveCruiseTab] = useState<"sin-visa" | "visa">(
+    "sin-visa",
+  );
 
   // Detectar cambios en el hash de la URL para activar el tab correcto
   useEffect(() => {
@@ -29,12 +29,6 @@ export function CruisesSection() {
         }, 100);
       } else if (hash === "#cruceros-visa") {
         setActiveCruiseTab("visa");
-        setTimeout(() => {
-          const cruisesSection = document.getElementById("cruceros");
-          cruisesSection?.scrollIntoView({ behavior: "smooth" });
-        }, 100);
-      } else if (hash === "#cruceros-europa") {
-        setActiveCruiseTab("europa");
         setTimeout(() => {
           const cruisesSection = document.getElementById("cruceros");
           cruisesSection?.scrollIntoView({ behavior: "smooth" });
@@ -94,18 +88,6 @@ export function CruisesSection() {
               }`}
             >
               Con Visa
-            </motion.button>
-            <motion.button
-              onClick={() => setActiveCruiseTab("europa")}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={`px-8 py-3 rounded-full transition-all duration-300 font-bold ${
-                activeCruiseTab === "europa"
-                  ? "bg-gradient-to-r from-[#512DDB] to-[#4E30B2] text-white shadow-lg"
-                  : "bg-white text-gray-600 border border-gray-200"
-              }`}
-            >
-              Europa
             </motion.button>
           </div>
         </motion.div>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { CruiseCard } from "../cards/CruiseCard";
-import { sinVisaCruises, visaCruises, europaCruises } from "../../data/cruises";
+import { sinVisaCruises, visaCruises } from "../../data/cruises";
 import {
   Carousel,
   CarouselContent,
@@ -13,13 +13,12 @@ import {
 const cruisesByType = {
   "sin-visa": sinVisaCruises,
   visa: visaCruises,
-  europa: europaCruises,
 };
 
 export function CruisesSection() {
-  const [activeCruiseTab, setActiveCruiseTab] = useState<
-    "sin-visa" | "visa" | "europa"
-  >("sin-visa");
+  const [activeCruiseTab, setActiveCruiseTab] = useState<"sin-visa" | "visa">(
+    "sin-visa",
+  );
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -33,12 +32,6 @@ export function CruisesSection() {
         }, 100);
       } else if (hash === "#cruceros-visa") {
         setActiveCruiseTab("visa");
-        setTimeout(() => {
-          const cruisesSection = document.getElementById("cruceros");
-          cruisesSection?.scrollIntoView({ behavior: "smooth" });
-        }, 100);
-      } else if (hash === "#cruceros-europa") {
-        setActiveCruiseTab("europa");
         setTimeout(() => {
           const cruisesSection = document.getElementById("cruceros");
           cruisesSection?.scrollIntoView({ behavior: "smooth" });
@@ -98,19 +91,6 @@ export function CruisesSection() {
               }`}
             >
               Con Visa
-            </motion.button>
-            <motion.button
-              type="button"
-              onClick={() => setActiveCruiseTab("europa")}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={`px-8 py-3 rounded-full transition-all duration-300 font-bold ${
-                activeCruiseTab === "europa"
-                  ? "brand-gradient text-white brand-shadow"
-                  : "bg-white text-gray-600 border border-gray-200"
-              }`}
-            >
-              Europa
             </motion.button>
           </div>
         </motion.div>

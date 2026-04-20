@@ -52,6 +52,71 @@ export const sinVisaCruises: Cruise[] = [
       "Asistencia por 728 miembros de tripulación",
     ],
   },
+  {
+    title: "Suramérica Increíble: MSC Splendida",
+    shipName: "MSC Splendida",
+    line: "MSC Cruceros",
+    type: "sin-visa",
+    description:
+      "Disfruta de una travesía inolvidable por las costas de Argentina, Uruguay y Brasil. Aprovecha la promoción especial de cabina con balcón a precio de interior.",
+    duration: "9 días / 8 noches",
+    location: "Saliendo desde Buenos Aires, Argentina",
+    images: ["/images/Cruceros/sinVisa/suramericaCrucero.jpg"],
+    whatsappMessage:
+      "¡Hola! Me interesa el crucero MSC Splendida desde Buenos Aires para el 3 de diciembre. ¿Aún tienen la promo de cabina balcón?",
+    itinerary: [
+      "Buenos Aires (Argentina)",
+      "Punta del Este (Uruguay)",
+      "Camboriú (Brasil)",
+      "Ilhabela (Brasil)",
+      "Rio de Janeiro (Brasil)",
+      "Buenos Aires (Argentina)",
+    ],
+    included: [
+      "Tiquetes aéreos ida y regreso a Buenos Aires",
+      "Alojamiento en cabina con balcón (según disponibilidad de la oferta)",
+      "Alimentación completa en restaurantes principales y buffet",
+      "Traslados aeropuerto – puerto – aeropuerto",
+      "Acceso a piscinas, jacuzzis y áreas de solárium",
+      "Entretenimiento a bordo: Teatro, música en vivo y casino",
+      "Asistencia médica internacional (cobertura 60.000 USD)",
+      "Clubes temáticos para niños y jóvenes",
+    ],
+  },
+  {
+    title: "Disney Cruise Line: Mediterráneo Sin Visa",
+    shipName: "Disney Wish",
+    line: "Disney Cruise Line",
+    type: "sin-visa",
+    description:
+      "Vive la magia de Disney en alta mar recorriendo las joyas de España e Italia. Una experiencia de lujo para toda la familia zarpando desde Barcelona.",
+    duration: "8 días / 7 noches",
+    location: "Saliendo desde Barcelona, España",
+    images: [
+      "/images/Cruceros/Europa/disneyWish1.jpg",
+      "/images/Cruceros/Europa/disneyWishDestinos.jpg",
+    ],
+    whatsappMessage:
+      "¡Hola! Me interesa el crucero Disney Wish por el Mediterráneo para mayo de 2027. ¿Me podrían dar más información sobre la cabina interior?",
+    itinerary: [
+      "Barcelona (España)",
+      "Palma de Mallorca (España)",
+      "Nápoles / Pompeya (Italia)",
+      "Civitavecchia / Roma (Italia)",
+      "Livorno / Florencia / Pisa (Italia)",
+      "Barcelona (España)",
+    ],
+    included: [
+      "Tiquetes aéreos internacionales ida y regreso",
+      "Alojamiento 7 noches a bordo del Disney Wish",
+      "Alimentación completa, snacks y bebidas (café, té y soda)",
+      "Encuentro con personajes de Disney, Marvel y Star Wars",
+      "Shows estilo Broadway y estrenos de cine Disney a bordo",
+      "Traslados aeropuerto – puerto – aeropuerto",
+      "Asistencia médica internacional (cobertura 60.000 USD)",
+      "Clubes temáticos para niños y jóvenes con supervisión",
+    ],
+  },
 ];
 
 export const visaCruises: Cruise[] = [
@@ -118,63 +183,38 @@ export const visaCruises: Cruise[] = [
       "Programas para niños y jóvenes (Adventure Ocean)",
     ],
   },
-];
-
-export const europaCruises: Cruise[] = [
   {
-    title: "Mediterráneo Clásico",
-    shipName: "Oasis of the Seas",
+    title: "Mediterráneo y Joyas del Adriático",
+    shipName: "Explorer of the Seas",
     line: "Royal Caribbean",
-    type: "europa",
+    type: "visa",
     description:
-      "Recorre la historia visual del Mediterráneo visitando las costas de España, Francia e Italia.",
-    duration: "8 días / 7 noches",
-    location: "Barcelona, España",
-    images: [
-      "https://images.unsplash.com/photo-1516483642775-7389657094a3?q=80&w=1000",
-      "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=1000",
-    ],
-    whatsappMessage:
-      "¡Hola! Me interesa el crucero por el Mediterráneo desde Barcelona.",
-    itinerary: [
-      "Barcelona",
-      "Palma de Mallorca",
-      "Marsella",
-      "La Spezia",
-      "Roma",
-    ],
-    included: [
-      "Alimentación completa",
-      "Recorrido por ciudades históricas",
-      "Shows y actividades premium",
-    ],
-  },
-  {
-    title: "Islas Griegas y Adriático",
-    shipName: "Odyssey of the Seas",
-    line: "Royal Caribbean",
-    type: "europa",
-    description:
-      "Navega por las aguas azules del Mar Egeo y descubre la magia de Santorini y Mykonos.",
+      "Un recorrido inolvidable por las ciudades más emblemáticas del Mediterráneo y la costa dálmata, combinando historia, cultura y el lujo de Royal Caribbean.",
     duration: "10 días / 9 noches",
-    location: "Civitavecchia (Roma), Italia",
-    images: [
-      "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1000",
-      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=1000",
-    ],
+    location: "Barcelona, España",
+    images: ["/images/Cruceros/Visa/mediterraneoCrucero.jpg"],
     whatsappMessage:
-      "¡Hola! Me interesa el crucero por las Islas Griegas saliendo de Roma.",
-    itinerary: ["Roma", "Santorini", "Mykonos", "Kusadasi", "Atenas"],
+      "¡Hola! Me interesa el crucero de 9 noches en el Explorer of the Seas por el Mediterráneo desde Barcelona.",
+    itinerary: [
+      "Barcelona (España)",
+      "Niza (Francia)",
+      "Roma / Civitavecchia (Italia)",
+      "Dubrovnik (Croacia)",
+      "Kotor (Montenegro)",
+      "Zadar (Croacia)",
+      "Venecia / Rávena (Italia)",
+    ],
     included: [
-      "Alimentación completa",
-      "Entretenimiento de alto nivel",
-      "Vistas espectaculares del Egeo",
+      "Tiquetes aéreos internacionales ida y regreso",
+      "Alojamiento 9 noches a bordo del Explorer of the Seas",
+      "Alimentación completa (Restaurantes de especialidad y buffet)",
+      "Traslados aeropuerto – puerto – aeropuerto",
+      "Acceso a pared de escalada, cancha de hielo y piscinas",
+      "Shows de entretenimiento tipo Broadway y música en vivo",
+      "Programas juveniles y guardería para niños",
+      "Asistencia médica internacional (cobertura 60.000 USD)",
     ],
   },
 ];
 
-export const cruisesPackages: Cruise[] = [
-  ...sinVisaCruises,
-  ...visaCruises,
-  ...europaCruises,
-];
+export const cruisesPackages: Cruise[] = [...sinVisaCruises, ...visaCruises];
