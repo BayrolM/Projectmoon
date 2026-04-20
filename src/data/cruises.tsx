@@ -92,10 +92,7 @@ export const sinVisaCruises: Cruise[] = [
       "Vive la magia de Disney en alta mar recorriendo las joyas de España e Italia. Una experiencia de lujo para toda la familia zarpando desde Barcelona.",
     duration: "8 días / 7 noches",
     location: "Saliendo desde Barcelona, España",
-    images: [
-      "/images/Cruceros/Europa/disneyWish1.jpg",
-      "/images/Cruceros/Europa/disneyWishDestinos.jpg",
-    ],
+    images: ["/images/Cruceros/sinVisa/disneyCrucero.avif"],
     whatsappMessage:
       "¡Hola! Me interesa el crucero Disney Wish por el Mediterráneo para mayo de 2027. ¿Me podrían dar más información sobre la cabina interior?",
     itinerary: [
