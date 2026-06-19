@@ -113,32 +113,42 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-        {/* Logo/Brand */}
+        {/* Brand & SEO Title */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex items-center justify-center gap-3 mb-8"
+          className="flex flex-col items-center justify-center mb-8"
         >
-          <motion.div
-            animate={{ rotate: [0, 5, -5, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <motion.div
+              animate={{ rotate: [0, 5, -5, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <img
+                src="/isotipo.png"
+                alt="Moon Travel Co Isotipo"
+                className="w-16 h-16 object-contain scale-[2]"
+              />
+            </motion.div>
+            <h1
+              className="text-5xl md:text-7xl text-white tracking-tight"
+              style={{
+                fontFamily: "'Playfair Display', Georgia, serif",
+                fontWeight: 600,
+              }}
+            >
+              Moon Travel Co.
+            </h1>
+          </div>
+          
+          {/* SEO hidden/integrated subtitle for H1 context (Google will read this) */}
+          <span 
+            className="text-xl md:text-2xl text-white/90 mt-2 font-light tracking-wide text-center"
+            style={{ fontFamily: "'Lato', system-ui, sans-serif" }}
           >
-            <img
-              src="/isotipo.png"
-              alt="Moon Travel Co Isotipo"
-              className="w-16 h-16 object-contain scale-[2]"
-            />
-          </motion.div>
-          <h1
-            className="text-5xl md:text-7xl text-white tracking-tight"
-            style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
-              fontWeight: 600,
-            }}
-          >
-            Moon Travel Co.
-          </h1>
+            Agencia de Viajes y Paquetes Turísticos
+          </span>
         </motion.div>
 
         {/* Tagline */}
@@ -147,22 +157,20 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <p
+          <h2
             className="text-xl md:text-3xl text-white/95 mb-4 max-w-3xl mx-auto leading-relaxed"
             style={{
               fontFamily: "'Playfair Display', Georgia, serif",
               fontStyle: "italic",
             }}
           >
-            Más que un viaje, creamos experiencias
-          </p>
+            Más que un viaje, creamos experiencias internacionales
+          </h2>
           <p
             className="text-base md:text-lg text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed"
             style={{ fontFamily: "'Lato', system-ui, sans-serif" }}
           >
-            Especialistas en crear experiencias de viaje únicas y
-            personalizadas. Desde playas paradisíacas hasta destinos culturales,
-            tu aventura perfecta comienza aquí.
+            Especialistas en viajes organizados, cruceros sin visa y destinos internacionales. Desde playas paradisíacas hasta ciudades culturales, tu aventura perfecta comienza aquí con nuestra asesoría personalizada.
           </p>
         </motion.div>
 

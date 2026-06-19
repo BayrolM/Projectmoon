@@ -59,6 +59,7 @@ export function Navbar() {
             >
               Home
             </a>
+            
 
             {/* Destinos Dropdown */}
             <div
@@ -182,6 +183,13 @@ export function Navbar() {
             >
               Contacto
             </a>
+            <a
+              href="#nosotros"
+              style={linkStyle}
+              className="text-gray-600 hover:text-[#512DDB] transition-colors duration-300"
+            >
+              Quiénes Somos
+            </a>
           </div>
 
           {/* WhatsApp CTA Button - Desktop */}
@@ -221,6 +229,14 @@ export function Navbar() {
                 className="text-gray-700 hover:text-[#512DDB] hover:bg-[#D2C3F7]/15 transition-colors py-3 px-2 rounded-lg"
               >
                 Home
+              </a>
+              <a
+                href="#nosotros"
+                onClick={() => setIsOpen(false)}
+                style={linkStyle}
+                className="text-gray-700 hover:text-[#512DDB] hover:bg-[#D2C3F7]/15 transition-colors py-3 px-2 rounded-lg"
+              >
+                Quiénes Somos
               </a>
 
               {/* Destinos Dropdown Mobile */}

@@ -5,6 +5,7 @@ import { CTASection } from "./components/sections/CTASection";
 import { Footer } from "./components/layout/Footer";
 import { Navbar } from "./components/layout/Navbar";
 import { Destinations } from "./components/sections/Destinations";
+import { SEOAbout } from "./components/sections/SEOAbout";
 import { Gallery } from "./components/sections/Gallery";
 import { Testimonials } from "./components/sections/Testimonials";
 import { FAQ } from "./components/sections/FAQ";
@@ -52,6 +53,9 @@ export default function App() {
 
       {/* CTA Section */}
       <CTASection />
+
+      {/* SEO Text Section */}
+      <SEOAbout />
 
       {/* Footer */}
       <Footer />
