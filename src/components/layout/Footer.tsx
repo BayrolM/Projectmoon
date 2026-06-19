@@ -53,7 +53,7 @@ export function Footer() {
             >
               <p className="flex items-center justify-center md:justify-start gap-2 text-white/60">
                 <MapPin className="w-3.5 h-3.5" />
-                Medellín, Colombia
+                Bello, Antioquia
               </p>
               <a
                 href={whatsappUrl}
@@ -91,7 +91,22 @@ export function Footer() {
             >
               <p>NIT: 1102809922-0</p>
               <p>RNT: 264489</p>
-              <p>Dirección: Carrera 54 # 35-21</p>
+              <p>Dirección: Cra. 54 #35 21, Obrero, Bello, Antioquia</p>
+              
+              <a 
+                href="https://www.google.com/maps/place/Moon+Travel+Co/@6.3227469,-75.565117,17z/data=!3m1!4b1!4m6!3m5!1s0x8e442f9df6ded487:0xa5a52812bda5fbdd!8m2!3d6.3227469!4d-75.5602461!16s%2Fg%2F11z3bj_6x8?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block mt-4 overflow-hidden rounded-xl border border-white/10 hover:border-[#D2C3F7]/50 transition-colors group relative"
+                title="Ver en Google Maps"
+              >
+                <img 
+                  src="/images/map_location.png" 
+                  alt="Ubicación de Moon Travel Co. en el mapa" 
+                  className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+                />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300 pointer-events-none" />
+              </a>
             </div>
           </div>
 
