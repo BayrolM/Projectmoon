@@ -91,10 +91,15 @@ export function PackageCard({
               willChange: shouldReduceMotion ? "auto" : "transform",
               transform: "translateZ(0)",
             }}
-            loading="lazy"
-            decoding="async"
           />
         </AnimatePresence>
+
+        {/* Preload other images in the background */}
+        {images.map((img, idx) => (
+          idx !== currentIndex && (
+            <img key={img} src={img} className="hidden" aria-hidden="true" />
+          )
+        ))}
 
         {/* Overlay Gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-[2]"></div>

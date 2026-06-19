@@ -11,8 +11,8 @@ export const sinVisaCruises: Cruise[] = [
     duration: "8 días / 7 noches",
     location: "Santo Domingo, Rep. Dominicana",
     images: [
-      "/images/Cruceros/sinVisa/santoDomingo.jpg",
-      "/images/Cruceros/sinVisa/santoDomingo2.jpg",
+      "/images/Cruceros/sinVisa/santoDomingo.webp",
+      "/images/Cruceros/sinVisa/santoDomingo2.webp",
     ],
     whatsappMessage:
       "¡Hola! Me interesa el crucero 'Caribe'. ¿Podrían darme más información?",
@@ -37,8 +37,8 @@ export const sinVisaCruises: Cruise[] = [
     duration: "8 días / 7 noches",
     location: "La Romana, República Dominicana",
     images: [
-      "/images/Cruceros/sinVisa/laRomanaCrucero.jpg",
-      "/images/Cruceros/sinVisa/laRomanaCrucero2.jpg",
+      "/images/Cruceros/sinVisa/laRomanaCrucero.webp",
+      "/images/Cruceros/sinVisa/laRomanaCrucero2.webp",
     ],
     whatsappMessage:
       "¡Hola! Me interesa el crucero 'Caribe'. ¿Podrían darme más información?",
@@ -61,7 +61,7 @@ export const sinVisaCruises: Cruise[] = [
       "Disfruta de una travesía inolvidable por las costas de Argentina, Uruguay y Brasil. Aprovecha la promoción especial de cabina con balcón a precio de interior.",
     duration: "9 días / 8 noches",
     location: "Saliendo desde Buenos Aires, Argentina",
-    images: ["/images/Cruceros/sinVisa/suramericaCrucero.jpg"],
+    images: ["/images/Cruceros/sinVisa/suramericaCrucero.webp"],
     whatsappMessage:
       "¡Hola! Me interesa el crucero MSC Splendida desde Buenos Aires para el 3 de diciembre. ¿Aún tienen la promo de cabina balcón?",
     itinerary: [
@@ -128,7 +128,7 @@ export const visaCruises: Cruise[] = [
     location: "Puerto Cañaveral (Florida), EE. UU.",
     images: [
       "/images/Cruceros/Visa/disneyCrucero.avif",
-      "/images/Cruceros/Visa/disneyCrucero2.jpg",
+      "/images/Cruceros/Visa/disneyCrucero2.webp",
     ],
     whatsappMessage:
       "¡Hola! Me encantaría recibir información sobre los cruceros de Disney. ¿Qué fechas hay disponibles?",
@@ -157,8 +157,8 @@ export const visaCruises: Cruise[] = [
     duration: "6 días / 5 noches",
     location: "Miami, Florida, EE. UU.",
     images: [
-      "/images/Cruceros/Visa/miamiCrucero.jpg",
-      "/images/Cruceros/Visa/miamiCrucero2.jpg",
+      "/images/Cruceros/Visa/miamiCrucero.webp",
+      "/images/Cruceros/Visa/miamiCrucero2.webp",
     ],
     whatsappMessage:
       "¡Hola! Me interesa el crucero de 5 noches en el Freedom of the Seas saliendo desde Miami.",
@@ -189,7 +189,7 @@ export const visaCruises: Cruise[] = [
       "Un recorrido inolvidable por las ciudades más emblemáticas del Mediterráneo y la costa dálmata, combinando historia, cultura y el lujo de Royal Caribbean.",
     duration: "10 días / 9 noches",
     location: "Barcelona, España",
-    images: ["/images/Cruceros/Visa/mediterraneoCrucero.jpg"],
+    images: ["/images/Cruceros/Visa/mediterraneoCrucero.webp"],
     whatsappMessage:
       "¡Hola! Me interesa el crucero de 9 noches en el Explorer of the Seas por el Mediterráneo desde Barcelona.",
     itinerary: [

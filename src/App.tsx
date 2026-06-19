@@ -18,7 +18,7 @@ export default function App() {
       {/* Navbar */}
       <Navbar />
 
-      {/* Hero Section - Adding padding-top to account for fixed navbar */}
+      {/* Hero Section*/}
       <div className="pt-24">
         <Hero />
       </div>
@@ -26,10 +26,10 @@ export default function App() {
       {/* Destinations Section with Tabs */}
       <Destinations />
 
-      {/* Packages Section (Modularizado) */}
+      {/* Packages Section */}
       <PackagesSection />
 
-      {/* Cruises Section (Modularizado) */}
+      {/* Cruises Section */}
       <CruisesSection />
 
       {/* Gallery Section */}

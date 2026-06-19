@@ -1,27 +1,27 @@
 export function Gallery() {
   const images = [
     {
-      url: "/images/experienciasViajeros/experiencia 1.jpeg",
+      url: "/images/experienciasViajeros/experiencia 1.webp",
       alt: "Experiencia 1",
       large: true,
     },
     {
-      url: "/images/experienciasViajeros/experiencia 2.jpeg",
+      url: "/images/experienciasViajeros/experiencia 2.webp",
       alt: "Experiencia 2",
       large: false,
     },
     {
-      url: "/images/experienciasViajeros/experiencia 3.jpeg",
+      url: "/images/experienciasViajeros/experiencia 3.webp",
       alt: "Experiencia 3",
       large: false,
     },
     {
-      url: "/images/experienciasViajeros/experiencia 4.jpeg",
+      url: "/images/experienciasViajeros/experiencia 4.webp",
       alt: "Experiencia 4",
       large: false,
     },
     {
-      url: "/images/experienciasViajeros/experiencia 5.jpeg",
+      url: "/images/experienciasViajeros/experiencia 5.webp",
       alt: "Experiencia 5",
       large: false,
     },

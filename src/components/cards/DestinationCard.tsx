@@ -6,9 +6,10 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, AnimatePresence, Variants, useReducedMotion } from "framer-motion";
 import { DestinationData } from "../../types";
 import { useWhatsApp } from "../../hooks/useWhatsApp";
+import { useCarousel } from "../../hooks/useCarousel";
 
 interface DestinationCardProps {
   destination: DestinationData;
@@ -17,22 +18,40 @@ interface DestinationCardProps {
 
 export function DestinationCard({ destination, index }: DestinationCardProps) {
   const shouldReduceMotion = useReducedMotion();
-  const [currentIndex, setCurrentIndex] = useState(0);
   const images = destination.images || [];
+  const { currentIndex, direction, next, prev, goTo } = useCarousel(images.length);
 
   const whatsappMsg = `¡Hola! Estoy interesado en viajar a ${destination.name}.`;
   const { whatsappUrl } = useWhatsApp(whatsappMsg);
 
-  const nextImage = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setCurrentIndex((prev) => (prev + 1) % images.length);
-  };
-
-  const prevImage = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  const variants: Variants = {
+    enter: (direction: number) => ({
+      x: shouldReduceMotion ? 0 : (direction > 0 ? "100%" : "-100%"),
+      opacity: 0,
+      scale: shouldReduceMotion ? 1 : 1.1,
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      transition: {
+        x: { type: "spring", stiffness: 200, damping: 25 },
+        opacity: { duration: 0.4 },
+        scale: { duration: 0.4 },
+      },
+    },
+    exit: (direction: number) => ({
+      zIndex: 0,
+      x: shouldReduceMotion ? 0 : (direction < 0 ? "100%" : "-100%"),
+      opacity: 0,
+      scale: shouldReduceMotion ? 1 : 0.9,
+      transition: {
+        x: { type: "spring", stiffness: 300, damping: 30 },
+        opacity: { duration: 0.5 },
+        scale: { duration: 0.5 },
+      },
+    }),
   };
 
   return (
@@ -46,36 +65,63 @@ export function DestinationCard({ destination, index }: DestinationCardProps) {
     >
       {/* Image Carousel Section */}
       <div className="relative h-48 overflow-hidden bg-gray-900 shrink-0">
-        <img
-          src={images[currentIndex]}
-          key={currentIndex}
-          alt={`${destination.name} - image ${currentIndex + 1}`}
-          className="absolute inset-0 w-full h-full object-cover"
-          loading="lazy"
-          decoding="async"
-        />
+        <AnimatePresence initial={false} custom={direction}>
+          <motion.img
+            key={currentIndex}
+            src={images[currentIndex]}
+            alt={`${destination.name} - image ${currentIndex + 1}`}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ willChange: shouldReduceMotion ? "auto" : "transform", transform: "translateZ(0)" }}
+          />
+        </AnimatePresence>
+
+        {/* Preload other images in the background */}
+        {images.map((img, idx) => (
+          idx !== currentIndex && (
+            <img key={img} src={img} className="hidden" aria-hidden="true" />
+          )
+        ))}
+
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-[2]"></div>
 
         {images.length > 1 && (
           <>
             <button
-              onClick={prevImage}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                prev();
+              }}
               className="absolute left-2 top-1/2 -translate-y-1/2 z-[5] w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/40"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
-              onClick={nextImage}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                next();
+              }}
               className="absolute right-2 top-1/2 -translate-y-1/2 z-[5] w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/40"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
             <div className="absolute bottom-4 right-4 z-[5] flex gap-1.5 px-2 py-1 rounded-full bg-black/20 backdrop-blur-sm">
               {images.map((_, idx) => (
-                <div
+                <button
                   key={idx}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    goTo(idx, currentIndex);
+                  }}
                   className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-                    idx === currentIndex ? "bg-white w-3" : "bg-white/40"
+                    idx === currentIndex ? "bg-white w-3" : "bg-white/40 hover:bg-white/60"
                   }`}
                 />
               ))}

@@ -79,10 +79,15 @@ export function CruiseCard({
             exit="exit"
             className="absolute inset-0 w-full h-full object-cover"
             style={{ willChange: shouldReduceMotion ? "auto" : "transform", transform: "translateZ(0)" }}
-            loading="lazy"
-            decoding="async"
           />
         </AnimatePresence>
+
+        {/* Preload other images in the background */}
+        {images.map((img, idx) => (
+          idx !== currentIndex && (
+            <img key={img} src={img} className="hidden" aria-hidden="true" />
+          )
+        ))}
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-[2]" />
 
