@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://moontravelco.com/sitemap.xml
